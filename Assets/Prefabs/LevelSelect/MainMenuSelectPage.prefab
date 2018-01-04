@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114000010376186052}
   - component: {fileID: 114000011272324594}
   m_Layer: 5
-  m_Name: LevelSelectPage
+  m_Name: MainMenuSelectPage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
   buttonLayoutGroup: {fileID: 114000013978039662}
   buttonPrefab: {fileID: 1000013864429740, guid: 2cc07cb4e0f984485adf85cbd7fbcede,
     type: 2}
-  maxButtonsPerPage: 9
+  maxButtonsPerPage: 6
 --- !u!114 &114000013978039662
 MonoBehaviour:
   m_ObjectHideFlags: 1
