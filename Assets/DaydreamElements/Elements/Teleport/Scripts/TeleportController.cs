@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using System;
 using UnityEngine;
 
 namespace DaydreamElements.Teleport {
@@ -137,7 +138,12 @@ namespace DaydreamElements.Teleport {
       }
     }
 
-    void OnDisable() {
+        private void OnEnable()
+        {
+            InputModeManager.OnInputModeChange += OnInputModeChange;
+        }
+
+        void OnDisable() {
       if (!selectionIsActive) {
         return;
       }
@@ -154,6 +160,7 @@ namespace DaydreamElements.Teleport {
       if (transition != null && transition.IsTransitioning) {
           transition.CancelTransition();
       }
+            InputModeManager.OnInputModeChange -= OnInputModeChange;
     }
 
     void Update() {
@@ -179,7 +186,7 @@ namespace DaydreamElements.Teleport {
       // If a teleport selection session has not started, check the appropriate
       // trigger to see if one should start.
       if (selectionIsActive == false) {
-        if (teleportStartTrigger.TriggerActive()) {
+        if (teleportStartTrigger.TriggerActive() && IsCorrectInputMode()) {
           StartTeleportSelection();
         }
       }
@@ -206,7 +213,7 @@ namespace DaydreamElements.Teleport {
 
       // When trigger deactivates we finish the teleport.
       if (selectionIsActive && teleportCommitTrigger.TriggerActive()) {
-        if (selectionResult.selectionIsValid) {
+        if (selectionResult.selectionIsValid && IsCorrectInputMode()) {
           Vector3 nextPlayerPosition = new Vector3(
             selectionResult.selection.x,
             selectionResult.selection.y + playerHeight,
@@ -343,5 +350,20 @@ namespace DaydreamElements.Teleport {
 
       return true;
     }
-  }
+
+        private bool IsCorrectInputMode()
+        {
+            if (InputModeManager.currentInputMode == InputModeManager.InputMode.TELEPORT)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private void OnInputModeChange()
+        {
+            EndTeleportSelection();
+        }
+    }
 }
