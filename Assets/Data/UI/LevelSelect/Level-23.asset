@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8465ac6a4bb547dd97116832e098653, type: 3}
   m_Name: Level-23
   m_EditorClassIdentifier: 
-  sceneAsset: {fileID: 0}
-  sceneAssetName: 
+  sceneAsset: {fileID: 11400000}
+  sceneAssetName: Level-23
   displayName: Nivel 2-3
-  backgroundSprite: {fileID: 0}
+  backgroundSprite: {fileID: 21300000, guid: eefbe1a81a28e4a3780f0b50afb4fc61, type: 3}
   levelSelectResponderPrefab: {fileID: 0}
