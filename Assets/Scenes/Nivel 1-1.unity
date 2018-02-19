@@ -88,6 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 112000002, guid: c5bb7289be099e14fb488356aabb6933,
     type: 2}
   m_UseShadowmask: 1
@@ -399,6 +400,7 @@ GameObject:
   - component: {fileID: 477231171}
   - component: {fileID: 477231170}
   - component: {fileID: 477231169}
+  - component: {fileID: 477231183}
   m_Layer: 0
   m_Name: TeleportController
   m_TagString: Untagged
@@ -499,7 +501,7 @@ MonoBehaviour:
   rotateRightTrigger: {fileID: 477231173}
   detector: {fileID: 477231171}
   visualizer: {fileID: 477231170}
-  transition: {fileID: 477231169}
+  transition: {fileID: 477231183}
   allowRotation: 1
   rotationSpeed: 30
   rotationDegreesIncrement: 20
@@ -643,6 +645,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fec4ca205a2c94b04a552928098c084d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &477231183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 477231168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b59b576d38533941a94ac749d14c0b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionSpeed: 40
+  fader: {fileID: 1462427539}
 --- !u!4 &648490386 stripped
 Transform:
   m_PrefabParentObject: {fileID: 766346198, guid: 463285ecd6702471a909ba810832bf0e,
@@ -1022,6 +1037,7 @@ GameObject:
   - component: {fileID: 1462427535}
   - component: {fileID: 1462427534}
   - component: {fileID: 1462427538}
+  - component: {fileID: 1462427539}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1106,6 +1122,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   maxRaycastHits: 64
+--- !u!114 &1462427539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1462427533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f48f8035581f4ea09ece08e375fb817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Material: {fileID: 2100000, guid: 4bc8c12d1af2b47e8b31eac96eed65fd, type: 2}
+  Color: {r: 0, g: 0, b: 0, a: 1}
+  FadeTime: 0.1
+  FadeToClearDelay: 0
 --- !u!4 &1495881551 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4016741902477884, guid: 72b5aa4dc0a00344297853bba3c17baa,
@@ -1327,7 +1358,7 @@ Prefab:
     - target: {fileID: 114063829130735768, guid: 5ca80f4596fa44b87912a0592346d260,
         type: 2}
       propertyPath: emulatorConnectionMode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ca80f4596fa44b87912a0592346d260, type: 2}

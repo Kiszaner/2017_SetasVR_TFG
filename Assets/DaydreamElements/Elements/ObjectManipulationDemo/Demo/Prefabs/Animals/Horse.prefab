@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4154552050179072}
-  - component: {fileID: 114764706647246428}
   m_Layer: 0
   m_Name: BounceSound_1
   m_TagString: Untagged
@@ -35,7 +34,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4779442702161386}
-  - component: {fileID: 114001642426911656}
   m_Layer: 0
   m_Name: BounceSound_0
   m_TagString: Untagged
@@ -51,7 +49,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4273593103285280}
-  - component: {fileID: 114950420392806594}
   m_Layer: 0
   m_Name: SelectSound
   m_TagString: Untagged
@@ -175,6 +172,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -190,6 +188,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -234,39 +233,6 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 64fb0d45076f4a5418e424c9c10c2bd1, type: 3}
---- !u!114 &114001642426911656
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1328612901805808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dbca64e524ea44f9b26142ec59aca8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bypassRoomEffects: 0
-  directivityAlpha: 0
-  directivitySharpness: 1
-  listenerDirectivityAlpha: 0
-  listenerDirectivitySharpness: 1
-  gainDb: 0
-  occlusionEnabled: 0
-  playOnAwake: 0
-  sourceClip: {fileID: 8300000, guid: be75cac2f29004c4599fd00a51c4875e, type: 3}
-  sourceLoop: 0
-  sourceMute: 0
-  sourcePitch: 1
-  sourcePriority: 128
-  sourceSpatialBlend: 1
-  sourceDopplerLevel: 1
-  sourceSpread: 0
-  sourceVolume: 1
-  sourceRolloffMode: 0
-  sourceMaxDistance: 500
-  sourceMinDistance: 1
-  hrtfEnabled: 1
-  audioSource: {fileID: 0}
 --- !u!114 &114003360055880052
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -307,43 +273,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveablePhysicsObject: {fileID: 114867320881698294}
   rigidbodyCmp: {fileID: 54366517898992984}
-  selectSound: {fileID: 114950420392806594}
+  selectSound: {fileID: 0}
   bounceSounds:
-  - {fileID: 114001642426911656}
-  - {fileID: 114764706647246428}
---- !u!114 &114764706647246428
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1146284912336090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dbca64e524ea44f9b26142ec59aca8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bypassRoomEffects: 0
-  directivityAlpha: 0
-  directivitySharpness: 1
-  listenerDirectivityAlpha: 0
-  listenerDirectivitySharpness: 1
-  gainDb: 0
-  occlusionEnabled: 0
-  playOnAwake: 0
-  sourceClip: {fileID: 8300000, guid: c465878f102954d4492cdc455629562a, type: 3}
-  sourceLoop: 0
-  sourceMute: 0
-  sourcePitch: 1
-  sourcePriority: 128
-  sourceSpatialBlend: 1
-  sourceDopplerLevel: 1
-  sourceSpread: 0
-  sourceVolume: 1
-  sourceRolloffMode: 0
-  sourceMaxDistance: 500
-  sourceMinDistance: 1
-  hrtfEnabled: 1
-  audioSource: {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114867320881698294
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -367,37 +300,3 @@ MonoBehaviour:
   distanceFromControllerMax: 10
   rotationOnTouchSpeed: 2
   camera: {fileID: 0}
-  rigidbodyCmp: {fileID: 54366517898992984}
---- !u!114 &114950420392806594
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1461653289592898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dbca64e524ea44f9b26142ec59aca8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bypassRoomEffects: 0
-  directivityAlpha: 0
-  directivitySharpness: 1
-  listenerDirectivityAlpha: 0
-  listenerDirectivitySharpness: 1
-  gainDb: 0
-  occlusionEnabled: 0
-  playOnAwake: 0
-  sourceClip: {fileID: 8300000, guid: 26ed425a0c5df704aa7f187943cde01f, type: 3}
-  sourceLoop: 0
-  sourceMute: 0
-  sourcePitch: 1
-  sourcePriority: 128
-  sourceSpatialBlend: 1
-  sourceDopplerLevel: 1
-  sourceSpread: 0
-  sourceVolume: 1
-  sourceRolloffMode: 0
-  sourceMaxDistance: 500
-  sourceMinDistance: 1
-  hrtfEnabled: 1
-  audioSource: {fileID: 0}

@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4936084825678806}
-  - component: {fileID: 114120910880186994}
   m_Layer: 0
   m_Name: SelectSound
   m_TagString: Untagged
@@ -53,7 +52,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4413746493847190}
-  - component: {fileID: 114147961029444702}
   m_Layer: 0
   m_Name: BounceSound_1
   m_TagString: Untagged
@@ -69,7 +67,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4148283787057604}
-  - component: {fileID: 114665837349359708}
   m_Layer: 0
   m_Name: BounceSound_0
   m_TagString: Untagged
@@ -175,6 +172,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -190,6 +188,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -248,72 +247,6 @@ MonoBehaviour:
   interactiveObject: {fileID: 114271640464461788}
   meshRenderer: {fileID: 23420840484945968}
   highlightSpeed: 1
---- !u!114 &114120910880186994
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1135252869581324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dbca64e524ea44f9b26142ec59aca8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bypassRoomEffects: 0
-  directivityAlpha: 0
-  directivitySharpness: 1
-  listenerDirectivityAlpha: 0
-  listenerDirectivitySharpness: 1
-  gainDb: 0
-  occlusionEnabled: 0
-  playOnAwake: 0
-  sourceClip: {fileID: 8300000, guid: 26ed425a0c5df704aa7f187943cde01f, type: 3}
-  sourceLoop: 0
-  sourceMute: 0
-  sourcePitch: 1
-  sourcePriority: 128
-  sourceSpatialBlend: 1
-  sourceDopplerLevel: 1
-  sourceSpread: 0
-  sourceVolume: 1
-  sourceRolloffMode: 0
-  sourceMaxDistance: 500
-  sourceMinDistance: 1
-  hrtfEnabled: 1
-  audioSource: {fileID: 0}
---- !u!114 &114147961029444702
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1459001318315588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dbca64e524ea44f9b26142ec59aca8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bypassRoomEffects: 0
-  directivityAlpha: 0
-  directivitySharpness: 1
-  listenerDirectivityAlpha: 0
-  listenerDirectivitySharpness: 1
-  gainDb: 0
-  occlusionEnabled: 0
-  playOnAwake: 0
-  sourceClip: {fileID: 8300000, guid: c465878f102954d4492cdc455629562a, type: 3}
-  sourceLoop: 0
-  sourceMute: 0
-  sourcePitch: 1
-  sourcePriority: 128
-  sourceSpatialBlend: 1
-  sourceDopplerLevel: 1
-  sourceSpread: 0
-  sourceVolume: 1
-  sourceRolloffMode: 0
-  sourceMaxDistance: 500
-  sourceMinDistance: 1
-  hrtfEnabled: 1
-  audioSource: {fileID: 0}
 --- !u!114 &114271640464461788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -337,7 +270,6 @@ MonoBehaviour:
   distanceFromControllerMax: 10
   rotationOnTouchSpeed: 2
   camera: {fileID: 0}
-  rigidbodyCmp: {fileID: 54158542155495706}
 --- !u!114 &114538234688352684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -351,43 +283,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveablePhysicsObject: {fileID: 114271640464461788}
   rigidbodyCmp: {fileID: 54158542155495706}
-  selectSound: {fileID: 114120910880186994}
+  selectSound: {fileID: 0}
   bounceSounds:
-  - {fileID: 114665837349359708}
-  - {fileID: 114147961029444702}
---- !u!114 &114665837349359708
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1815560312227390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dbca64e524ea44f9b26142ec59aca8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bypassRoomEffects: 0
-  directivityAlpha: 0
-  directivitySharpness: 1
-  listenerDirectivityAlpha: 0
-  listenerDirectivitySharpness: 1
-  gainDb: 0
-  occlusionEnabled: 0
-  playOnAwake: 0
-  sourceClip: {fileID: 8300000, guid: be75cac2f29004c4599fd00a51c4875e, type: 3}
-  sourceLoop: 0
-  sourceMute: 0
-  sourcePitch: 1
-  sourcePriority: 128
-  sourceSpatialBlend: 1
-  sourceDopplerLevel: 1
-  sourceSpread: 0
-  sourceVolume: 1
-  sourceRolloffMode: 0
-  sourceMaxDistance: 500
-  sourceMinDistance: 1
-  hrtfEnabled: 1
-  audioSource: {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114879237654701476
 MonoBehaviour:
   m_ObjectHideFlags: 1

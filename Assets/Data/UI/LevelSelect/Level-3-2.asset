@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8465ac6a4bb547dd97116832e098653, type: 3}
-  m_Name: Level-31
+  m_Name: Level-3-2
   m_EditorClassIdentifier: 
-  sceneAsset: {fileID: 11400000}
-  sceneAssetName: Level-31
-  displayName: Nivel 3-1
+  sceneAsset: {fileID: 0}
+  sceneAssetName: 
+  displayName: Nivel 3-2
   backgroundSprite: {fileID: 21300000, guid: 0c13d46c5598d4397b31c1888773ddb1, type: 3}
   levelSelectResponderPrefab: {fileID: 0}
