@@ -6,7 +6,8 @@
 using UnityEngine;
 using System.Data;
 using Mono.Data.SqliteClient;
-using System.IO;
+using System.Globalization;
+using System.Text;
 
 namespace SQLiter
 {
@@ -46,15 +47,15 @@ namespace SQLiter
 		/// <summary>
 		/// Table name and DB actual file name -- this is the name of the actual file on the filesystem
 		/// </summary>
-		private const string SQL_DB_NAME = "PlayersSQLite";
+		private const string SQL_DB_NAME = "UBUSetasDB";
 
 		// table name
-		private const string SQL_TABLE_NAME = "GenericTableName";
+		private const string SQL_TABLE_NAME = "TablaComestible";
 
 		/// <summary>
 		/// predefine columns here to there are no typos
 		/// </summary>
-		private const string COL_NAME = "name";  // using name as example of primary, unique, key
+		private const string COL_NAME = "Nombre";  // using name as example of primary, unique, key
 		private const string COL_LOGIN_LAST = "login";
 		private const string COL_RACE = "race";
 		private const string COL_CLASS = "class";
@@ -87,7 +88,7 @@ namespace SQLiter
 			// - during builds, this is located in the project root - same level as Assets/Library/obj/ProjectSettings
 			// - during runtime (Windows at least), this is located in the SAME directory as the executable
 			// you can play around with the path if you like, but build-vs-run locations need to be taken into account
-			_sqlDBLocation = "URI=file:" + SQL_DB_NAME + ".db";
+			_sqlDBLocation = "URI=file:Assets/Data/DB/" + SQL_DB_NAME + ".db";
 
 			Debug.Log(_sqlDBLocation);
 			Instance = this;
@@ -99,10 +100,17 @@ namespace SQLiter
 			if (DebugMode)
 				Debug.Log("--- Start ---");
 
-			// just for testing, comment/uncomment to play with it
-			// note that it MUST be invoked after SQLite has initialized, 2-3 seconds later usually.  1 second is cutting it too close
-			Invoke("Test", 3);
+            // just for testing, comment/uncomment to play with it
+            // note that it MUST be invoked after SQLite has initialized, 2-3 seconds later usually.  1 second is cutting it too close
+            //Invoke("Test", 3);
+            Invoke("CustomTest", 3);
 		}
+
+        void CustomTest()
+        {
+            string MushroomName = QueryString("Nombre", "agaricus urinascens");
+            Debug.Log( new CultureInfo("es-ES").TextInfo.ToTitleCase(MushroomName).ToString());
+        }
 
 		/// <summary>
 		/// Just for testing, but you can see that GetAllPlayers is called -before- the insert player methods,
@@ -324,6 +332,7 @@ namespace SQLiter
 		{
 			string text = "Not Found";
 			_connection.Open();
+            Debug.Log("SELECT " + column + " FROM " + SQL_TABLE_NAME + " WHERE " + COL_NAME + "='" + value + "'");
 			_command.CommandText = "SELECT " + column + " FROM " + SQL_TABLE_NAME + " WHERE " + COL_NAME + "='" + value + "'";
 			_reader = _command.ExecuteReader();
 			if (_reader.Read())
