@@ -63,10 +63,19 @@ namespace SQLiter
 		private const string COL_XP = "xp";
 		private const string COL_GOLD = "gold";
 
-		/// <summary>
-		/// DB objects
-		/// </summary>
-		private IDbConnection _connection = null;
+        private const string SQL_TABLE_NAME_1 = "TablaComestible";
+        private const string SQL_TABLE_NAME_2 = "TablaDescripciones";
+        private const string SQL_TABLE_NAME_3 = "TablaGeneros";
+        private const string COL_DESCRIPTION_SPANISH = "DescripcionEs";
+        private const string COL_EDIBLE_SPANISH = "ComestibleEs";
+        private const string COL_DESCRIPTION_ENGLISH = "DescripcionEn";
+        private const string COL_EDIBLE_ENGLISH = "ComestibleEn";
+        private const string COL_SPECIES = "Especie";
+
+        /// <summary>
+        /// DB objects
+        /// </summary>
+        private IDbConnection _connection = null;
 		private IDbCommand _command = null;
 		private IDataReader _reader = null;
 		private string _sqlString;
@@ -110,6 +119,34 @@ namespace SQLiter
         {
             string MushroomName = QueryString("Nombre", "agaricus urinascens");
             Debug.Log( new CultureInfo("es-ES").TextInfo.ToTitleCase(MushroomName).ToString());
+        }
+
+        void GetAllMushrooms()
+        {
+            _connection.Open();
+            //Debug.Log("SELECT " + column + " FROM " + SQL_TABLE_NAME + " WHERE " + COL_NAME + "='" + value + "'");
+            //select c.Nombre, d.DescripcionEs, c.ComestibleEs, g.Especie
+            //from TablaComestible c
+            //join TablaDescripciones d
+            
+            //    on c.IdSeta = d.IdSeta
+            //join TablaGeneros g
+            
+            //    on c.IdSeta = g.IdSeta;
+            _command.CommandText = "SELECT c."+ COL_NAME +", d."+ COL_DESCRIPTION_SPANISH +", c."+ COL_EDIBLE_SPANISH +", g."+ COL_SPECIES +
+                " FROM " + SQL_TABLE_NAME_1 +" c join "+ SQL_TABLE_NAME_2 +" d on c.IdSeta" " WHERE " + COL_NAME + "='" + value + "'";
+            _reader = _command.ExecuteReader();
+            IDbDataParameter[] parameters = { CreateSqlStringParameter("@name", userName) };
+            // this should get only one row, as the user name is unique.
+            RunParamQuery("SELECT * FROM " + UserTable + " WHERE " + ColUserName + "=@name", parameters);
+            if (Reader.Read())
+                return new User(Reader.GetString(1), Reader.GetString(2), GetUserType(Reader.GetInt32(3)),
+                    Reader.GetFloat(4), false);
+
+            Debug.LogWarning("User " + userName + " not found on db!");
+            _reader.Close();
+            _connection.Close();
+            return null;
         }
 
 		/// <summary>
