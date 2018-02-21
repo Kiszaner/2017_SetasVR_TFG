@@ -1,15 +1,14 @@
 //----------------------------------------------
 // SQLiter
 // Copyright � 2014 OuijaPaw Games LLC
+// Modified version by Rodrigo Jurado Pajares
 //----------------------------------------------
 
 using UnityEngine;
 using System.Data;
 using Mono.Data.SqliteClient;
-using System.Globalization;
-using System.Text;
 
-namespace SQLiter
+namespace Database.SQLiter
 {
 	/// <summary>
 	/// The idea is that here is a bunch of the basics on using SQLite
@@ -35,52 +34,45 @@ namespace SQLiter
 	/// 
 	/// Here are some starting tools and information.  Go explore.
 	/// </summary>
-	public class SQLite : MonoBehaviour
+	public abstract class SQLite : MonoBehaviour
 	{
-		public static SQLite Instance = null;
+		//public static SQLite Instance = null;
 		public bool DebugMode = false;
 
 		// Location of database - this will be set during Awake as to stop Unity 5.4 error regarding initialization before scene is set
 		// file should show up in the Unity inspector after a few seconds of running it the first time
-		private static string _sqlDBLocation = "";
+		private static string DBLocation = "";
 
 		/// <summary>
 		/// Table name and DB actual file name -- this is the name of the actual file on the filesystem
 		/// </summary>
-		private const string SQL_DB_NAME = "UBUSetasDB";
+		protected abstract string DBName { get; }
 
 		// table name
-		private const string SQL_TABLE_NAME = "TablaComestible";
+		//private const string SQL_TABLE_NAME = "TablaComestible";
 
 		/// <summary>
 		/// predefine columns here to there are no typos
 		/// </summary>
-		private const string COL_NAME = "Nombre";  // using name as example of primary, unique, key
-		private const string COL_LOGIN_LAST = "login";
-		private const string COL_RACE = "race";
-		private const string COL_CLASS = "class";
-		private const string COL_LEVEL = "level";
-		private const string COL_XP = "xp";
-		private const string COL_GOLD = "gold";
+		//private const string COL_NAME = "Nombre";  // using name as example of primary, unique, key
+		//private const string COL_LOGIN_LAST = "login";
+		//private const string COL_RACE = "race";
+		//private const string COL_CLASS = "class";
+		//private const string COL_LEVEL = "level";
+		//private const string COL_XP = "xp";
+		//private const string COL_GOLD = "gold";
 
-        private const string SQL_TABLE_NAME_1 = "TablaComestible";
-        private const string SQL_TABLE_NAME_2 = "TablaDescripciones";
-        private const string SQL_TABLE_NAME_3 = "TablaGeneros";
-        private const string COL_DESCRIPTION_SPANISH = "DescripcionEs";
-        private const string COL_EDIBLE_SPANISH = "ComestibleEs";
-        private const string COL_DESCRIPTION_ENGLISH = "DescripcionEn";
-        private const string COL_EDIBLE_ENGLISH = "ComestibleEn";
-        private const string COL_SPECIES = "Especie";
+        
 
         /// <summary>
         /// DB objects
         /// </summary>
-        private IDbConnection _connection = null;
-		private IDbCommand _command = null;
-		private IDataReader _reader = null;
-		private string _sqlString;
+        protected IDbConnection _connection = null;
+		protected IDbCommand _command = null;
+		protected IDataReader _reader = null;
+		//private string _sqlString;
 
-		private bool _createNewTavle = false;
+		//private bool _createNewTavle = false;
 
 		/// <summary>
 		/// Awake will initialize the connection.  
@@ -92,16 +84,20 @@ namespace SQLiter
 			if (DebugMode)
 				Debug.Log("--- Awake ---");
 
-			// here is where we set the file location
-			// ------------ IMPORTANT ---------
-			// - during builds, this is located in the project root - same level as Assets/Library/obj/ProjectSettings
-			// - during runtime (Windows at least), this is located in the SAME directory as the executable
-			// you can play around with the path if you like, but build-vs-run locations need to be taken into account
-			_sqlDBLocation = "URI=file:Assets/Data/DB/" + SQL_DB_NAME + ".db";
+            // here is where we set the file location
+            // ------------ IMPORTANT ---------
+            // - during builds, this is located in the project root - same level as Assets/Library/obj/ProjectSettings
+            // - during runtime (Windows at least), this is located in the SAME directory as the executable
+            // you can play around with the path if you like, but build-vs-run locations need to be taken into account
+#if UNITY_EDITOR
+            DBLocation = "URI=file:Assets/Data/DB/" + DBName + ".db";
+#else
+            DBLocation = "URI=file:" + DBName + ".db";
+#endif
 
-			Debug.Log(_sqlDBLocation);
-			Instance = this;
-			SQLiteInit();
+			Debug.Log(DBLocation);
+			//Instance = this;
+			//SQLiteInit();
 		}
 
 		void Start()
@@ -112,98 +108,93 @@ namespace SQLiter
             // just for testing, comment/uncomment to play with it
             // note that it MUST be invoked after SQLite has initialized, 2-3 seconds later usually.  1 second is cutting it too close
             //Invoke("Test", 3);
-            Invoke("CustomTest", 3);
+            //Invoke("CustomTest", 3);
 		}
 
-        void CustomTest()
-        {
-            string MushroomName = QueryString("Nombre", "agaricus urinascens");
-            Debug.Log( new CultureInfo("es-ES").TextInfo.ToTitleCase(MushroomName).ToString());
-        }
+        //void CustomTest()
+        //{
+        //    string MushroomName = QueryString("Nombre", "agaricus urinascens");
+        //    Debug.Log( new CultureInfo("es-ES").TextInfo.ToTitleCase(MushroomName).ToString());
+        //}
 
-        void GetAllMushrooms()
-        {
-            _connection.Open();
-            //Debug.Log("SELECT " + column + " FROM " + SQL_TABLE_NAME + " WHERE " + COL_NAME + "='" + value + "'");
-            //select c.Nombre, d.DescripcionEs, c.ComestibleEs, g.Especie
-            //from TablaComestible c
-            //join TablaDescripciones d
+        //List<MushroomDataStructure> GetMushrooms()
+        //{
+        //    _connection.Open();
+        //    //Debug.Log("SELECT " + column + " FROM " + SQL_TABLE_NAME + " WHERE " + COL_NAME + "='" + value + "'");
+        //    //select c.Nombre, d.DescripcionEs, c.ComestibleEs, g.Especie
+        //    //from TablaComestible c
+        //    //join TablaDescripciones d
             
-            //    on c.IdSeta = d.IdSeta
-            //join TablaGeneros g
+        //    //    on c.IdSeta = d.IdSeta
+        //    //join TablaGeneros g
             
-            //    on c.IdSeta = g.IdSeta;
-            _command.CommandText = "SELECT c."+ COL_NAME +", d."+ COL_DESCRIPTION_SPANISH +", c."+ COL_EDIBLE_SPANISH +", g."+ COL_SPECIES +
-                " FROM " + SQL_TABLE_NAME_1 +" c join "+ SQL_TABLE_NAME_2 +" d on c.IdSeta" " WHERE " + COL_NAME + "='" + value + "'";
-            _reader = _command.ExecuteReader();
-            IDbDataParameter[] parameters = { CreateSqlStringParameter("@name", userName) };
-            // this should get only one row, as the user name is unique.
-            RunParamQuery("SELECT * FROM " + UserTable + " WHERE " + ColUserName + "=@name", parameters);
-            if (Reader.Read())
-                return new User(Reader.GetString(1), Reader.GetString(2), GetUserType(Reader.GetInt32(3)),
-                    Reader.GetFloat(4), false);
+        //    //    on c.IdSeta = g.IdSeta;
+        //    _command.CommandText = "SELECT c."+ COL_NAME +", d."+ COL_DESCRIPTION_SPANISH +", c."+ COL_EDIBLE_SPANISH +", g."+ COL_SPECIES +" FROM "+ SQL_TABLE_NAME_1 +" c join "+ SQL_TABLE_NAME_2 +" d on c.IdSeta = d.IdSeta join "+ SQL_TABLE_NAME_3 +"g on c.IdSeta = g.IdSeta";
+        //    _reader = _command.ExecuteReader();
+        //    // this should get only one row, as the user name is unique.
+        //    //RunParamQuery("SELECT * FROM " + UserTable + " WHERE " + ColUserName + "=@name", parameters);
+        //    //if (Reader.Read())
+        //    //    return new User(Reader.GetString(1), Reader.GetString(2), GetUserType(Reader.GetInt32(3)),
+        //    //        Reader.GetFloat(4), false);
 
-            Debug.LogWarning("User " + userName + " not found on db!");
-            _reader.Close();
-            _connection.Close();
-            return null;
+        //    //Debug.LogWarning("User " + userName + " not found on db!");
+        //    _reader.Close();
+        //    _connection.Close();
+        //    return null;
+        //}
+
+        /// <summary>
+        /// Just for testing, but you can see that GetAllPlayers is called -before- the insert player methods,
+        /// and returns the data afterwards.
+        /// </summary>
+        //void Test()
+        //{
+        //	if (DebugMode)
+        //		Debug.Log("--- Test Invoked ---");
+
+        //	LoomManager.Loom.QueueOnMainThread(() =>
+        //	{
+        //		GetAllPlayers();
+        //	});
+
+        //	InsertPlayer("Alex", 3, 2, 3, 2, 4, 12);
+        //	InsertPlayer("Bob", 3, 2, 3, 2, 4, 12);
+        //	InsertPlayer("Frank", 3, 2, 3, 2, 4, 12);
+        //	InsertPlayer("Joe", 3, 2, 3, 2, 4, 12);
+        //}
+
+        /// <summary>
+        /// Uncomment if you want to see the time it takes to do things
+        /// </summary>
+        //void Update()
+        //{
+        //    Debug.Log(Time.time);
+        //}
+
+#if UNITY_EDITOR
+        /// <summary>
+        ///     Clean up SQLite Connections, anything else
+        /// </summary>
+        private void OnDestroy()
+        {
+            SQLiteClose();
         }
+#endif
 
-		/// <summary>
-		/// Just for testing, but you can see that GetAllPlayers is called -before- the insert player methods,
-		/// and returns the data afterwards.
-		/// </summary>
-		void Test()
+        /// <summary>
+        /// Example using the Loom to run an asynchronous method on another thread so SQLite lookups
+        /// do not block the main Unity thread
+        /// </summary>
+
+
+        /// <summary>
+        /// Basic initialization of SQLite
+        /// </summary>
+        protected void SQLiteInit()
 		{
-			if (DebugMode)
-				Debug.Log("--- Test Invoked ---");
 
-			LoomManager.Loom.QueueOnMainThread(() =>
-			{
-				GetAllPlayers();
-			});
-
-			InsertPlayer("Alex", 3, 2, 3, 2, 4, 12);
-			InsertPlayer("Bob", 3, 2, 3, 2, 4, 12);
-			InsertPlayer("Frank", 3, 2, 3, 2, 4, 12);
-			InsertPlayer("Joe", 3, 2, 3, 2, 4, 12);
-		}
-
-		/// <summary>
-		/// Uncomment if you want to see the time it takes to do things
-		/// </summary>
-		//void Update()
-		//{
-		//    Debug.Log(Time.time);
-		//}
-
-		/// <summary>
-		/// Clean up SQLite Connections, anything else
-		/// </summary>
-		void OnDestroy()
-		{
-			SQLiteClose();
-		}
-
-		/// <summary>
-		/// Example using the Loom to run an asynchronous method on another thread so SQLite lookups
-		/// do not block the main Unity thread
-		/// </summary>
-		public void RunAsyncInit()
-		{
-			LoomManager.Loom.QueueOnMainThread(() =>
-			{
-				SQLiteInit();
-			});
-		}
-
-		/// <summary>
-		/// Basic initialization of SQLite
-		/// </summary>
-		private void SQLiteInit()
-		{
 			Debug.Log("SQLiter - Opening SQLite Connection");
-			_connection = new SqliteConnection(_sqlDBLocation);
+			_connection = new SqliteConnection(DBLocation);
 			_command = _connection.CreateCommand();
 			_connection.Open();
 
@@ -229,250 +220,271 @@ namespace SQLiter
 				Debug.Log("SQLiter - synchronous value is: " + _reader.GetInt32(0));
 			_reader.Close();
 
-			// here we check if the table you want to use exists or not.  If it doesn't exist we create it.
-			_command.CommandText = "SELECT name FROM sqlite_master WHERE name='" + SQL_TABLE_NAME + "'";
-			_reader = _command.ExecuteReader();
-			if (!_reader.Read())
-			{
-				Debug.Log("SQLiter - Could not find SQLite table " + SQL_TABLE_NAME);
-				_createNewTavle = true;
-			}
-			_reader.Close();
+			//// here we check if the table you want to use exists or not.  If it doesn't exist we create it.
+			//_command.CommandText = "SELECT name FROM sqlite_master WHERE name='" + SQL_TABLE_NAME + "'";
+			//_reader = _command.ExecuteReader();
+			//if (!_reader.Read())
+			//{
+			//	Debug.Log("SQLiter - Could not find SQLite table " + SQL_TABLE_NAME);
+			//	_createNewTavle = true;
+			//}
+			//_reader.Close();
 
-			// create new table if it wasn't found
-			if (_createNewTavle)
-			{
-				Debug.Log("SQLiter - Creating new SQLite table " + SQL_TABLE_NAME);
+			//// create new table if it wasn't found
+			//if (_createNewTavle)
+			//{
+			//	Debug.Log("SQLiter - Creating new SQLite table " + SQL_TABLE_NAME);
 
-				// insurance policy, drop table
-				_command.CommandText = "DROP TABLE IF EXISTS " + SQL_TABLE_NAME;
-				_command.ExecuteNonQuery();
+			//	// insurance policy, drop table
+			//	_command.CommandText = "DROP TABLE IF EXISTS " + SQL_TABLE_NAME;
+			//	_command.ExecuteNonQuery();
 
-				// create new - SQLite recommendation is to drop table, not clear it
-				_sqlString = "CREATE TABLE IF NOT EXISTS " + SQL_TABLE_NAME + " (" +
-					COL_NAME + " TEXT UNIQUE, " +
-					COL_RACE + " INTEGER, " +
-					COL_CLASS + " INTEGER, " +
-					COL_GOLD + " INTEGER, " +
-					COL_LOGIN_LAST + " INTEGER, " +
-					COL_LEVEL + " INTEGER, " +
-					COL_XP + " INTEGER)";
-				_command.CommandText = _sqlString;
-				_command.ExecuteNonQuery();
-			}
-			else
-			{
-				if (DebugMode)
-					Debug.Log("SQLiter - SQLite table " + SQL_TABLE_NAME + " was found");
-			}
+			//	// create new - SQLite recommendation is to drop table, not clear it
+			//	_sqlString = "CREATE TABLE IF NOT EXISTS " + SQL_TABLE_NAME + " (" +
+			//		COL_NAME + " TEXT UNIQUE, " +
+			//		COL_RACE + " INTEGER, " +
+			//		COL_CLASS + " INTEGER, " +
+			//		COL_GOLD + " INTEGER, " +
+			//		COL_LOGIN_LAST + " INTEGER, " +
+			//		COL_LEVEL + " INTEGER, " +
+			//		COL_XP + " INTEGER)";
+			//	_command.CommandText = _sqlString;
+			//	_command.ExecuteNonQuery();
+			//}
+			//else
+			//{
+			//	if (DebugMode)
+			//		Debug.Log("SQLiter - SQLite table " + SQL_TABLE_NAME + " was found");
+			//}
 
 			// close connection
 			_connection.Close();
 		}
 
-		#region Insert
-		/// <summary>
-		/// Inserts a player into the database
-		/// http://www.sqlite.org/lang_insert.html
-		/// name must be unique, it's our primary key
-		/// </summary>
-		/// <param name="name"></param>
-		/// <param name="raceType"></param>
-		/// <param name="classType"></param>
-		/// <param name="gold"></param>
-		/// <param name="login"></param>
-		/// <param name="level"></param>
-		/// <param name="xp"></param>
-		public void InsertPlayer(string name, int raceType, int classType, int gold, int login, int level, int xp)
-		{
-			name = name.ToLower();
+        //#region Insert
+        ///// <summary>
+        ///// Inserts a player into the database
+        ///// http://www.sqlite.org/lang_insert.html
+        ///// name must be unique, it's our primary key
+        ///// </summary>
+        ///// <param name="name"></param>
+        ///// <param name="raceType"></param>
+        ///// <param name="classType"></param>
+        ///// <param name="gold"></param>
+        ///// <param name="login"></param>
+        ///// <param name="level"></param>
+        ///// <param name="xp"></param>
+        //public void InsertPlayer(string name, int raceType, int classType, int gold, int login, int level, int xp)
+        //{
+        //	name = name.ToLower();
 
-			// note - this will replace any item that already exists, overwriting them.  
-			// normal INSERT without the REPLACE will throw an error if an item already exists
-			_sqlString = "INSERT OR REPLACE INTO " + SQL_TABLE_NAME
-				+ " ("
-				+ COL_NAME + ","
-				+ COL_RACE + ","
-				+ COL_CLASS + ","
-				+ COL_GOLD + ","
-				+ COL_LOGIN_LAST + ","
-				+ COL_LEVEL + ","
-				+ COL_XP
-				+ ") VALUES ('"
-				+ name + "',"  // note that string values need quote or double-quote delimiters
-				+ raceType + ","
-				+ classType + ","
-				+ gold + ","
-				+ login + ","
-				+ level + ","
-				+ xp
-				+ ");";
+        //	// note - this will replace any item that already exists, overwriting them.  
+        //	// normal INSERT without the REPLACE will throw an error if an item already exists
+        //	_sqlString = "INSERT OR REPLACE INTO " + SQL_TABLE_NAME
+        //		+ " ("
+        //		+ COL_NAME + ","
+        //		+ COL_RACE + ","
+        //		+ COL_CLASS + ","
+        //		+ COL_GOLD + ","
+        //		+ COL_LOGIN_LAST + ","
+        //		+ COL_LEVEL + ","
+        //		+ COL_XP
+        //		+ ") VALUES ('"
+        //		+ name + "',"  // note that string values need quote or double-quote delimiters
+        //		+ raceType + ","
+        //		+ classType + ","
+        //		+ gold + ","
+        //		+ login + ","
+        //		+ level + ","
+        //		+ xp
+        //		+ ");";
 
-			if (DebugMode)
-				Debug.Log(_sqlString);
-			ExecuteNonQuery(_sqlString);
-		}
+        //	if (DebugMode)
+        //		Debug.Log(_sqlString);
+        //	ExecuteNonQuery(_sqlString);
+        //}
 
-		#endregion
+        //#endregion
 
-		#region Query Values
+        //#region Query Values
 
-		/// <summary>
-		/// Quick method to show how you can query everything.  Expland on the query parameters to limit what you're looking for, etc.
-		/// </summary>
-		public void GetAllPlayers()
-		{
-			System.Text.StringBuilder sb = new System.Text.StringBuilder();
+        ///// <summary>
+        ///// Quick method to show how you can query everything.  Expland on the query parameters to limit what you're looking for, etc.
+        ///// </summary>
+        //public void GetAllPlayers()
+        //{
+        //	System.Text.StringBuilder sb = new System.Text.StringBuilder();
 
-			_connection.Open();
+        //	_connection.Open();
 
-			// if you have a bunch of stuff, this is going to be inefficient and a pain.  it's just for testing/show
-			_command.CommandText = "SELECT * FROM " + SQL_TABLE_NAME;
-			_reader = _command.ExecuteReader();
-			while (_reader.Read())
-			{
-				// reuse same stringbuilder
-				sb.Length = 0;
-				sb.Append(_reader.GetString(0)).Append(" ");
-				sb.Append(_reader.GetInt32(1)).Append(" ");
-				sb.Append(_reader.GetInt32(2)).Append(" ");
-				sb.Append(_reader.GetInt32(3)).Append(" ");
-				sb.Append(_reader.GetInt32(4)).Append(" ");
-				sb.Append(_reader.GetInt32(5)).Append(" ");
-				sb.AppendLine();
+        //	// if you have a bunch of stuff, this is going to be inefficient and a pain.  it's just for testing/show
+        //	_command.CommandText = "SELECT * FROM " + SQL_TABLE_NAME;
+        //	_reader = _command.ExecuteReader();
+        //	while (_reader.Read())
+        //	{
+        //		// reuse same stringbuilder
+        //		sb.Length = 0;
+        //		sb.Append(_reader.GetString(0)).Append(" ");
+        //		sb.Append(_reader.GetInt32(1)).Append(" ");
+        //		sb.Append(_reader.GetInt32(2)).Append(" ");
+        //		sb.Append(_reader.GetInt32(3)).Append(" ");
+        //		sb.Append(_reader.GetInt32(4)).Append(" ");
+        //		sb.Append(_reader.GetInt32(5)).Append(" ");
+        //		sb.AppendLine();
 
-				// view our output
-				if (DebugMode)
-					Debug.Log(sb.ToString());
-			}
-			_reader.Close();
-			_connection.Close();
-		}
+        //		// view our output
+        //		if (DebugMode)
+        //			Debug.Log(sb.ToString());
+        //	}
+        //	_reader.Close();
+        //	_connection.Close();
+        //}
 
-		/// <summary>
-		/// Basic get, returning a value
-		/// </summary>
-		/// <param name="value"></param>
-		/// <returns></returns>
-		public int GetRace(string value)
-		{
-			return QueryInt(COL_RACE, value);
-		}
+        ///// <summary>
+        ///// Basic get, returning a value
+        ///// </summary>
+        ///// <param name="value"></param>
+        ///// <returns></returns>
+        //public int GetRace(string value)
+        //{
+        //	return QueryInt(COL_RACE, value);
+        //}
 
-		/// <summary>
-		/// Supply the column and the value you're trying to find, and it will use the primary key to query the result
-		/// </summary>
-		/// <param name="column"></param>
-		/// <param name="value"></param>
-		/// <returns></returns>
-		public string QueryString(string column, string value)
-		{
-			string text = "Not Found";
-			_connection.Open();
-            Debug.Log("SELECT " + column + " FROM " + SQL_TABLE_NAME + " WHERE " + COL_NAME + "='" + value + "'");
-			_command.CommandText = "SELECT " + column + " FROM " + SQL_TABLE_NAME + " WHERE " + COL_NAME + "='" + value + "'";
-			_reader = _command.ExecuteReader();
-			if (_reader.Read())
-				text = _reader.GetString(0);
-			else
-				Debug.Log("QueryString - nothing to read...");
-			_reader.Close();
-			_connection.Close();
-			return text;
-		}
+        ///// <summary>
+        ///// Supply the column and the value you're trying to find, and it will use the primary key to query the result
+        ///// </summary>
+        ///// <param name="column"></param>
+        ///// <param name="value"></param>
+        ///// <returns></returns>
+        //public string QueryString(string column, string value)
+        //{
+        //	string text = "Not Found";
+        //	_connection.Open();
+        //          Debug.Log("SELECT " + column + " FROM " + SQL_TABLE_NAME + " WHERE " + COL_NAME + "='" + value + "'");
+        //	_command.CommandText = "SELECT " + column + " FROM " + SQL_TABLE_NAME + " WHERE " + COL_NAME + "='" + value + "'";
+        //	_reader = _command.ExecuteReader();
+        //	if (_reader.Read())
+        //		text = _reader.GetString(0);
+        //	else
+        //		Debug.Log("QueryString - nothing to read...");
+        //	_reader.Close();
+        //	_connection.Close();
+        //	return text;
+        //}
 
-		/// <summary>
-		/// Supply the column and the value you're trying to find, and it will use the primary key to query the result
-		/// </summary>
-		/// <param name="column"></param>
-		/// <param name="value"></param>
-		/// <returns></returns>
-		public int QueryInt(string column, string value)
-		{
-			int sel = -1;
-			_connection.Open();
-			_command.CommandText = "SELECT " + column + " FROM " + SQL_TABLE_NAME + " WHERE " + COL_NAME + "='" + value + "'";
-			_reader = _command.ExecuteReader();
-			if (_reader.Read())
-				sel = _reader.GetInt32(0);
-			else
-				Debug.Log("QueryInt - nothing to read...");
-			_reader.Close();
-			_connection.Close();
-			return sel;
-		}
+        ///// <summary>
+        ///// Supply the column and the value you're trying to find, and it will use the primary key to query the result
+        ///// </summary>
+        ///// <param name="column"></param>
+        ///// <param name="value"></param>
+        ///// <returns></returns>
+        //public int QueryInt(string column, string value)
+        //{
+        //	int sel = -1;
+        //	_connection.Open();
+        //	_command.CommandText = "SELECT " + column + " FROM " + SQL_TABLE_NAME + " WHERE " + COL_NAME + "='" + value + "'";
+        //	_reader = _command.ExecuteReader();
+        //	if (_reader.Read())
+        //		sel = _reader.GetInt32(0);
+        //	else
+        //		Debug.Log("QueryInt - nothing to read...");
+        //	_reader.Close();
+        //	_connection.Close();
+        //	return sel;
+        //}
 
-		/// <summary>
-		/// Supply the column and the value you're trying to find, and it will use the primary key to query the result
-		/// </summary>
-		/// <param name="column"></param>
-		/// <param name="value"></param>
-		/// <returns></returns>
-		public short QueryShort(string column, string value)
-		{
-			short sel = -1;
-			_connection.Open();
-			_command.CommandText = "SELECT " + column + " FROM " + SQL_TABLE_NAME + " WHERE " + COL_NAME + "='" + value + "'";
-			_reader = _command.ExecuteReader();
-			if (_reader.Read())
-				sel = _reader.GetInt16(0);
-			else
-				Debug.Log("QueryShort - nothing to read...");
-			_reader.Close();
-			_connection.Close();
-			return sel;
-		}
-		#endregion
+        ///// <summary>
+        ///// Supply the column and the value you're trying to find, and it will use the primary key to query the result
+        ///// </summary>
+        ///// <param name="column"></param>
+        ///// <param name="value"></param>
+        ///// <returns></returns>
+        //public short QueryShort(string column, string value)
+        //{
+        //	short sel = -1;
+        //	_connection.Open();
+        //	_command.CommandText = "SELECT " + column + " FROM " + SQL_TABLE_NAME + " WHERE " + COL_NAME + "='" + value + "'";
+        //	_reader = _command.ExecuteReader();
+        //	if (_reader.Read())
+        //		sel = _reader.GetInt16(0);
+        //	else
+        //		Debug.Log("QueryShort - nothing to read...");
+        //	_reader.Close();
+        //	_connection.Close();
+        //	return sel;
+        //}
+        //#endregion
 
-		#region Update / Replace Values
-		/// <summary>
-		/// A 'Set' method that will set a column value for a specific player, using their name as the unique primary key
-		/// to some value.  This currently just uses 'int' types, but you could modify this to use/do most anything.
-		/// Remember strings need single/double quotes around their values
-		/// </summary>
-		/// <param name="value"></param>
-		public void SetValue(string column, int value, string name)
-		{
-			ExecuteNonQuery("UPDATE OR REPLACE " + SQL_TABLE_NAME + " SET " + column + "=" + value + " WHERE " + COL_NAME + "='" + name + "'");
-		}
+        //#region Update / Replace Values
+        ///// <summary>
+        ///// A 'Set' method that will set a column value for a specific player, using their name as the unique primary key
+        ///// to some value.  This currently just uses 'int' types, but you could modify this to use/do most anything.
+        ///// Remember strings need single/double quotes around their values
+        ///// </summary>
+        ///// <param name="value"></param>
+        //public void SetValue(string column, int value, string name)
+        //{
+        //	ExecuteNonQuery("UPDATE OR REPLACE " + SQL_TABLE_NAME + " SET " + column + "=" + value + " WHERE " + COL_NAME + "='" + name + "'");
+        //}
 
-		#endregion
+        //#endregion
 
-		#region Delete
+        //#region Delete
 
-		/// <summary>
-		/// Basic delete, using the name primary key for the 
-		/// </summary>
-		/// <param name="nameKey"></param>
-		public void DeletePlayer(string nameKey)
-		{
-			ExecuteNonQuery("DELETE FROM " + SQL_TABLE_NAME + " WHERE " + COL_NAME + "='" + nameKey + "'");
-		}
-		#endregion
+        ///// <summary>
+        ///// Basic delete, using the name primary key for the 
+        ///// </summary>
+        ///// <param name="nameKey"></param>
+        //public void DeletePlayer(string nameKey)
+        //{
+        //	ExecuteNonQuery("DELETE FROM " + SQL_TABLE_NAME + " WHERE " + COL_NAME + "='" + nameKey + "'");
+        //}
+        //#endregion
 
-		/// <summary>
-		/// Basic execute command - open, create command, execute, close
-		/// </summary>
-		/// <param name="commandText"></param>
-		public void ExecuteNonQuery(string commandText)
-		{
-			_connection.Open();
-			_command.CommandText = commandText;
-			_command.ExecuteNonQuery();
-			_connection.Close();
-		}
+        ///// <summary>
+        ///// Basic execute command - open, create command, execute, close
+        ///// </summary>
+        ///// <param name="commandText"></param>
+        //public void ExecuteNonQuery(string commandText)
+        //{
+        //	_connection.Open();
+        //	_command.CommandText = commandText;
+        //	_command.ExecuteNonQuery();
+        //	_connection.Close();
+        //}
 
-		/// <summary>
-		/// Clean up everything for SQLite
-		/// </summary>
-		private void SQLiteClose()
+        /// <summary>
+        ///     Method to run query command.
+        /// </summary>
+        /// <param name="command">The query to run.</param>
+        protected void RunQuery(string command)
+        {
+            _connection.Open();
+            NewCommand();
+            this._command.CommandText = command;
+            _reader = this._command.ExecuteReader();
+            _connection.Close();
+        }
+
+        /// <summary>
+        ///     Function to ease the clearing of the command so that we make the variable reusable.
+        /// </summary>
+        private void NewCommand()
+        {
+            _command = _connection.CreateCommand();
+        }
+
+        /// <summary>
+        /// Clean up everything for SQLite
+        /// </summary>
+        private void SQLiteClose()
 		{
 			if (_reader != null && !_reader.IsClosed)
 				_reader.Close();
 			_reader = null;
 
-			if (_command != null)
-				_command.Dispose();
+            if (_command != null)
+                NewCommand();
 			_command = null;
 
 			if (_connection != null && _connection.State != ConnectionState.Closed)

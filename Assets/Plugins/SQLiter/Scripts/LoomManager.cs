@@ -7,7 +7,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using Action = System.Action;
 
-namespace SQLiter
+namespace Database.SQLiter
 {
     /// <summary>
     /// The LoomManager will moves things to another thread to process, then bring them back to main thread.
