@@ -60,10 +60,7 @@ public class DataServiceEditorUtility : Editor
         if (mushroom != null)
         {
             MushroomScriptableObject asset = CreateInstance<MushroomScriptableObject>();
-            asset.Name = mushroom.Name;
-            asset.Description = mushroom.Description;
-            asset.EdibleCondition = mushroom.EdibleCondition;
-            asset.Species = mushroom.Species;
+            asset.DataToScriptable(mushroom);
             AssetDatabase.CreateAsset(asset, "Assets/Data/Mushrooms/" + mushroom.Name + ".asset");
             return asset;
         }

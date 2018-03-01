@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,53 +9,79 @@ namespace Database.DataStructures
     {
         public string Name;
         public string Description;
-        public EdibleType EdibleCondition;
         public string Species;
+        public bool isEdible;
+        public bool isNotEdible;
+        public bool isRecommended;
+        public bool isPsycotropic;
+        public bool isPoisonous;
+        public bool isDangerous;
+        public bool isDeadly;
+        public bool isUnknown;
 
-        public Mushroom(string name, string description, string edibleCondition, string species)
+        public Mushroom(string name, string description, string edibleConditions, string species)
         {
             Name = name;
             Description = description;
-            EdibleCondition = GetEdibleType(edibleCondition);
+            SetEdibleConditions(edibleConditions);
             Species = species;
         }
 
-        EdibleType GetEdibleType(string edibleType)
+        private void SetEdibleConditions(string edibleConditions)
         {
-            // TODO localization manager
-            if (true) //spanish == true
+            string[] conditions = edibleConditions.Split(' ');
+            bool notChar = false;
+            for (int i = 0; i < conditions.Length; i++)
             {
-                edibleType = edibleType.ToLower();
-                if (edibleType.Contains("mortal"))
+                if(conditions[i] == "No")
                 {
-                    return EdibleType.Deadly;
-                }
-                else if(edibleType.Contains("venenosa"))
-                {
-                    return EdibleType.Poisonous;
-                }
-                else if (edibleType.Contains("no comestible") || edibleType.Contains("peligrosa"))
-                {
-                    return EdibleType.NotEdible;
-                }
-                else if (edibleType.Contains("comestible"))
-                {
-                    return EdibleType.Edible;
+                    notChar = true;
                 }
                 else
                 {
-                    return EdibleType.Unknown;
+                    SwitchEdibleConditions(conditions[i], notChar);
+                    notChar = false;
                 }
             }
-            // TODO localization manager
-            //else if (english)
+        }
+
+        private void SwitchEdibleConditions(string v, bool notChar)
+        {
+            Debug.Log("V: " + v);
+            if (notChar)
+            {
+                isNotEdible = true;
+                return;
+            }
+            switch (v.ToLower())
+            {
+                case "comestible":
+                    isEdible = true;
+                    break;
+                case "recomendada":
+                    isRecommended = true;
+                    break;
+                case "psicotropica":
+                    isPsycotropic = true;
+                    break;
+                case "peligrosa":
+                    isPoisonous = true;
+                    break;
+                case "mortal":
+                    isDeadly = true;
+                    break;
+                case "desconocido":
+                    isUnknown = true;
+                    break;
+                default:
+                    Debug.Log("Default: " + v);
+                    throw new ArgumentOutOfRangeException();
+            }
         }
 
         public override string ToString()
         {
-            return string.Concat("Nombre: ", Name, ". Descripcion: ", Description, ". EdibleCondition: ", EdibleCondition.ToString(), ". Species: ", Species);
+            return string.Concat("Nombre: ", Name, ". Descripcion: ", Description, ". Species: ", Species, ". EdibleCondition: ");
         }
     }
 }
-
-public enum EdibleType { Edible, NotEdible, Poisonous, Deadly, Unknown };
