@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class InfoPanelHandler : MonoBehaviour
 {
-    public Canvas InfoPanel;
+    public GameObject InfoPanel;
     private MoveablePhysicsObject MPO;
     public BaseActionTrigger informationPanelToggleTrigger;
 
@@ -22,7 +22,7 @@ public class InfoPanelHandler : MonoBehaviour
         {
             if (informationPanelToggleTrigger.TriggerActive())
             {
-                InfoPanel.enabled = !InfoPanel.enabled;
+                InfoPanel.SetActive(!InfoPanel.activeSelf);
             }
         }
 	}

@@ -9,6 +9,7 @@ public class MushroomScriptableObject : ScriptableObject
     public string Name;
     public string Description;
     public string Species;
+    public int ScoreValue = 5;
     public bool IsEdible;
     public bool IsNotEdible;
     public bool IsRecommended;
