@@ -14,6 +14,11 @@ public class LevelScore : MonoBehaviour
         Basket.OnMushroomInBasket += UpdateScore;
     }
 
+    private void Start()
+    {
+        ScoreText.text = "Puntuación: " + Score;
+    }
+
     private void UpdateScore(bool success, int value = 0)
     {
         if (success)

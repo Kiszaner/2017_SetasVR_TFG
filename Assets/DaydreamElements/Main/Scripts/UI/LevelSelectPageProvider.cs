@@ -38,7 +38,7 @@ namespace DaydreamElements.Main {
     private AssetTree.Node currentNode;
     private int pageCount;
 
-    private const string HOME_NAME = "Elements";
+    private const string HOME_NAME = "Niveles";
 
     public float GetSpacing() {
       return spacing;

@@ -53,4 +53,9 @@ public class Basket : MonoBehaviour
             }
         }
     }
+
+    public static void RaiseEvent(bool success, int value)
+    {
+        OnMushroomInBasket(success, value);
+    }
 }

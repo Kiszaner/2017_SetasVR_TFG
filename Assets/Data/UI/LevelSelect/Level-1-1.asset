@@ -15,4 +15,5 @@ MonoBehaviour:
   sceneAssetName: Nivel 1-1
   displayName: Nivel 1-1
   backgroundSprite: {fileID: 21300000, guid: 926636374e487462ab79414418ed54d8, type: 3}
-  levelSelectResponderPrefab: {fileID: 0}
+  levelSelectResponderPrefab: {fileID: 1079647992188152, guid: 0b6c10bc2d9fe9f48af1532debff736a,
+    type: 2}
