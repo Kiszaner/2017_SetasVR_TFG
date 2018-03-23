@@ -17,7 +17,8 @@ MonoBehaviour:
     incluye el hongo com\xFAn (\\\" bot\xF3n \\ \") (Agaricus bisporus) y el hongo
     de campo (Agaricus campestris), el cultivado dominante "
   Species: Agaricus
-  IsEdible: 1
+  ScoreValue: 5
+  IsEdible: 0
   IsNotEdible: 0
   IsRecommended: 0
   IsPsycotropic: 0
