@@ -31,15 +31,18 @@ namespace Database.DataStructures
         {
             string[] conditions = edibleConditions.Split(' ');
             bool notChar = false;
+            string conditionString;
+            Debug.Log("Length: '" + conditions.Length+"'");
             for (int i = 0; i < conditions.Length; i++)
             {
-                if(conditions[i] == "No")
+                conditionString = conditions[i].ToLower();
+                if (conditionString == "no")
                 {
                     notChar = true;
                 }
                 else
                 {
-                    SwitchEdibleConditions(conditions[i], notChar);
+                    SwitchEdibleConditions(conditionString, notChar);
                     notChar = false;
                 }
             }
@@ -47,7 +50,7 @@ namespace Database.DataStructures
 
         private void SwitchEdibleConditions(string v, bool notChar)
         {
-            Debug.Log("V: " + v);
+            Debug.Log("V: " + v + ". NotChar: "+notChar);
             if (notChar)
             {
                 isNotEdible = true;
@@ -65,6 +68,9 @@ namespace Database.DataStructures
                     isPsycotropic = true;
                     break;
                 case "peligrosa":
+                    isDangerous = true;
+                    break;
+                case "venenosa":
                     isPoisonous = true;
                     break;
                 case "mortal":

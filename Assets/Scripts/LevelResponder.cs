@@ -8,6 +8,7 @@ public class LevelResponder : BaseLevelSelectResponder
     private GvrTrackedController controller;
     private TeleportController teleport;
     private ObjectManipulationPointer pointer;
+    private LevelScore levelScore;
 
     public override void OnMenuOpened()
     {
@@ -29,6 +30,9 @@ public class LevelResponder : BaseLevelSelectResponder
         Assert.IsNotNull(teleport);
         pointer = controller.GetComponentInChildren<ObjectManipulationPointer>(true);
         Assert.IsNotNull(pointer);
+        levelScore = SceneHelpers.FindObjectOfType<LevelScore>(true);
+        Assert.IsNotNull(levelScore);
+        levelScore.ResetScore();
     }
 
     void Update()

@@ -14,6 +14,11 @@ public class LevelScore : MonoBehaviour
         Basket.OnMushroomInBasket += UpdateScore;
     }
 
+    private void OnDisable()
+    {
+        Basket.OnMushroomInBasket -= UpdateScore;
+    }
+
     private void Start()
     {
         ScoreText.text = "Puntuación: " + Score;
@@ -21,6 +26,7 @@ public class LevelScore : MonoBehaviour
 
     private void UpdateScore(bool success, int value = 0)
     {
+        Debug.Log("UpdateScore: "+value+". Current Score: "+Score);
         if (success)
         {
             Score += value;
@@ -29,6 +35,17 @@ public class LevelScore : MonoBehaviour
         {
             Score -= value;
         }
+        WriteCurrentScore();
+    }
+
+    private void WriteCurrentScore()
+    {
         ScoreText.text = "Puntuación: " + Score;
+    }
+
+    public void ResetScore()
+    {
+        Score = 0;
+        WriteCurrentScore();
     }
 }

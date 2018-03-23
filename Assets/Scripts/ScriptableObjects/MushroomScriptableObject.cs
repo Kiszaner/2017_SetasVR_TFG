@@ -34,6 +34,7 @@ public class MushroomScriptableObject : ScriptableObject
         IsNotEdible = isNotEdible;
         IsRecommended = isRecommended;
         IsPsycotropic = isPsycotropic;
+        IsPoisonous = isPoisonous;
         IsDangerous = isDangerous;
         IsDeadly = isDeadly;
         IsUnknown = isUnknown;
