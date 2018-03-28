@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224437938855629038}
   - component: {fileID: 222475068355228374}
   - component: {fileID: 114239341569818558}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 223893655549739864}
   - component: {fileID: 114373026424109664}
   - component: {fileID: 114478764734756586}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 224449821631036268}
   - component: {fileID: 222852830243480950}
   - component: {fileID: 114404468268676224}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 114476600066683876}
   - component: {fileID: 114260773274699142}
   - component: {fileID: 114679466580596558}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boletus Edulis
   m_TagString: Mushroom
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 224030149957094926}
   - component: {fileID: 222861022666063148}
   - component: {fileID: 114592027100928512}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 224965605819362992}
   - component: {fileID: 222496170533478414}
   - component: {fileID: 114022798434731692}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 224178081502975650}
   - component: {fileID: 222911269327971040}
   - component: {fileID: 114938408172030894}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 4906673471127608}
   - component: {fileID: 33882475331119116}
   - component: {fileID: 23090216387753226}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boletus edulisv2 Low poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}

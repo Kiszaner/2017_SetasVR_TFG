@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4366028095294634}
   - component: {fileID: 33533066820839138}
   - component: {fileID: 23218512680855368}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pino
   m_TagString: Untagged
   m_Icon: {fileID: 0}

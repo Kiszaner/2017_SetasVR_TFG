@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4899380009766280}
   - component: {fileID: 33308573371693432}
   - component: {fileID: 23879664675488254}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Chopo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

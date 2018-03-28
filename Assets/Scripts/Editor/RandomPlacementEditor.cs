@@ -8,7 +8,6 @@ public class RandomPlacementEditor : Editor
 {
     public override void OnInspectorGUI()
     {
-        DrawDefaultInspector();
         RandomPlacement placer = (RandomPlacement)target;
         if (GUILayout.Button("Random place Trees"))
         {
@@ -18,13 +17,32 @@ public class RandomPlacementEditor : Editor
         {
             placer.MushroomPlacement();
         }
-        if (GUILayout.Button("RemoveTrees"))
+
+        GUILayout.Space(5);
+        if (GUILayout.Button("Remove Trees"))
         {
             placer.ClearList(placer.InstantiatedTrees);
         }
-        if (GUILayout.Button("RemoveMushrooms"))
+        if (GUILayout.Button("Remove Mushrooms"))
         {
             placer.ClearList(placer.InstantiatedMushrooms);
         }
+
+        GUILayout.Space(10);
+        if (GUILayout.Button("Repeat Trees placement"))
+        {
+            placer.RepeatTreesPlacement();
+        }
+        if (GUILayout.Button("Repeat Mushrooms placement"))
+        {
+            placer.RepeatMushroomsPlacement();
+        }
+
+        GUILayout.Space(10);
+        if (GUILayout.Button("Repeat all placement"))
+        {
+            placer.RepeatAllPlacement();
+        }
+        DrawDefaultInspector();
     }
 }

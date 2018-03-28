@@ -6,18 +6,19 @@ using UnityEngine;
 public class Basket : MonoBehaviour
 {
     public bool IsGoodBasket;
-    public delegate void MushroomInBasket(bool success, int value); 
+    public delegate void MushroomInBasket(GameObject mushroom, bool success, int value); 
     public static event MushroomInBasket OnMushroomInBasket;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Mushroom"))
         {
-            MushroomInfo info = other.gameObject.GetComponent<MushroomInfo>();
+            GameObject mushroom = other.gameObject;
+            MushroomInfo info = mushroom.GetComponent<MushroomInfo>();
             if(info != null)
             {
-                CheckConditions(info);
-                Destroy(other.gameObject);
+                CheckConditions(info, mushroom);
+                //Destroy(other.gameObject);
             }
         }
         else
@@ -26,18 +27,18 @@ public class Basket : MonoBehaviour
         }
     }
 
-    private void CheckConditions(MushroomInfo info)
+    private void CheckConditions(MushroomInfo info, GameObject mushroom)
     {
         if (info.Mushroom.IsEdible || info.Mushroom.IsRecommended)
         {
             Debug.Log("Comestible o recomendada");
             if (IsGoodBasket)
             {
-                OnMushroomInBasket(true, info.Mushroom.ScoreValue);
+                OnMushroomInBasket(mushroom, true, info.Mushroom.ScoreValue);
             }
             else
             {
-                OnMushroomInBasket(false, info.Mushroom.ScoreValue);
+                OnMushroomInBasket(mushroom, false, info.Mushroom.ScoreValue);
             }
         }
         else
@@ -45,17 +46,12 @@ public class Basket : MonoBehaviour
             Debug.Log("Otra cosa");
             if (IsGoodBasket)
             {
-                OnMushroomInBasket(false, info.Mushroom.ScoreValue);
+                OnMushroomInBasket(mushroom, false, info.Mushroom.ScoreValue);
             }
             else
             {
-                OnMushroomInBasket(true, info.Mushroom.ScoreValue);
+                OnMushroomInBasket(mushroom, true, info.Mushroom.ScoreValue);
             }
         }
-    }
-
-    public static void RaiseEvent(bool success, int value)
-    {
-        OnMushroomInBasket(success, value);
     }
 }

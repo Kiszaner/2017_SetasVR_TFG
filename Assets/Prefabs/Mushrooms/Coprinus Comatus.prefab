@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224238602845127550}
   - component: {fileID: 222099282141931164}
   - component: {fileID: 114777266244877878}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 224711757974651440}
   - component: {fileID: 222268977645596922}
   - component: {fileID: 114255417616230768}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 223955634708460784}
   - component: {fileID: 114509064837898058}
   - component: {fileID: 114778428035056872}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 114381192324656046}
   - component: {fileID: 114028185579518402}
   - component: {fileID: 114454024889258094}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Coprinus Comatus
   m_TagString: Mushroom
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 224172499556376098}
   - component: {fileID: 222593145971673054}
   - component: {fileID: 114676914554066502}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 224647549097352122}
   - component: {fileID: 222966373339668080}
   - component: {fileID: 114173150270168880}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 224401777164234972}
   - component: {fileID: 222043292838817994}
   - component: {fileID: 114193641324230502}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 4860349337199136}
   - component: {fileID: 33908005934586872}
   - component: {fileID: 23586094824249064}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Coprinus Comatus lowpoly
   m_TagString: Untagged
   m_Icon: {fileID: 0}

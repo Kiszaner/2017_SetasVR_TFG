@@ -271,64 +271,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4431380008749576, guid: 7eff53e2446925a46add882ff0ea2d90,
     type: 2}
   m_PrefabInternal: {fileID: 1960066423}
---- !u!1 &295859460
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 295859462}
-  - component: {fileID: 295859461}
-  m_Layer: 0
-  m_Name: Spawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &295859461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 295859460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3274a16168ffe9e4684afe209a9c3b94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Trees:
-  - {fileID: 1701521749485546, guid: 4bb1bb964b1bfb0418ef27829b15835a, type: 2}
-  - {fileID: 1642357790401582, guid: da5696854f227fa4c8c101a2fab0651b, type: 2}
-  - {fileID: 1250975948624240, guid: 96cb24cbd5e20be4d9d3940af4397901, type: 2}
-  Mushrooms:
-  - {fileID: 1509673219003450, guid: 66589bd42df6ca844be8d17c2ee38439, type: 2}
-  - {fileID: 1016109798309372, guid: fdee084aa3eb90d4a82e678e64c5debf, type: 2}
-  - {fileID: 1201425423452090, guid: 40f04e76d80aaa0439ba29a9d29be0f4, type: 2}
-  - {fileID: 1594573939688646, guid: a6354060fd6f20649a12ba839523e2c0, type: 2}
-  - {fileID: 1960206374735778, guid: 7eff53e2446925a46add882ff0ea2d90, type: 2}
-  TreePlacementRadius: 10
-  MushroomPlacementRadius: 5
-  TreeNum: 12
-  MushroomNum: 6
-  TreeContainer: {fileID: 1046326108}
-  MushroomContainer: {fileID: 66828827}
-  InstantiatedTrees: []
-  InstantiatedMushrooms: []
---- !u!4 &295859462
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 295859460}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &385051094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1111,11 +1053,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 384392458db4b7e499b988d551d0b169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetScore: 0
-  timeLimit: 120
-  timeLimitEnabled: 1
+  autoPlaceEnvironment: 0
+  targetScore: 10
+  timeLimit: 5
+  targetNumSuccess: 3
+  targetNumMushrooms: 4
+  maxNumTries: 6
   targetScoreEnabled: 1
-  CurrentScore: 0
+  timeLimitEnabled: 1
+  maxTriesEnabled: 1
+  currentScore: 0
 --- !u!114 &1265436130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1137,10 +1084,10 @@ MonoBehaviour:
   - {fileID: 1201425423452090, guid: 40f04e76d80aaa0439ba29a9d29be0f4, type: 2}
   - {fileID: 1594573939688646, guid: a6354060fd6f20649a12ba839523e2c0, type: 2}
   - {fileID: 1960206374735778, guid: 7eff53e2446925a46add882ff0ea2d90, type: 2}
-  TreePlacementRadius: 10
-  MushroomPlacementRadius: 5
-  TreeNum: 12
-  MushroomNum: 6
+  TreePlacementRadius: 170
+  MushroomPlacementRadius: 200
+  TreeNum: 120
+  MushroomNum: 60
   TreeContainer: {fileID: 1046326108}
   MushroomContainer: {fileID: 66828827}
   InstantiatedTrees: []
@@ -1215,6 +1162,10 @@ Prefab:
         type: 2}
       propertyPath: m_ReceiveShadows
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011584081066, guid: 41c324654db8eef469e3f5f9dc140477, type: 2}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41c324654db8eef469e3f5f9dc140477, type: 2}
@@ -1609,6 +1560,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 40f04e76d80aaa0439ba29a9d29be0f4, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1506740494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1506740495}
+  m_Layer: 0
+  m_Name: Good Basket Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1506740495
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1506740494}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1930039074}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1536044815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,6 +1619,7 @@ Transform:
   - {fileID: 1904860089}
   - {fileID: 1462427537}
   - {fileID: 1495881551}
+  - {fileID: 1930039074}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1754,6 +1734,34 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1567777384}
+--- !u!1 &1587217078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1587217079}
+  m_Layer: 0
+  m_Name: Bad Basket Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1587217079
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1587217078}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1930039074}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1616279470 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000011468964624, guid: 8147544e811dfc4439ec77890095cedc,
@@ -1982,6 +1990,61 @@ Transform:
   m_Father: {fileID: 1536044816}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1930039073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1930039074}
+  - component: {fileID: 1930039075}
+  m_Layer: 0
+  m_Name: Baskets Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1930039074
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1930039073}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1506740495}
+  - {fileID: 1587217079}
+  m_Father: {fileID: 1536044816}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1930039075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1930039073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cfba8497408d4649936948bb297f56f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BasketPrefab: {fileID: 1153762899331684, guid: 05a740a4c88036543928a0fcea5119d5,
+    type: 2}
+  BasketsPositions:
+  - {fileID: 1506740495}
+  - {fileID: 1587217079}
+  Baskets: []
+  DistanceToFloor: 2.3
+  FloorMask:
+    serializedVersion: 2
+    m_Bits: 256
+  EnvironmentMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1001 &1960066423
 Prefab:
   m_ObjectHideFlags: 0

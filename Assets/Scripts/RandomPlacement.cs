@@ -15,14 +15,29 @@ public class RandomPlacement : MonoBehaviour
     public List<GameObject> InstantiatedTrees;
     public List<GameObject> InstantiatedMushrooms;
 
-    // Use this for initialization
-    void Start ()
+    private void OnEnable()
     {
         InstantiatedTrees = new List<GameObject>();
         InstantiatedMushrooms = new List<GameObject>();
-        TreePlacement();
-        MushroomPlacement();
 	}
+
+    public void RepeatAllPlacement()
+    {
+        RepeatTreesPlacement();
+        RepeatMushroomsPlacement();
+    }
+
+    public void RepeatTreesPlacement()
+    {
+        ClearList(InstantiatedTrees);
+        TreePlacement();
+    }
+
+    public void RepeatMushroomsPlacement()
+    {
+        ClearList(InstantiatedMushrooms);
+        MushroomPlacement();
+    }
 
     public void TreePlacement()
     {
@@ -62,13 +77,18 @@ public class RandomPlacement : MonoBehaviour
         {
             foreach(GameObject go in list)
             {
-#if UNITY_EDITOR
-                DestroyImmediate(go);
-#elif UNITY_ANDROID
-                Destroy(go);
-#endif
+                RemoveMushroomFromList(go);
             }
             list.Clear();
         }
+    }
+
+    public void RemoveMushroomFromList(GameObject go)
+    {
+#if UNITY_EDITOR
+        DestroyImmediate(go);
+#elif UNITY_ANDROID
+                Destroy(go);
+#endif
     }
 }
