@@ -173,6 +173,26 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ca5bf933158222e459a29b4618c3d58c, type: 2}
+    - target: {fileID: 1000010111470310, guid: 8147544e811dfc4439ec77890095cedc, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010090192834, guid: 8147544e811dfc4439ec77890095cedc, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012580293860, guid: 8147544e811dfc4439ec77890095cedc, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012564537274, guid: 8147544e811dfc4439ec77890095cedc, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013602593702, guid: 8147544e811dfc4439ec77890095cedc, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8147544e811dfc4439ec77890095cedc, type: 2}
   m_IsPrefabParent: 0
@@ -215,6 +235,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114924292498126726, guid: 66589bd42df6ca844be8d17c2ee38439,
+        type: 2}
+      propertyPath: informationPanelToggleTrigger
+      value: 
+      objectReference: {fileID: 642704482}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66589bd42df6ca844be8d17c2ee38439, type: 2}
   m_IsPrefabParent: 0
@@ -223,6 +248,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4127353246759704, guid: fdee084aa3eb90d4a82e678e64c5debf,
     type: 2}
   m_PrefabInternal: {fileID: 817538348}
+--- !u!114 &66200186 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114028185579518402, guid: a6354060fd6f20649a12ba839523e2c0,
+    type: 2}
+  m_PrefabInternal: {fileID: 2014862641}
+  m_Script: {fileID: 11500000, guid: 15c40b6d988ad4bfc9a03f37c45a5597, type: 3}
 --- !u!1 &66828826
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,6 +292,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4000013656625352, guid: 41c324654db8eef469e3f5f9dc140477,
     type: 2}
   m_PrefabInternal: {fileID: 1375297282}
+--- !u!114 &126045103 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114184299969534372, guid: fdee084aa3eb90d4a82e678e64c5debf,
+    type: 2}
+  m_PrefabInternal: {fileID: 817538348}
+  m_Script: {fileID: 11500000, guid: 15c40b6d988ad4bfc9a03f37c45a5597, type: 3}
 --- !u!4 &180172303 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4968815404955378, guid: 96cb24cbd5e20be4d9d3940af4397901,
@@ -271,6 +308,57 @@ Transform:
   m_PrefabParentObject: {fileID: 4431380008749576, guid: 7eff53e2446925a46add882ff0ea2d90,
     type: 2}
   m_PrefabInternal: {fileID: 1960066423}
+--- !u!1 &256561257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 256561259}
+  - component: {fileID: 256561258}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &256561258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 256561257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241df9bcd6cc541478011cf97d8dd240, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mushroomsPrefabs: []
+  mushroomsChooseProbability:
+  - 0.1
+  - 0.7
+  - 0.1
+  - 0.1
+  maxMushroomChoosen: 2
+  spawnPoints: []
+  maxSpawnChoosen: 3
+  InstantiatedTrees: []
+  InstantiatedMushrooms: []
+--- !u!4 &256561259
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 256561257}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.30181843, y: -0.29037157, z: -11.921398}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &385051094
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +490,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72b5aa4dc0a00344297853bba3c17baa, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &401357444 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114113161218781014, guid: 7eff53e2446925a46add882ff0ea2d90,
+    type: 2}
+  m_PrefabInternal: {fileID: 1960066423}
+  m_Script: {fileID: 11500000, guid: 15c40b6d988ad4bfc9a03f37c45a5597, type: 3}
 --- !u!1 &477231168
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,10 +582,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   validTeleportLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 256
   raycastMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 768
   maxDistance: 5
   maxSurfaceAngle: 45
   maxControllerPitch: 60
@@ -698,11 +792,23 @@ Transform:
   m_PrefabParentObject: {fileID: 4235066473548658, guid: 66589bd42df6ca844be8d17c2ee38439,
     type: 2}
   m_PrefabInternal: {fileID: 56197901}
+--- !u!114 &642704482 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114973936528490276, guid: 66589bd42df6ca844be8d17c2ee38439,
+    type: 2}
+  m_PrefabInternal: {fileID: 56197901}
+  m_Script: {fileID: 11500000, guid: 15c40b6d988ad4bfc9a03f37c45a5597, type: 3}
 --- !u!4 &648490386 stripped
 Transform:
   m_PrefabParentObject: {fileID: 766346198, guid: 463285ecd6702471a909ba810832bf0e,
     type: 2}
   m_PrefabInternal: {fileID: 2082216846}
+--- !u!114 &673254963 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114260773274699142, guid: 40f04e76d80aaa0439ba29a9d29be0f4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1504107525}
+  m_Script: {fileID: 11500000, guid: 15c40b6d988ad4bfc9a03f37c45a5597, type: 3}
 --- !u!1 &697837557
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,6 +949,11 @@ Prefab:
       propertyPath: m_TagString
       value: Mushroom
       objectReference: {fileID: 0}
+    - target: {fileID: 114851228370774866, guid: fdee084aa3eb90d4a82e678e64c5debf,
+        type: 2}
+      propertyPath: informationPanelToggleTrigger
+      value: 
+      objectReference: {fileID: 126045103}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fdee084aa3eb90d4a82e678e64c5debf, type: 2}
   m_IsPrefabParent: 0
@@ -1557,6 +1668,11 @@ Prefab:
       propertyPath: m_TagString
       value: Mushroom
       objectReference: {fileID: 0}
+    - target: {fileID: 114679466580596558, guid: 40f04e76d80aaa0439ba29a9d29be0f4,
+        type: 2}
+      propertyPath: informationPanelToggleTrigger
+      value: 
+      objectReference: {fileID: 673254963}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 40f04e76d80aaa0439ba29a9d29be0f4, type: 2}
   m_IsPrefabParent: 0
@@ -2096,6 +2212,11 @@ Prefab:
       propertyPath: m_TagString
       value: Mushroom
       objectReference: {fileID: 0}
+    - target: {fileID: 114943138098576926, guid: 7eff53e2446925a46add882ff0ea2d90,
+        type: 2}
+      propertyPath: informationPanelToggleTrigger
+      value: 
+      objectReference: {fileID: 401357444}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7eff53e2446925a46add882ff0ea2d90, type: 2}
   m_IsPrefabParent: 0
@@ -2142,6 +2263,11 @@ Prefab:
       propertyPath: m_TagString
       value: Mushroom
       objectReference: {fileID: 0}
+    - target: {fileID: 114454024889258094, guid: a6354060fd6f20649a12ba839523e2c0,
+        type: 2}
+      propertyPath: informationPanelToggleTrigger
+      value: 
+      objectReference: {fileID: 66200186}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a6354060fd6f20649a12ba839523e2c0, type: 2}
   m_IsPrefabParent: 0

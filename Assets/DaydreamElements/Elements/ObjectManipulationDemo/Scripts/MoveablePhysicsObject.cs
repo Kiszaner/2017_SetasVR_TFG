@@ -366,7 +366,8 @@ namespace DaydreamElements.ObjectManipulation {
     // Reset rigidbody properties.
     private void ResetRigidbody() {
       rigidbodyCmp.useGravity = useGravityDefault;
-      rigidbodyCmp.isKinematic = isKinematicDefault;
+      //rigidbodyCmp.isKinematic = isKinematicDefault;
+      rigidbodyCmp.isKinematic = false;
       // Reset the velocity and angular velocity of the rigidbody
       // if resetPhysicsOnDrop is checked.
       if (resetPhysicsOnDrop) {

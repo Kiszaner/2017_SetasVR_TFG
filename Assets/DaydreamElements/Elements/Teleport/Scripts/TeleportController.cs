@@ -214,7 +214,7 @@ namespace DaydreamElements.Teleport {
       // When trigger deactivates we finish the teleport.
       if (selectionIsActive && teleportCommitTrigger.TriggerActive()) {
         if (selectionResult.selectionIsValid && IsCorrectInputMode()) {
-          Vector3 nextPlayerPosition = new Vector3(
+            Vector3 nextPlayerPosition = new Vector3(
             selectionResult.selection.x,
             selectionResult.selection.y + playerHeight,
             selectionResult.selection.z);
@@ -231,7 +231,7 @@ namespace DaydreamElements.Teleport {
     }
 
     private void StartTeleportSelection() {
-      detector.StartSelection(currentController);
+            detector.StartSelection(currentController);
       visualizer.StartSelection(currentController);
       selectionIsActive = true;
     }

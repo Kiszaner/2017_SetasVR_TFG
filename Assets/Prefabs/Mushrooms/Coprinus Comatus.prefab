@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InfoPanel: {fileID: 1202002082813302}
-  informationPanelToggleTrigger: {fileID: 0}
+  informationPanelToggleTrigger: {fileID: 114028185579518402}
 --- !u!114 &114509064837898058
 MonoBehaviour:
   m_ObjectHideFlags: 1
