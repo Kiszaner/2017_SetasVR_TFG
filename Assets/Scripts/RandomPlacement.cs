@@ -86,7 +86,14 @@ public class RandomPlacement : MonoBehaviour
     public void RemoveMushroomFromList(GameObject go)
     {
 #if UNITY_EDITOR
-        DestroyImmediate(go);
+        if (!Application.isPlaying)
+        {
+            DestroyImmediate(go);
+        }
+        else
+        {
+            Destroy(go);
+        }
 #elif UNITY_ANDROID
                 Destroy(go);
 #endif

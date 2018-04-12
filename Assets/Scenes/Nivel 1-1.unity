@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 256561259}
   - component: {fileID: 256561258}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: WeightedPlacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

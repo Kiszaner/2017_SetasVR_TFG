@@ -76,7 +76,12 @@ public class LevelManager : MonoBehaviour
 
     private void MushroomInBasket(GameObject mushroom, bool success, int value)
     {
-        if (gameOver) return;
+        Debug.Log("MushroomInBasket");
+        if (gameOver) {
+            Debug.Log("Game is over, no further conditions will be checked");
+            Destroy(mushroom);
+            return;
+        }
         UpdateVariables(mushroom, success);
         UpdateScore(success, value);
         CheckWinConditions();
@@ -85,6 +90,7 @@ public class LevelManager : MonoBehaviour
 
     private void UpdateVariables(GameObject mushroom, bool success)
     {
+        Debug.Log("UpdateVariables");
         if (success)
         {
             currentNumSuccess++;
@@ -96,6 +102,7 @@ public class LevelManager : MonoBehaviour
 
     private void UpdateScore(bool success, int value)
     {
+        Debug.Log("UpdateScore");
         if (success)
         {
             currentScore += value;
@@ -109,12 +116,14 @@ public class LevelManager : MonoBehaviour
 
     private void ResetScore()
     {
+        Debug.Log("ResetScore");
         currentScore = 0;
         UpdateScoreCounter();
     }
 
     private void UpdateScoreCounter()
     {
+        Debug.Log("UpdateScoreCounter");
         if (OnScoreUpdated != null)
         {
             OnScoreUpdated(currentScore);
@@ -123,6 +132,7 @@ public class LevelManager : MonoBehaviour
 
     private void CheckWinConditions()
     {
+        Debug.Log("CheckWinConditions");
         if (targetScoreEnabled)
         {
             if (currentScore >= targetScore)
@@ -151,6 +161,7 @@ public class LevelManager : MonoBehaviour
 
     private void CheckLoseConditions()
     {
+        Debug.Log("CheckLoseConditions");
         if (maxTriesEnabled)
         {
             if(triesLeft <= 0)
@@ -164,16 +175,19 @@ public class LevelManager : MonoBehaviour
 
     private void PlayerWin()
     {
+        Debug.Log("PlayerWin");
         TriggerEnd(true);
     }
 
     private void PlayerLose()
     {
+        Debug.Log("PlayerLose");
         TriggerEnd(false);
     }
 
     private void GameOver()
     {
+        Debug.Log("GameOver");
         gameOver = true;
     }
 
