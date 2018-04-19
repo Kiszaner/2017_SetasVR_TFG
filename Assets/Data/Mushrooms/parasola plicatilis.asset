@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 609482df5d76f204d94f8aab99586d83, type: 3}
+  m_Name: parasola plicatilis
+  m_EditorClassIdentifier: 
+  Name: parasola plicatilis
+  Description: "\"Parasola plicatilis es una peque\xF1a seta saprotr\xF3fica con un
+    gorro plicado (di\xE1metro de hasta 35 mm). Es una especie ampliamente distribuida
+    en Europa y Am\xE9rica del Norte. Esta especie de tapa de tinta es un descomponedor
+    que se puede encontrar en \xE1reas cubiertas de hierba, solo, disperso. "
+  Species: Parasola
+  ScoreValue: 5
+  IsEdible: 0
+  IsNotEdible: 0
+  IsRecommended: 0
+  IsPsycotropic: 0
+  IsPoisonous: 0
+  IsDangerous: 0
+  IsDeadly: 0
+  IsUnknown: 1
+  Photos: []

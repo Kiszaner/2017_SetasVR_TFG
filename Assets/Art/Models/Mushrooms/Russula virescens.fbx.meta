@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 969920402cdd59f40a7b8a6665ec9e2c
-timeCreated: 1521720876
+guid: 694de37e1bff5e9429e0050bed63d354
+timeCreated: 1524053924
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,14 +10,12 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: cabeza
-    7400000: cabeza|cabezaAction
-    9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.002
-    second: {fileID: 2100000, guid: cd7ea71989894fc49b026bb5e0ebf7fe, type: 2}
+      name: Material.001
+    second: {fileID: 2100000, guid: 82189962da2390644b6e7f445c3baf2d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -89,7 +87,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

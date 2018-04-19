@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour
     public bool maxTriesEnabled = true;
     public delegate void ScoreUpdateDelegate(int value);
     public static event ScoreUpdateDelegate OnScoreUpdated;
-    public delegate void GameOverDelegate(bool isPlayerWinner);
+    public delegate void GameOverDelegate(bool isPlayerWinner, string endGameText);
     public static event GameOverDelegate OnGameOver;
 
     [SerializeField]
@@ -32,6 +32,7 @@ public class LevelManager : MonoBehaviour
     private int triesLeft;
     private RandomPlacement placer;
     private bool gameOver = false;
+    private string endGameText;
 
     private void OnEnable()
     {
@@ -70,6 +71,7 @@ public class LevelManager : MonoBehaviour
         if (timeLeft <= 0)
         {
             Debug.Log("Time's up!");
+            endGameText = "Se ha terminado el tiempo";
             PlayerLose();
         }
     }
@@ -138,6 +140,7 @@ public class LevelManager : MonoBehaviour
             if (currentScore >= targetScore)
             {
                 Debug.Log("Target score reached!");
+                endGameText = "Puntuación objetivo conseguida";
                 PlayerWin();
             }
         }
@@ -146,6 +149,7 @@ public class LevelManager : MonoBehaviour
             if(currentNumSuccess >= targetNumSuccess)
             {
                 Debug.Log("Target num of success reached!");
+                endGameText = "Acertadas las setas necesarias";
                 PlayerWin();
             }
         }
@@ -154,6 +158,7 @@ public class LevelManager : MonoBehaviour
             if(currentNumMushrooms >= targetNumMushrooms)
             {
                 Debug.Log("Target num of mushrooms reached!");
+                endGameText = "Encontradas todas las setas necesarias";
                 PlayerWin();
             }
         }
@@ -167,6 +172,7 @@ public class LevelManager : MonoBehaviour
             if(triesLeft <= 0)
             {
                 Debug.Log("Max num of tries reached!");
+                endGameText = "Número máximo de intentos alcanzado";
                 PlayerLose();
             }
         }
@@ -176,12 +182,14 @@ public class LevelManager : MonoBehaviour
     private void PlayerWin()
     {
         Debug.Log("PlayerWin");
+        endGameText = endGameText + ", has ganado!";
         TriggerEnd(true);
     }
 
     private void PlayerLose()
     {
         Debug.Log("PlayerLose");
+        endGameText = endGameText + ", has perdido!";
         TriggerEnd(false);
     }
 
@@ -196,7 +204,7 @@ public class LevelManager : MonoBehaviour
         GameOver();
         if (OnGameOver != null)
         {
-            OnGameOver(isPlayerWinner);
+            OnGameOver(isPlayerWinner, endGameText);
         }
     }
 }

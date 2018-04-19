@@ -33,13 +33,14 @@ public class DataServiceEditorUtility : Editor
         EditorGUILayout.LabelField("Mushroom Data assets generator", EditorStyles.boldLabel);
         if (GUILayout.Button("Create Mushrooms List"))
         {
-            MushroomScriptableObject scriptableObj = CreateMushroomScriptableObject(dataService);
-            if (scriptableObj != null)
-            {
-                MushroomList list = CreateMushroomList();
-                list.mushroomList.Add(scriptableObj);
-                SaveScriptableObject(scriptableObj.Name, scriptableObj);
-            }
+            // TO IMPROVE
+            //MushroomScriptableObject scriptableObj = CreateMushroomScriptableObject(dataService);
+            //if (scriptableObj != null)
+            //{
+            //    MushroomList list = CreateMushroomList();
+            //    list.mushroomList.Add(scriptableObj);
+            //    SaveScriptableObject(scriptableObj.Name, scriptableObj);
+            //}
         }
     }
 
