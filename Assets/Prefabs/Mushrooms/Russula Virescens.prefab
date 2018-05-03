@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df86f08069334747a61c788f886abe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mushroom: {fileID: 11400000, guid: 7f16da6911948d14a933b6d63a3a5f1d, type: 2}
+  Mushroom: {fileID: 11400000, guid: 28c7500838206af49a9e163b02d3d498, type: 2}
   nameText: {fileID: 114558890087343326}
   DescriptionText: {fileID: 114651185400614146}
   EdibleText: {fileID: 114207867677362550}

@@ -67,6 +67,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1190341642453588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4676308054906756}
+  - component: {fileID: 33890011294297250}
+  - component: {fileID: 23769244707430542}
+  m_Layer: 0
+  m_Name: Amanita muscaria
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1272924540468618
 GameObject:
   m_ObjectHideFlags: 1
@@ -79,23 +96,6 @@ GameObject:
   - component: {fileID: 114905479843384710}
   m_Layer: 9
   m_Name: Panel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1359481811202114
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4996744398682432}
-  - component: {fileID: 33563795664058016}
-  - component: {fileID: 23635104820834140}
-  m_Layer: 0
-  m_Name: Amanita muscaria
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,6 +153,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4676308054906756
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1190341642453588}
+  m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4944055520790836}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4944055520790836
 Transform:
   m_ObjectHideFlags: 1
@@ -160,33 +173,20 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1060881456989230}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.448282, y: -1.6074272e-22, z: -0.39969072}
+  m_LocalPosition: {x: 13.448282, y: 0, z: -0.39969072}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4996744398682432}
   - {fileID: 224621204920217738}
+  - {fileID: 4676308054906756}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4996744398682432
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1359481811202114}
-  m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4944055520790836}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23635104820834140
+--- !u!23 &23769244707430542
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1359481811202114}
+  m_GameObject: {fileID: 1190341642453588}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -215,13 +215,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33563795664058016
+--- !u!33 &33890011294297250
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1359481811202114}
-  m_Mesh: {fileID: 4300000, guid: 60666f0b53d1f644fa214b2fbeed1b48, type: 3}
+  m_GameObject: {fileID: 1190341642453588}
+  m_Mesh: {fileID: 4300000, guid: 3dad6b57ea90fa74f85797340a070ca3, type: 3}
 --- !u!54 &54532702988121738
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -250,7 +250,7 @@ MeshCollider:
   m_Convex: 1
   m_InflateMesh: 1
   m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 60666f0b53d1f644fa214b2fbeed1b48, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 3dad6b57ea90fa74f85797340a070ca3, type: 3}
 --- !u!114 &114021950796119330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactiveObject: {fileID: 114936267244702468}
-  meshRenderer: {fileID: 23635104820834140}
+  meshRenderer: {fileID: 23769244707430542}
   highlightSpeed: 1
 --- !u!114 &114772452221623992
 MonoBehaviour:
@@ -659,7 +659,7 @@ RectTransform:
   m_Children:
   - {fileID: 224877522650296618}
   m_Father: {fileID: 4944055520790836}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

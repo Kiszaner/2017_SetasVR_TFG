@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 9e06633c2137e7446ad4ef2120d52232
-timeCreated: 1517487851
+guid: 13bf512277041f4478128ea464b56183
+timeCreated: 1525344084
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,13 +9,13 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cylinder
+    4300000: cabeza
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 2f63db687a7c98742ba7e2c9e57008cf, type: 2}
+      name: Material.002
+    second: {fileID: 2100000, guid: cd7ea71989894fc49b026bb5e0ebf7fe, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
