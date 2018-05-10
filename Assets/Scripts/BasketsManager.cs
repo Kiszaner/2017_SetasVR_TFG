@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UBUSetasVR;
 
 public class BasketsManager : MonoBehaviour
 {
@@ -74,9 +75,9 @@ public class BasketsManager : MonoBehaviour
         {
             Debug.Log("Hit");
             targetLocation = hit.point;
-            while (CheckObjectsAround(targetLocation, checkObjectsRadius))
+            while (AuxiliarFunctions.CheckObjectsAround(targetLocation, checkObjectsRadius, EnvironmentMask))
             {
-                targetLocation = PickRandomPosAroundPoint(hit.point, pickPointRadius);
+                targetLocation = AuxiliarFunctions.PickRandomPosAroundPoint(hit.point, pickPointRadius);
             }
             //targetLocation += new Vector3(0, transform.localScale.y / 2, 0);
             transform.position = targetLocation;
@@ -90,24 +91,5 @@ public class BasketsManager : MonoBehaviour
         return targetLocation;
     }
 
-    private bool CheckObjectsAround(Vector3 hitPoint, float radius)
-    {
-        Debug.Log("CheckAround");
-        Collider[] colliders;
-        colliders = Physics.OverlapSphere(hitPoint, radius, EnvironmentMask);
-        if (colliders.Length > 0)
-        {
-            return true;
-        }
-        return false;
-    }
-
-    private Vector3 PickRandomPosAroundPoint(Vector3 point, float radius)
-    {
-        Debug.Log("Picking new random pos");
-        Vector2 flatPos = Random.insideUnitCircle * radius;
-        Vector3 pos = new Vector3(point.x + flatPos.x, point.y, point.z + flatPos.y);
-        Debug.Log("RandomPos: "+pos);
-        return pos;
-    }
+    
 }
