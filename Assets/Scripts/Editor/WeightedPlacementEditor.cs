@@ -9,11 +9,12 @@ public class WeightedPlacementEditor : Editor
 
     public override void OnInspectorGUI()
     {
-        DrawDefaultInspector();
         WeightedPlacement placer = (WeightedPlacement)target;
-        if (GUILayout.Button("Repeat choose"))
+
+        if (GUILayout.Button("Repeat placement"))
         {
-            placer.TreeGroupPlacement();
+            placer.RepeatPlacement();
         }
+        DrawDefaultInspector();
     }
 }

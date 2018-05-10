@@ -20,10 +20,10 @@ namespace UBUSetasVR
 
         public static Vector3 PickRandomPosAroundPoint(Vector3 point, float maxRadius, float minRadius = 0.1f)
         {
-            Debug.Log("Picking new random pos");
+            //Debug.Log("Picking new random pos");
             Vector2 flatPos = GetRandomPointBetweenTwoCircles(minRadius, maxRadius);
             Vector3 pos = new Vector3(point.x + flatPos.x, point.y, point.z + flatPos.y);
-            Debug.Log("RandomPos: " + pos);
+            //Debug.Log("RandomPos: " + pos);
             return pos;
         }
 
