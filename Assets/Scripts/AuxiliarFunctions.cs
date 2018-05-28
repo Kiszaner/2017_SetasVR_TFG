@@ -27,6 +27,35 @@ namespace UBUSetasVR
             return pos;
         }
 
+        public static Vector3 PickRandomPosAroundPoint(Vector3 point, float maxRadius, Terrain terr, float minRadius = 0.1f)
+        {
+            //Debug.Log("Picking new random pos");
+            Vector2 flatPos = GetRandomPointBetweenTwoCircles(minRadius, maxRadius);
+            Vector3 pos = new Vector3(point.x + flatPos.x, point.y, point.z + flatPos.y);
+            Debug.Log("Pos: " + pos);
+            RaycastHit hit;
+            if(Physics.Raycast(pos, Vector3.down, out hit, LayerMask.NameToLayer("Floor")))
+            {
+                Debug.Log("Hit");
+                Debug.Log("TerrPos: " + hit);
+                return hit.point;
+            }
+            float posy = Terrain.activeTerrain.SampleHeight(new Vector3(pos.x, 0, pos.z));
+            //pos = ConvertWordCor2TerrCor(terr, pos);
+            Debug.Log("TerrPos2: " + pos);
+            return pos;
+        }
+
+        private static Vector3 ConvertWordCor2TerrCor(Terrain ter, Vector3 wordCor)
+        {
+            Vector3 vecRet = new Vector3();
+            //Terrain ter = Terrain.activeTerrain;
+            Vector3 terPosition = ter.transform.position;
+            vecRet.x = ((wordCor.x - terPosition.x) / ter.terrainData.size.x) * ter.terrainData.alphamapWidth;
+            vecRet.z = ((wordCor.y - terPosition.z) / ter.terrainData.size.z) * ter.terrainData.alphamapHeight;
+            return vecRet;
+        }
+
         /// <summary>
         /// Returns a random point in the space between two concentric circles.
         /// </summary>

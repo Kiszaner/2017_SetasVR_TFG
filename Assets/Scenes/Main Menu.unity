@@ -668,7 +668,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 980592997}
-  Score: 0
 --- !u!1001 &1466206294
 Prefab:
   m_ObjectHideFlags: 0

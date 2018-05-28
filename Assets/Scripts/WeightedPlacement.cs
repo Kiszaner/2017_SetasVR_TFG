@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UBUSetasVR;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 public class WeightedPlacement : MonoBehaviour
 {
+    public Terrain terr;
     public Mushroom[] mushrooms;
     public GameObject[] trees;
     public Transform TreeContainer;
@@ -120,13 +120,24 @@ public class WeightedPlacement : MonoBehaviour
 
     private GameObject SpawnTree(Transform treeGroup)
     {
+        Debug.Log("SpawnTree");
         Vector3 pos;
         Quaternion rot;
         GameObject tmp;
+        RaycastHit hit;
         GameObject go = trees[Random.Range(0, trees.Length)];
         pos = Random.insideUnitCircle * treePlacementRadius;
         rot = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
-        tmp = Instantiate(go, new Vector3(pos.x, 0f, pos.y), rot);
+        if (Physics.Raycast(pos, Vector3.down, out hit, 5f, LayerMask.NameToLayer("Floor")))
+        {
+            Debug.Log("TreeHit");
+            tmp = Instantiate(go, hit.point, rot);
+        }
+        else
+        {
+            Debug.Log("NoTreeHit");
+            tmp = Instantiate(go, new Vector3(pos.x, 0f, pos.y), rot);
+        }
         tmp.transform.SetParent(treeGroup);
         InstantiatedTrees.Add(tmp);
         return tmp;
@@ -137,7 +148,7 @@ public class WeightedPlacement : MonoBehaviour
         Vector3[] points = new Vector3[maxPoints];
         for (int i = 0; i < maxPoints; i++)
         {
-            points[i]= AuxiliarFunctions.PickRandomPosAroundPoint(position, maxRadius, minRadius);
+            points[i]= AuxiliarFunctions.PickRandomPosAroundPoint(position, maxRadius, terr, minRadius);
         }
         return points;
     }
