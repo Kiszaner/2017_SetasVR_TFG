@@ -4,32 +4,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Canvas))]
-public class EndGameText : MonoBehaviour
+namespace UBUSetasVR
 {
-    public Text endGameText;
-    public GameObject endGameTextParent;
-
-    private void OnEnable()
+    [RequireComponent(typeof(Canvas))]
+    public class EndGameText : MonoBehaviour
     {
-        LevelManager.OnGameOver += OnGameIsOver;
-    }
+        public Text endGameText;
+        public GameObject endGameTextParent;
 
-    private void OnGameIsOver(bool isPlayerWinner, string endGameMessage)
-    {
-        if (endGameTextParent != null)
+        private void OnEnable()
         {
-            endGameTextParent.SetActive(true);
+            LevelManager.OnGameOver += OnGameIsOver;
         }
-        endGameText.gameObject.SetActive(true);
-        endGameText.text = endGameMessage;
-        if (isPlayerWinner)
+
+        private void OnGameIsOver(bool isPlayerWinner, string endGameMessage)
         {
-            endGameText.color = Color.green;
-        }
-        else
-        {
-            endGameText.color = Color.red;
+            if (endGameTextParent != null)
+            {
+                endGameTextParent.SetActive(true);
+            }
+            endGameText.gameObject.SetActive(true);
+            endGameText.text = endGameMessage;
+            if (isPlayerWinner)
+            {
+                endGameText.color = Color.green;
+            }
+            else
+            {
+                endGameText.color = Color.red;
+            }
         }
     }
 }

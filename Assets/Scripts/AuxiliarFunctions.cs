@@ -18,6 +18,27 @@ namespace UBUSetasVR
             return false;
         }
 
+        public static void DrawCircleGizmo(Transform t, float firstRadius, float secondRadius = 0f)
+        {
+            Gizmos.color = Color.white;
+            float theta = 0;
+            float x = firstRadius * Mathf.Cos(theta);
+            float y = firstRadius * Mathf.Sin(theta);
+            Vector3 pos = t.position + new Vector3(x, 0, y);
+            Vector3 newPos = pos;
+            Vector3 lastPos = pos;
+            for (theta = 0.1f; theta < Mathf.PI * 2; theta += 0.1f)
+            {
+                x = firstRadius * Mathf.Cos(theta);
+                y = firstRadius * Mathf.Sin(theta);
+                newPos = t.position + new Vector3(x, 0, y);
+                Gizmos.DrawLine(pos, newPos);
+                pos = newPos;
+            }
+            Gizmos.DrawLine(pos, lastPos);
+            if (secondRadius != 0f) DrawCircleGizmo(t, secondRadius);
+        }
+
         public static Vector3 PickRandomPosAroundPoint(Vector3 point, float maxRadius, float minRadius = 0.1f)
         {
             //Debug.Log("Picking new random pos");
@@ -29,9 +50,8 @@ namespace UBUSetasVR
 
         public static Vector3 PickRandomPosAroundPoint(Vector3 point, float maxRadius, Terrain terr, float minRadius = 0.1f)
         {
-            //Debug.Log("Picking new random pos");
-            Vector2 flatPos = GetRandomPointBetweenTwoCircles(minRadius, maxRadius);
-            Vector3 pos = new Vector3(point.x + flatPos.x, point.y, point.z + flatPos.y);
+            Vector3 pos = PickRandomPosAroundPoint(point, maxRadius, minRadius);
+            if (terr == null) return pos;
             Debug.Log("Pos: " + pos);
             RaycastHit hit;
             if(Physics.Raycast(pos, Vector3.down, out hit, LayerMask.NameToLayer("Floor")))
@@ -40,7 +60,7 @@ namespace UBUSetasVR
                 Debug.Log("TerrPos: " + hit);
                 return hit.point;
             }
-            float posy = Terrain.activeTerrain.SampleHeight(new Vector3(pos.x, 0, pos.z));
+            float posy = terr.SampleHeight(new Vector3(pos.x, 0, pos.z));
             //pos = ConvertWordCor2TerrCor(terr, pos);
             Debug.Log("TerrPos2: " + pos);
             return pos;

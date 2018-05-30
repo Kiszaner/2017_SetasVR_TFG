@@ -3,342 +3,245 @@ using System.Collections.Generic;
 using UBUSetasVR;
 using UnityEngine;
 
-public class WeightedPlacement : MonoBehaviour
+namespace UBUSetasVR.Placement
 {
-    public Terrain terr;
-    public Mushroom[] mushrooms;
-    public GameObject[] trees;
-    public Transform treeContainer;
-    public Transform mushroomContainer;
-
-    public int numberOfTrees = 12;
-    public int numberOfTreesPerGroup = 5;
-    public float treePlacementRadius = 20;
-
-    public int maxNumMushroomsSpawned;
-    public int maxMushroomChosen = 2;
-    public float spawnMinRadius = 1f;
-    public float spawnMaxRadius = 2f;
-    public int spawnPointsAroundTrees = 7;
-    public int maxSpawnPointsChosen = 3;
-
-    public List<GameObject> instantiatedTrees;
-    public List<GameObject> instantiatedMushrooms;
-
-    private Mushroom[] mushroomsChosen;
-    private Vector3[] spawnPointsChosen;
-    private Vector3[] spawnPoints;
-
-    private void OnEnable()
+    public class WeightedPlacement : BasePlacement
     {
-        instantiatedTrees = new List<GameObject>();
-        instantiatedMushrooms = new List<GameObject>();
-    }
+        [Header("Weighted placement settings")]
+        public Terrain terrainUsed;
+        public Mushroom[] posibleMushrooms;
 
-    private void OnDrawGizmosSelected()
-    {
-        Transform t = GetComponent<Transform>();
-        AuxiliarFunctions.DrawCircleGizmo(t, treePlacementRadius);
-    }
+        public int treesPerGroup = 5;
 
-    public void TreeGroupPlacement()
-    {
-        // Make Tree group
-        Transform treeGroup;
-        int treesLeft = numberOfTrees;
-        int treesWithoutPlace = numberOfTrees % numberOfTreesPerGroup;
-        List<GameObject> treesFromGroup;
-        int k = 0;
-        for (k = 0; treesLeft > 0; k++)
+        public int maxMushroomChosen = 2;
+        public float spawnMinRadius = 1.3f;
+        public float spawnMaxRadius = 1.7f;
+        public int pointsAroundTrees = 7;
+        public int maxPointsChosen = 3;
+
+        public List<GameObject> treeGroupsList;
+
+        private Mushroom[] mushroomsChosen;
+        private Vector3[] spawnPointsChosen;
+        private Vector3[] spawnPoints;
+
+        protected override void OnEnable()
         {
-            treeGroup = new GameObject("TreeGroup" + k).transform;
-            treeGroup.transform.SetParent(treeContainer);
-            treesFromGroup = new List<GameObject>();
-            // Spawn Trees randomly
-            if (treesLeft >= numberOfTreesPerGroup)
-            {
-                for (int j = 0; j < numberOfTreesPerGroup; j++)
-                {
-                    treesFromGroup.Add(SpawnTree(treeGroup));
-                }
-            }
-            treesLeft -= numberOfTreesPerGroup;
-            if (treesLeft < 0)
-            {
-                for (int j = 0; j < treesWithoutPlace; j++)
-                {
-                    treesFromGroup.Add(SpawnTree(treeGroup));
-                }
-            }
-
-            SpawnMushroomsFromGroup(treesFromGroup);
+            base.OnEnable();
+            treeGroupsList = new List<GameObject>();
         }
-    }
 
-    private void SpawnMushroomsFromGroup(List<GameObject> treesFromGroup)
-    {
-        if (IsMushroomLimitReached()) return;
-        float[] mushroomsProbabilities;
-        // Choose posible mushrooms to spawn in this group of trees (random at the moment)
-        mushroomsProbabilities = mushrooms.GetProbabilities();
-        mushroomsChosen = ChooseSet(mushroomsProbabilities, maxMushroomChosen);
-        int i = 0;
-        foreach (Mushroom mush in mushroomsChosen)
+        public void TreeGroupPlacement()
         {
-            Debug.Log("Chosen " + i + ": " + mush.prefab.name);
-            i++;
-        }
-        if (mushroomsChosen.Length < 1) return;
+            Transform treeGroup;
+            int treesLeft = numberOfTrees;
+            int treesWithoutPlace = numberOfTrees % treesPerGroup;
+            List<GameObject> treesFromGroup;
+            int k = 0;
+            // Make as many Tree Groups as required
+            for (k = 0; treesLeft > 0; k++)
+            {
+                // Make Tree group
+                treeGroup = new GameObject("TreeGroup" + k).transform;
+                treeGroup.transform.SetParent(treeContainer);
+                treeGroupsList.Add(treeGroup.gameObject);
+                treesFromGroup = new List<GameObject>();
+                // Spawn Trees randomly
+                if (treesLeft >= treesPerGroup)
+                {
+                    for (int j = 0; j < treesPerGroup; j++)
+                    {
+                        treesFromGroup.Add(SpawnTree(treeGroup));
+                    }
+                }
+                treesLeft -= treesPerGroup;
+                if (treesLeft < 0)
+                {
+                    for (int j = 0; j < treesWithoutPlace; j++)
+                    {
+                        treesFromGroup.Add(SpawnTree(treeGroup));
+                    }
+                }
 
-        // Run through trees from the group
-        foreach (GameObject tree in treesFromGroup)
+                SpawnMushroomsFromGroup(treesFromGroup);
+            }
+        }
+
+        private void SpawnMushroomsFromGroup(List<GameObject> treesFromGroup)
         {
             if (IsMushroomLimitReached()) return;
-            //Choose posible points around to spawn
-            spawnPoints = GetPointsAround(tree.transform.position, spawnMaxRadius, spawnMinRadius, spawnPointsAroundTrees);
-
-            spawnPointsChosen = ChooseSet(spawnPoints, maxSpawnPointsChosen);
-            i = 0;
-            foreach (Vector3 vec3 in spawnPointsChosen)
+            float[] mushroomsProbabilities;
+            // Choose posible mushrooms to spawn in this group of trees (random at the moment)
+            mushroomsProbabilities = posibleMushrooms.GetProbabilities();
+            mushroomsChosen = ChooseSet(mushroomsProbabilities, maxMushroomChosen);
+            int i = 0;
+            foreach (Mushroom mush in mushroomsChosen)
             {
-                //Debug.Log("Chosen " + i + ": " + vec3);
+                Debug.Log("Chosen " + i + ": " + mush.prefab.name);
                 i++;
             }
-            foreach (Vector3 vec3 in spawnPointsChosen)
+            if (mushroomsChosen.Length < 1) return;
+
+            // Run through trees from the group
+            foreach (GameObject tree in treesFromGroup)
             {
-                // Choose a mushroom index (or not) from chosen mushrooms to spawn in the point
-                float[] mushroomsChosenProbabilities = mushroomsChosen.GetProbabilities();
-                int index = Choose(mushroomsChosenProbabilities);
-                if (index != -1)
+                if (IsMushroomLimitReached()) return;
+                //Choose posible points around to spawn
+                spawnPoints = GetPointsAround(tree.transform.position, spawnMaxRadius, spawnMinRadius, pointsAroundTrees);
+
+                spawnPointsChosen = ChooseSet(spawnPoints, maxPointsChosen);
+                i = 0;
+                foreach (Vector3 vec3 in spawnPointsChosen)
                 {
-                    // Spawn the mushroom if one is chosen with random rotation
-                    SpawnMushroom(mushroomsChosen[index].prefab, vec3);
+                    //Debug.Log("Chosen " + i + ": " + vec3);
+                    i++;
+                }
+                foreach (Vector3 vec3 in spawnPointsChosen)
+                {
+                    // Choose a mushroom index (or not) from chosen mushrooms to spawn in the point
+                    float[] mushroomsChosenProbabilities = mushroomsChosen.GetProbabilities();
+                    int index = Choose(mushroomsChosenProbabilities);
+                    if (index != -1)
+                    {
+                        // Spawn the mushroom if one is chosen with random rotation
+                        if (IsMushroomLimitReached()) return;
+                        SpawnMushroom(mushroomsChosen[index].prefab, vec3);
+                    }
                 }
             }
         }
-    }
 
-    private bool IsMushroomLimitReached()
-    {
-        // To limit mushrooms spawned
-        return maxNumMushroomsSpawned >= 0 && instantiatedMushrooms.Count >= maxNumMushroomsSpawned;
-    }
-
-    private GameObject SpawnTree(Transform treeGroup)
-    {
-        Debug.Log("SpawnTree");
-        Vector3 pos;
-        Quaternion rot;
-        GameObject tmp;
-        RaycastHit hit;
-        GameObject go = trees[Random.Range(0, trees.Length)];
-        pos = Random.insideUnitCircle * treePlacementRadius;
-        pos.Set(pos.x, 3f, pos.y);
-        Debug.Log("InitialSpawnPos: " + pos);
-        rot = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
-        if (Physics.Raycast(pos, Vector3.down, out hit, Mathf.Infinity, LayerMask.GetMask("Floor")) ||
-            Physics.Raycast(pos, Vector3.up, out hit, Mathf.Infinity, LayerMask.GetMask("Floor")))
+        private Vector3[] GetPointsAround(Vector3 position, float maxRadius, float minRadius, int maxPoints)
         {
-            Debug.Log("TreeHit");
-            tmp = Instantiate(go, hit.point, rot);
-        }
-        else
-        {
-            Debug.Log("NoTreeHit");
-            Debug.Log("TreePos: " + pos);
-            tmp = Instantiate(go, new Vector3(pos.x, 0f, pos.y), rot);
-        }
-        tmp.transform.SetParent(treeGroup);
-        instantiatedTrees.Add(tmp);
-        return tmp;
-    }
-
-    private Vector3[] GetPointsAround(Vector3 position, float maxRadius, float minRadius, int maxPoints)
-    {
-        Vector3[] points = new Vector3[maxPoints];
-        for (int i = 0; i < maxPoints; i++)
-        {
-            points[i]= AuxiliarFunctions.PickRandomPosAroundPoint(position, maxRadius, terr, minRadius);
-        }
-        return points;
-    }
-
-    private GameObject SpawnMushroom(GameObject mushroomPrefab, Vector3 spawnPoint)
-    {
-        if (IsMushroomLimitReached()) return null;
-        GameObject mushroom;
-        Quaternion rotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
-        mushroom = Instantiate(mushroomPrefab, spawnPoint, rotation);
-        mushroom.transform.SetParent(mushroomContainer);
-        instantiatedMushrooms.Add(mushroom);
-        return mushroom;
-    }
-
-    public void RepeatPlacement()
-    {
-        ClearList(instantiatedTrees);
-        ClearList(instantiatedMushrooms);
-        TreeGroupPlacement();
-    }
-
-    public void ClearList(List<GameObject> list)
-    {
-        if (list != null)
-        {
-            foreach (GameObject go in list)
+            Vector3[] points = new Vector3[maxPoints];
+            for (int i = 0; i < maxPoints; i++)
             {
-                RemoveMushroomFromList(go);
+                points[i] = AuxiliarFunctions.PickRandomPosAroundPoint(position, maxRadius, terrainUsed, minRadius);
             }
-            list.Clear();
-        }
-    }
-
-    public void RemoveMushroomFromList(GameObject go)
-    {
-#if UNITY_EDITOR
-        if (!Application.isPlaying)
-        {
-            DestroyImmediate(go);
-        }
-        else
-        {
-            Destroy(go);
-        }
-#elif UNITY_ANDROID
-                Destroy(go);
-#endif
-    }
-
-    // Choosing Items with Different Probabilities
-    private int Choose(float[] probs)
-    {
-        float total = 0;
-
-        foreach (float elem in probs)
-        {
-            // Probability of being chosen: prob
-            total += elem;
-            // Probability of not being chosen: 1 - prob
-            total += 1 - elem;
+            return points;
         }
 
-        //Debug.Log("Total: " + total);
-
-        float randomPoint = Random.value * total;
-
-        //Debug.Log("Point: " + randomPoint);
-        for (int i = 0; i < probs.Length; i++)
+        private bool IsMushroomLimitReached()
         {
-            if (randomPoint < probs[i])
+            // To limit mushrooms spawned
+            return maxNumMushroomsSpawned >= 0 && instantiatedMushrooms.Count >= maxNumMushroomsSpawned;
+        }
+
+        public override void ClearLists()
+        {
+            base.ClearLists();
+            ClearList(treeGroupsList);
+        }
+
+        public override void RepeatAllPlacement()
+        {
+            Debug.Log("RepeatAll");
+            ClearLists();
+            TreeGroupPlacement();
+        }
+
+        // Choosing Items with Different Probabilities
+        private int Choose(float[] probs)
+        {
+            float total = 0;
+
+            foreach (float elem in probs)
             {
-                return i;
+                // Probability of being chosen: prob
+                total += elem;
+                // Probability of not being chosen: 1 - prob
+                total += 1 - elem;
             }
-            else
+
+            //Debug.Log("Total: " + total);
+
+            float randomPoint = Random.value * total;
+
+            //Debug.Log("Point: " + randomPoint);
+            for (int i = 0; i < probs.Length; i++)
             {
-                randomPoint -= probs[i];
+                if (randomPoint < probs[i])
+                {
+                    return i;
+                }
+                else
+                {
+                    randomPoint -= probs[i];
+                }
             }
+            return -1;
         }
-        return -1;
-    }
 
-    // Sin repeticiones int
-    private Mushroom[] ChooseSet(float[] probabilities, int numRequired)
-    {
-        Mushroom[] result = new Mushroom[numRequired];
-
-        int numToChoose = numRequired;
-
-        for (int numLeft = probabilities.Length; numToChoose > 0 && numLeft > 0; numLeft--)
+        // Sin repeticiones int
+        private Mushroom[] ChooseSet(float[] probabilities, int numRequired)
         {
-            float prob = (float)numToChoose / (float)numLeft;
+            Mushroom[] result = new Mushroom[numRequired];
 
-            if (Random.value <= prob)
+            int numToChoose = numRequired;
+
+            for (int numLeft = probabilities.Length; numToChoose > 0 && numLeft > 0; numLeft--)
             {
-                numToChoose--;
-                result[numToChoose] = mushrooms[numLeft - 1]; //probabilities[numLeft - 1];
+                float prob = (float)numToChoose / (float)numLeft;
+
+                if (Random.value <= prob)
+                {
+                    numToChoose--;
+                    result[numToChoose] = posibleMushrooms[numLeft - 1]; //probabilities[numLeft - 1];
+                }
             }
+            return result;
         }
-        return result;
-    }
 
-    // Sin repeticiones Transform
-    private Vector3[] ChooseSet(Vector3[] spawnPoints, int numRequired)
-    {
-        Vector3[] result = new Vector3[numRequired];
-
-        int numToChoose = numRequired;
-
-        for (int numLeft = spawnPoints.Length; numToChoose > 0 && numLeft > 0; numLeft--)
+        // Sin repeticiones Transform
+        private Vector3[] ChooseSet(Vector3[] spawnPoints, int numRequired)
         {
+            Vector3[] result = new Vector3[numRequired];
 
-            float prob = (float)numToChoose / (float)numLeft;
+            int numToChoose = numRequired;
 
-            if (Random.value <= prob)
+            for (int numLeft = spawnPoints.Length; numToChoose > 0 && numLeft > 0; numLeft--)
             {
-                numToChoose--;
-                result[numToChoose] = spawnPoints[numLeft - 1];
+
+                float prob = (float)numToChoose / (float)numLeft;
+
+                if (Random.value <= prob)
+                {
+                    numToChoose--;
+                    result[numToChoose] = spawnPoints[numLeft - 1];
+                }
             }
+            return result;
         }
-        return result;
-    }
 
-    [System.Serializable]
-    public struct Mushroom
-    {
-        public GameObject prefab;
-        [Range(0f, 1f)]
-        public float probability;
-
-    }
-
-        //public int GetRandomWeightedIndex(int[] weights)
-        //{
-        //    // Get the total sum of all the weights.
-        //    int weightSum = 0f;
-        //    for (int i = 0; i < weights; ++i)
-        //    {
-        //        weightSum += weights[i];
-        //    }
-
-        //    // Step through all the possibilities, one by one, checking to see if each one is selected.
-        //    int index = 0;
-        //    int lastIndex = elementCount - 1;
-        //    while (index < lastIndex)
-        //    {
-        //        // Do a probability check with a likelihood of weights[index] / weightSum.
-        //        if (Random.Range(0, weightSum) < weights[index])
-        //        {
-        //            return index;
-        //        }
-
-        //        // Remove the last item from the sum of total untested weights and try again.
-        //        weightSum -= weights[index++];
-        //    }
-
-        //    // No other item was selected, so return very last index.
-        //    return index;
-        //}
-    }
-
-public static class MushroomExtension
-{
-    public static float[] GetProbabilities(this WeightedPlacement.Mushroom[] mushrooms)
-    {
-        float[] result = new float[mushrooms.Length];
-        for (int i = 0; i < mushrooms.Length; i++)
+        [System.Serializable]
+        public class Mushroom
         {
-            result[i] = mushrooms[i].probability;
+            public GameObject prefab;
+            [Range(0f, 1f)]
+            public float probability;
         }
-        return result;
     }
 
-    public static GameObject[] GetPrefabs(this WeightedPlacement.Mushroom[] mushrooms)
+    public static class MushroomExtension
     {
-        GameObject[] result = new GameObject[mushrooms.Length];
-        for (int i = 0; i < mushrooms.Length; i++)
+        public static float[] GetProbabilities(this WeightedPlacement.Mushroom[] mushrooms)
         {
-            result[i] = mushrooms[i].prefab;
+            float[] result = new float[mushrooms.Length];
+            for (int i = 0; i < mushrooms.Length; i++)
+            {
+                result[i] = mushrooms[i].probability;
+            }
+            return result;
         }
-        return result;
+
+        public static GameObject[] GetPrefabs(this WeightedPlacement.Mushroom[] mushrooms)
+        {
+            GameObject[] result = new GameObject[mushrooms.Length];
+            for (int i = 0; i < mushrooms.Length; i++)
+            {
+                result[i] = mushrooms[i].prefab;
+            }
+            return result;
+        }
     }
 }

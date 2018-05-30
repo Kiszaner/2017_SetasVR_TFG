@@ -1,20 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UBUSetasVR.Placement;
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(WeightedPlacement))]
-public class WeightedPlacementEditor : Editor
+namespace UBUSetasVR.EditorScripts
 {
-
-    public override void OnInspectorGUI()
+    [CustomEditor(typeof(WeightedPlacement))]
+    public class WeightedPlacementEditor : Editor
     {
-        WeightedPlacement placer = (WeightedPlacement)target;
 
-        if (GUILayout.Button("Repeat placement"))
+        public override void OnInspectorGUI()
         {
-            placer.RepeatPlacement();
+            WeightedPlacement placer = (WeightedPlacement)target;
+
+            if (GUILayout.Button("Repeat placement"))
+            {
+                placer.RepeatAllPlacement();
+            }
+            GUILayout.Space(5);
+            if (GUILayout.Button("Remove all"))
+            {
+                placer.ClearLists();
+            }
+            DrawDefaultInspector();
         }
-        DrawDefaultInspector();
     }
 }

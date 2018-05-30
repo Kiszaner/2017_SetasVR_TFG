@@ -6,7 +6,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(DataService))]
-public class DataServiceEditorUtility : Editor
+public class DataServiceEditor : Editor
 {
     string text = "";
     MushroomList list;

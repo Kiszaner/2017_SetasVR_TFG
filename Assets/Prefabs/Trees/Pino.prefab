@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4366028095294634}
   - component: {fileID: 33533066820839138}
   - component: {fileID: 23218512680855368}
+  - component: {fileID: 114037957500438806}
   m_Layer: 9
   m_Name: Pino
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1642357790401582}
   m_Mesh: {fileID: 4300000, guid: bf55ad0f968b77f4dbfb1d5dac340567, type: 3}
+--- !u!114 &114037957500438806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1642357790401582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40675eee0c1b72b45a1ff372bb007a81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstRadius: 1.3
+  secondRadius: 1.7

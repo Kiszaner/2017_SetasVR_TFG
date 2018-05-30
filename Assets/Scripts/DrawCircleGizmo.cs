@@ -2,28 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DrawCircleGizmo : MonoBehaviour
+namespace UBUSetasVR
 {
-    public float Radius = 4;
-
-    private void OnDrawGizmosSelected()
+    public class DrawCircleGizmo : MonoBehaviour
     {
-        Transform t = GetComponent<Transform>();
-        Gizmos.color = Color.white;
-        float theta = 0;
-        float x = Radius * Mathf.Cos(theta);
-        float y = Radius * Mathf.Sin(theta);
-        Vector3 pos = t.position + new Vector3(x, 0, y);
-        Vector3 newPos = pos;
-        Vector3 lastPos = pos;
-        for (theta = 0.1f; theta < Mathf.PI * 2; theta += 0.1f)
+        public float firstRadius = 1.3f;
+        public float secondRadius = 1.7f;
+
+        private void OnDrawGizmosSelected()
         {
-            x = Radius * Mathf.Cos(theta);
-            y = Radius * Mathf.Sin(theta);
-            newPos = t.position + new Vector3(x, 0, y);
-            Gizmos.DrawLine(pos, newPos);
-            pos = newPos;
+            Transform t = GetComponent<Transform>();
+            AuxiliarFunctions.DrawCircleGizmo(t, firstRadius, secondRadius);
+
         }
-        Gizmos.DrawLine(pos, lastPos);
     }
 }

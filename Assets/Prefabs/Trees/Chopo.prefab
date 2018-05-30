@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4899380009766280}
   - component: {fileID: 33308573371693432}
   - component: {fileID: 23879664675488254}
+  - component: {fileID: 114600257727971932}
   m_Layer: 9
   m_Name: Chopo
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1701521749485546}
   m_Mesh: {fileID: 4300000, guid: a3beaaeb5a3a7f342bb8236cf3edeb80, type: 3}
+--- !u!114 &114600257727971932
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1701521749485546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40675eee0c1b72b45a1ff372bb007a81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstRadius: 1.3
+  secondRadius: 1.7

@@ -4,27 +4,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelScore : MonoBehaviour
+namespace UBUSetasVR
 {
-    public Text ScoreText;
-
-    private void OnEnable()
+    public class LevelScore : MonoBehaviour
     {
-        LevelManager.OnScoreUpdated += WriteScore;
-    }
+        public Text ScoreText;
 
-    private void OnDisable()
-    {
-        LevelManager.OnScoreUpdated -= WriteScore;
-    }
+        private void OnEnable()
+        {
+            LevelManager.OnScoreUpdated += WriteScore;
+        }
 
-    private void Start()
-    {
-        WriteScore(0);
-    }
+        private void OnDisable()
+        {
+            LevelManager.OnScoreUpdated -= WriteScore;
+        }
 
-    private void WriteScore(int value)
-    {
-        ScoreText.text = "Puntuación: " + value;
+        private void Start()
+        {
+            WriteScore(0);
+        }
+
+        private void WriteScore(int value)
+        {
+            ScoreText.text = "Puntuación: " + value;
+        }
     }
 }
