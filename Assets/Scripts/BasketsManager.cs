@@ -5,7 +5,8 @@ using UBUSetasVR;
 
 public class BasketsManager : MonoBehaviour
 {
-    public GameObject BasketPrefab;
+    public GameObject GoodBasketPrefab;
+    public GameObject BadBasketPrefab;
     public Transform[] BasketsPositions;
     public GameObject[] Baskets;
     public float DistanceToFloor = 2.3f;
@@ -32,10 +33,14 @@ public class BasketsManager : MonoBehaviour
         for ( int i = 0; i < BasketsPositions.Length; i++)
         {
             pos = new Vector3(BasketsPositions[i].position.x, BasketsPositions[i].position.y - transform.position.y, BasketsPositions[i].position.z);
-            Baskets[i] = Instantiate(BasketPrefab, pos, Quaternion.identity, null);
             if (i == 0)
             {
+                Baskets[i] = Instantiate(GoodBasketPrefab, pos, Quaternion.identity, null);
                 Baskets[i].GetComponent<Basket>().IsGoodBasket = true;
+            }
+            else
+            {
+                Baskets[i] = Instantiate(BadBasketPrefab, pos, Quaternion.identity, null);
             }
             Baskets[i].SetActive(false);
         }

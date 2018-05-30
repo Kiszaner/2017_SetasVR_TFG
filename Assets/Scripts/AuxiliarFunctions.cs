@@ -6,6 +6,36 @@ namespace UBUSetasVR
 {
     public static class AuxiliarFunctions
     {
+
+        public static string FirstUpper(string s)
+        {
+            return char.ToUpper(s[0]) + s.Substring(1);
+        }
+        public static T[] RandomPickWithoutRepetition<T>(T[] arrayOfItems, int numRequired)
+        {
+            T[] result = new T[numRequired];
+
+            int numToChoose = numRequired;
+
+            for (int numLeft = arrayOfItems.Length; numLeft > 0; numLeft--)
+            {
+
+                float prob = (float)numToChoose / (float)numLeft;
+
+                if (Random.value <= prob)
+                {
+                    numToChoose--;
+                    result[numToChoose] = arrayOfItems[numLeft - 1];
+
+                    if (numToChoose == 0)
+                    {
+                        break;
+                    }
+                }
+            }
+            return result;
+        }
+
         public static bool CheckObjectsAround(Vector3 hitPoint, float radius, LayerMask environmentMask)
         {
             Debug.Log("CheckAround");
@@ -41,10 +71,8 @@ namespace UBUSetasVR
 
         public static Vector3 PickRandomPosAroundPoint(Vector3 point, float maxRadius, float minRadius = 0.1f)
         {
-            //Debug.Log("Picking new random pos");
             Vector2 flatPos = GetRandomPointBetweenTwoCircles(minRadius, maxRadius);
             Vector3 pos = new Vector3(point.x + flatPos.x, point.y, point.z + flatPos.y);
-            //Debug.Log("RandomPos: " + pos);
             return pos;
         }
 
@@ -54,26 +82,14 @@ namespace UBUSetasVR
             if (terr == null) return pos;
             Debug.Log("Pos: " + pos);
             RaycastHit hit;
-            if(Physics.Raycast(pos, Vector3.down, out hit, LayerMask.NameToLayer("Floor")))
+            if (Physics.Raycast(pos, Vector3.down, out hit, Mathf.Infinity, LayerMask.GetMask("Floor")) ||
+                Physics.Raycast(pos, Vector3.up, out hit, Mathf.Infinity, LayerMask.GetMask("Floor")))
             {
                 Debug.Log("Hit");
                 Debug.Log("TerrPos: " + hit);
                 return hit.point;
             }
-            float posy = terr.SampleHeight(new Vector3(pos.x, 0, pos.z));
-            //pos = ConvertWordCor2TerrCor(terr, pos);
-            Debug.Log("TerrPos2: " + pos);
-            return pos;
-        }
-
-        private static Vector3 ConvertWordCor2TerrCor(Terrain ter, Vector3 wordCor)
-        {
-            Vector3 vecRet = new Vector3();
-            //Terrain ter = Terrain.activeTerrain;
-            Vector3 terPosition = ter.transform.position;
-            vecRet.x = ((wordCor.x - terPosition.x) / ter.terrainData.size.x) * ter.terrainData.alphamapWidth;
-            vecRet.z = ((wordCor.y - terPosition.z) / ter.terrainData.size.z) * ter.terrainData.alphamapHeight;
-            return vecRet;
+            return hit.point;
         }
 
         /// <summary>

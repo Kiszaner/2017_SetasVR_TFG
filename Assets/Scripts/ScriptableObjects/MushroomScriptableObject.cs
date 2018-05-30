@@ -18,7 +18,7 @@ public class MushroomScriptableObject : ScriptableObject
     public bool IsDangerous;
     public bool IsDeadly;
     public bool IsUnknown;
-    public Sprite[] Photos;
+    public Texture[] Photos;
 
     public void DataToScriptable(Mushroom m)
     {

@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using UBUSetasVR;
 using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(MushroomScriptableObject))]
 public class MushroomScriptableObjectUtility : Editor
 {
-    List<Texture2D> textures;
+    List<Texture> textures;
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
@@ -20,10 +21,11 @@ public class MushroomScriptableObjectUtility : Editor
         if (GUILayout.Button("Asset Path"))
         {
             string sDataPath = Application.dataPath;
-            string sFolderPath = sDataPath.Substring(0, sDataPath.Length - 6) + "Assets/Art/2D/Mushrooms/Agaricus urinascens";
+            string capitalizedMushName = AuxiliarFunctions.FirstUpper(mushScrObj.Name);
+            string sFolderPath = sDataPath.Substring(0, sDataPath.Length - 6) + "Assets/Art/2D/Mushrooms/" +  capitalizedMushName;
             Debug.Log("A: " + sFolderPath);
             string[] aFilePaths = Directory.GetFiles(sFolderPath, "*.jpg");
-            textures = new List<Texture2D>();
+            textures = new List<Texture>();
             foreach (string sFilePath in aFilePaths)
             {
                 string sAssetPath = sFilePath.Substring(sDataPath.Length - 6);
@@ -40,17 +42,7 @@ public class MushroomScriptableObjectUtility : Editor
 
     public void RandomPickPhotos(MushroomScriptableObject mushScrObj)
     {
-        Texture2D[] texturesArray = textures.ToArray();
-        Sprite[] sprites = new Sprite[texturesArray.Length];
-        for (int i = 0; i < texturesArray.Length; i++)
-        {
-            sprites[i] = CreateSpriteFromTexture2D(texturesArray[i]);
-        }
-        mushScrObj.Photos = sprites;
-    }
-
-    private Sprite CreateSpriteFromTexture2D(Texture2D texture)
-    {
-        return Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+        Texture[] texturesArray = textures.ToArray();
+        mushScrObj.Photos = AuxiliarFunctions.RandomPickWithoutRepetition(texturesArray, 4);
     }
 }

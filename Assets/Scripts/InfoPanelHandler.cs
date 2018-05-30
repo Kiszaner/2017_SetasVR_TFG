@@ -25,5 +25,9 @@ public class InfoPanelHandler : MonoBehaviour
                 InfoPanel.SetActive(!InfoPanel.activeSelf);
             }
         }
+        else if (MPO.State == BaseInteractiveObject.ObjectState.Released)
+        {
+            InfoPanel.SetActive(false);
+        }
 	}
 }

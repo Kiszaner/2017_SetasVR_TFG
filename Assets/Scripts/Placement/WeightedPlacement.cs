@@ -89,7 +89,7 @@ namespace UBUSetasVR.Placement
                 //Choose posible points around to spawn
                 spawnPoints = GetPointsAround(tree.transform.position, spawnMaxRadius, spawnMinRadius, pointsAroundTrees);
 
-                spawnPointsChosen = ChooseSet(spawnPoints, maxPointsChosen);
+                spawnPointsChosen = AuxiliarFunctions.RandomPickWithoutRepetition(spawnPoints, maxPointsChosen);
                 i = 0;
                 foreach (Vector3 vec3 in spawnPointsChosen)
                 {
@@ -187,27 +187,6 @@ namespace UBUSetasVR.Placement
                 {
                     numToChoose--;
                     result[numToChoose] = posibleMushrooms[numLeft - 1]; //probabilities[numLeft - 1];
-                }
-            }
-            return result;
-        }
-
-        // Sin repeticiones Transform
-        private Vector3[] ChooseSet(Vector3[] spawnPoints, int numRequired)
-        {
-            Vector3[] result = new Vector3[numRequired];
-
-            int numToChoose = numRequired;
-
-            for (int numLeft = spawnPoints.Length; numToChoose > 0 && numLeft > 0; numLeft--)
-            {
-
-                float prob = (float)numToChoose / (float)numLeft;
-
-                if (Random.value <= prob)
-                {
-                    numToChoose--;
-                    result[numToChoose] = spawnPoints[numLeft - 1];
                 }
             }
             return result;
