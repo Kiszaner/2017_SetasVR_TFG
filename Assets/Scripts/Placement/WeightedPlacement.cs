@@ -8,8 +8,8 @@ public class WeightedPlacement : MonoBehaviour
     public Terrain terr;
     public Mushroom[] mushrooms;
     public GameObject[] trees;
-    public Transform TreeContainer;
-    public Transform MushroomContainer;
+    public Transform treeContainer;
+    public Transform mushroomContainer;
 
     public int numberOfTrees = 12;
     public int numberOfTreesPerGroup = 5;
@@ -22,8 +22,8 @@ public class WeightedPlacement : MonoBehaviour
     public int spawnPointsAroundTrees = 7;
     public int maxSpawnPointsChosen = 3;
 
-    public List<GameObject> InstantiatedTrees;
-    public List<GameObject> InstantiatedMushrooms;
+    public List<GameObject> instantiatedTrees;
+    public List<GameObject> instantiatedMushrooms;
 
     private Mushroom[] mushroomsChosen;
     private Vector3[] spawnPointsChosen;
@@ -31,8 +31,14 @@ public class WeightedPlacement : MonoBehaviour
 
     private void OnEnable()
     {
-        InstantiatedTrees = new List<GameObject>();
-        InstantiatedMushrooms = new List<GameObject>();
+        instantiatedTrees = new List<GameObject>();
+        instantiatedMushrooms = new List<GameObject>();
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Transform t = GetComponent<Transform>();
+        AuxiliarFunctions.DrawCircleGizmo(t, treePlacementRadius);
     }
 
     public void TreeGroupPlacement()
@@ -46,7 +52,7 @@ public class WeightedPlacement : MonoBehaviour
         for (k = 0; treesLeft > 0; k++)
         {
             treeGroup = new GameObject("TreeGroup" + k).transform;
-            treeGroup.transform.SetParent(TreeContainer);
+            treeGroup.transform.SetParent(treeContainer);
             treesFromGroup = new List<GameObject>();
             // Spawn Trees randomly
             if (treesLeft >= numberOfTreesPerGroup)
@@ -115,7 +121,7 @@ public class WeightedPlacement : MonoBehaviour
     private bool IsMushroomLimitReached()
     {
         // To limit mushrooms spawned
-        return maxNumMushroomsSpawned >= 0 && InstantiatedMushrooms.Count >= maxNumMushroomsSpawned;
+        return maxNumMushroomsSpawned >= 0 && instantiatedMushrooms.Count >= maxNumMushroomsSpawned;
     }
 
     private GameObject SpawnTree(Transform treeGroup)
@@ -127,8 +133,11 @@ public class WeightedPlacement : MonoBehaviour
         RaycastHit hit;
         GameObject go = trees[Random.Range(0, trees.Length)];
         pos = Random.insideUnitCircle * treePlacementRadius;
+        pos.Set(pos.x, 3f, pos.y);
+        Debug.Log("InitialSpawnPos: " + pos);
         rot = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
-        if (Physics.Raycast(pos, Vector3.down, out hit, 5f, LayerMask.NameToLayer("Floor")))
+        if (Physics.Raycast(pos, Vector3.down, out hit, Mathf.Infinity, LayerMask.GetMask("Floor")) ||
+            Physics.Raycast(pos, Vector3.up, out hit, Mathf.Infinity, LayerMask.GetMask("Floor")))
         {
             Debug.Log("TreeHit");
             tmp = Instantiate(go, hit.point, rot);
@@ -136,10 +145,11 @@ public class WeightedPlacement : MonoBehaviour
         else
         {
             Debug.Log("NoTreeHit");
+            Debug.Log("TreePos: " + pos);
             tmp = Instantiate(go, new Vector3(pos.x, 0f, pos.y), rot);
         }
         tmp.transform.SetParent(treeGroup);
-        InstantiatedTrees.Add(tmp);
+        instantiatedTrees.Add(tmp);
         return tmp;
     }
 
@@ -159,15 +169,15 @@ public class WeightedPlacement : MonoBehaviour
         GameObject mushroom;
         Quaternion rotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
         mushroom = Instantiate(mushroomPrefab, spawnPoint, rotation);
-        mushroom.transform.SetParent(MushroomContainer);
-        InstantiatedMushrooms.Add(mushroom);
+        mushroom.transform.SetParent(mushroomContainer);
+        instantiatedMushrooms.Add(mushroom);
         return mushroom;
     }
 
     public void RepeatPlacement()
     {
-        ClearList(InstantiatedTrees);
-        ClearList(InstantiatedMushrooms);
+        ClearList(instantiatedTrees);
+        ClearList(instantiatedMushrooms);
         TreeGroupPlacement();
     }
 

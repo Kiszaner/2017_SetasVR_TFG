@@ -1,25 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UBUSetasVR;
 using UnityEngine;
 
 public class RandomPlacement : MonoBehaviour
 {
-    public GameObject[] Trees;
-    public GameObject[] Mushrooms;
-    public float TreePlacementRadius = 10;
-    public float MushroomPlacementRadius = 5;
-    public int TreeNum = 12;
-    public int MushroomNum = 6;
-    public Transform TreeContainer;
-    public Transform MushroomContainer;
-    public List<GameObject> InstantiatedTrees;
-    public List<GameObject> InstantiatedMushrooms;
+    public GameObject[] trees;
+    public GameObject[] mushrooms;
+    public float treePlacementRadius = 10;
+    public float mushroomPlacementRadius = 5;
+    public int treeNum = 12;
+    public int mushroomNum = 6;
+    public Transform treeContainer;
+    public Transform mushroomContainer;
+    public List<GameObject> instantiatedTrees;
+    public List<GameObject> instantiatedMushrooms;
 
     private void OnEnable()
     {
-        InstantiatedTrees = new List<GameObject>();
-        InstantiatedMushrooms = new List<GameObject>();
+        instantiatedTrees = new List<GameObject>();
+        instantiatedMushrooms = new List<GameObject>();
 	}
+
+    private void OnDrawGizmosSelected()
+    {
+        Transform t = GetComponent<Transform>();
+        AuxiliarFunctions.DrawCircleGizmo(t, treePlacementRadius);
+    }
 
     public void RepeatAllPlacement()
     {
@@ -29,13 +36,13 @@ public class RandomPlacement : MonoBehaviour
 
     public void RepeatTreesPlacement()
     {
-        ClearList(InstantiatedTrees);
+        ClearList(instantiatedTrees);
         TreePlacement();
     }
 
     public void RepeatMushroomsPlacement()
     {
-        ClearList(InstantiatedMushrooms);
+        ClearList(instantiatedMushrooms);
         MushroomPlacement();
     }
 
@@ -44,14 +51,14 @@ public class RandomPlacement : MonoBehaviour
         Vector3 pos;
         Quaternion rot;
         GameObject tmp;
-        for (int i = 0; i < TreeNum; i++)
+        for (int i = 0; i < treeNum; i++)
         {
-            GameObject go = Trees[Random.Range(0, Trees.Length)];
-            pos = Random.insideUnitCircle * TreePlacementRadius;
+            GameObject go = trees[Random.Range(0, trees.Length)];
+            pos = Random.insideUnitCircle * treePlacementRadius;
             rot = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
             tmp = Instantiate(go, new Vector3(pos.x, 0f, pos.y), rot);
-            tmp.transform.SetParent(TreeContainer);
-            InstantiatedTrees.Add(tmp);
+            tmp.transform.SetParent(treeContainer);
+            instantiatedTrees.Add(tmp);
         }
     }
 
@@ -60,14 +67,14 @@ public class RandomPlacement : MonoBehaviour
         Vector3 pos;
         Quaternion rot;
         GameObject tmp;
-        for (int i = 0; i < MushroomNum; i++)
+        for (int i = 0; i < mushroomNum; i++)
         {
-            GameObject go = Mushrooms[Random.Range(0, Mushrooms.Length)];
-            pos = Random.insideUnitCircle * MushroomPlacementRadius;
+            GameObject go = mushrooms[Random.Range(0, mushrooms.Length)];
+            pos = Random.insideUnitCircle * mushroomPlacementRadius;
             rot = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
             tmp = Instantiate(go, new Vector3(pos.x, 0f, pos.y), rot);
-            tmp.transform.SetParent(MushroomContainer);
-            InstantiatedMushrooms.Add(tmp);
+            tmp.transform.SetParent(mushroomContainer);
+            instantiatedMushrooms.Add(tmp);
         }
     }
 
