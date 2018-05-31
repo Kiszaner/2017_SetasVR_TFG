@@ -12,7 +12,7 @@ namespace UBUSetasVR
         public GameObject backgroundCross;
 
         // Use this for initialization
-        void Start()
+        void Awake()
         {
             GetComponent<Toggle>().onValueChanged.AddListener(Switch);
         }
