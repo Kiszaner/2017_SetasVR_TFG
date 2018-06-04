@@ -8,7 +8,7 @@ using UnityEngine;
 [CustomEditor(typeof(MushroomScriptableObject))]
 public class MushroomScriptableObjectUtility : Editor
 {
-    List<Texture> textures;
+    
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
@@ -16,31 +16,49 @@ public class MushroomScriptableObjectUtility : Editor
         MushroomScriptableObject mushScrObj = (MushroomScriptableObject)target;
         if (GUILayout.Button("Random pick photos"))
         {
-            RandomPickPhotos(mushScrObj);
-        }
-        if (GUILayout.Button("Asset Path"))
-        {
             string sDataPath = Application.dataPath;
             string capitalizedMushName = AuxiliarFunctions.FirstUpper(mushScrObj.Name);
-            string sFolderPath = sDataPath.Substring(0, sDataPath.Length - 6) + "Assets/Art/2D/Mushrooms/" +  capitalizedMushName;
+            string sFolderPath = sDataPath.Substring(0, sDataPath.Length - 6) + "Assets/Art/2D/Mushrooms/" + capitalizedMushName;
             Debug.Log("A: " + sFolderPath);
             string[] aFilePaths = Directory.GetFiles(sFolderPath, "*.jpg");
+            List<Texture> textures;
             textures = new List<Texture>();
             foreach (string sFilePath in aFilePaths)
             {
                 string sAssetPath = sFilePath.Substring(sDataPath.Length - 6);
-                Debug.Log(sAssetPath);
+                //Debug.Log(sAssetPath);
 
                 Object objAsset = AssetDatabase.LoadAssetAtPath(sAssetPath, typeof(Object));
 
                 textures.Add((Texture2D)objAsset);
 
-                Debug.Log(objAsset.GetType().Name);
+                //Debug.Log(objAsset.GetType().Name);
             }
+            RandomPickPhotos(mushScrObj, textures);
         }
+        //if (GUILayout.Button("Asset Path"))
+        //{
+        //    string sDataPath = Application.dataPath;
+        //    string capitalizedMushName = AuxiliarFunctions.FirstUpper(mushScrObj.Name);
+        //    string sFolderPath = sDataPath.Substring(0, sDataPath.Length - 6) + "Assets/Art/2D/Mushrooms/" +  capitalizedMushName;
+        //    Debug.Log("A: " + sFolderPath);
+        //    string[] aFilePaths = Directory.GetFiles(sFolderPath, "*.jpg");
+        //    textures = new List<Texture>();
+        //    foreach (string sFilePath in aFilePaths)
+        //    {
+        //        string sAssetPath = sFilePath.Substring(sDataPath.Length - 6);
+        //        Debug.Log(sAssetPath);
+
+        //        Object objAsset = AssetDatabase.LoadAssetAtPath(sAssetPath, typeof(Object));
+
+        //        textures.Add((Texture2D)objAsset);
+
+        //        Debug.Log(objAsset.GetType().Name);
+        //    }
+        //}
     }
 
-    public void RandomPickPhotos(MushroomScriptableObject mushScrObj)
+    public void RandomPickPhotos(MushroomScriptableObject mushScrObj, List<Texture> textures)
     {
         Texture[] texturesArray = textures.ToArray();
         mushScrObj.Photos = AuxiliarFunctions.RandomPickWithoutRepetition(texturesArray, 4);

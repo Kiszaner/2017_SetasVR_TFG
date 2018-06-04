@@ -35,7 +35,7 @@ namespace Database.SQLiter
                 return _nullLoom as ILoom;
             }
         }
-
+#if UNITY_EDITOR
         void Awake()
         {
             _loom = new LoomDispatcher();
@@ -53,6 +53,7 @@ namespace Database.SQLiter
                 _loom.Update();
             }
         }
+#endif
 
         private class NullLoom : ILoom
         {
