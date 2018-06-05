@@ -124,12 +124,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4395185017065880}
   - component: {fileID: 54062405503418260}
-  - component: {fileID: 64922330791131248}
   - component: {fileID: 114275424760606300}
   - component: {fileID: 114156397538365090}
   - component: {fileID: 114476600066683876}
   - component: {fileID: 114260773274699142}
   - component: {fileID: 114679466580596558}
+  - component: {fileID: 136394048157573242}
   m_Layer: 9
   m_Name: Boletus Edulis low poly
   m_TagString: Mushroom
@@ -885,20 +885,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64922330791131248
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1201425423452090}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 1
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: fb00ad538c04bce42a2f662fc8daffad, type: 3}
 --- !u!114 &114026249120076036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2530,6 +2516,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!136 &136394048157573242
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1201425423452090}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.11
+  m_Height: 0.37
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.168, z: 0}
 --- !u!222 &222057470492282920
 CanvasRenderer:
   m_ObjectHideFlags: 1

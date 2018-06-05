@@ -651,7 +651,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4459433572283472}
   - component: {fileID: 54889893765475794}
-  - component: {fileID: 64155965545279160}
+  - component: {fileID: 114084373042426662}
   - component: {fileID: 114480048498801930}
   - component: {fileID: 114986814312747404}
   - component: {fileID: 114496769309304628}
@@ -885,20 +885,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64155965545279160
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1846167880891368}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 1
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 7c1790135c160be44b93dd77921beddb, type: 3}
 --- !u!114 &114007902398757256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1115,6 +1101,46 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114084373042426662
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1846167880891368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df1f1f21b553524e9679d198532fd59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  properties:
+    convex: 1
+    isTrigger: 0
+    material: {fileID: 0}
+    colliderType: 2
+    centre: {x: 0, y: 0.32, z: 0}
+    rotation: {x: 0, y: 0, z: 180}
+    size: {x: 0.8, y: 0.7, z: 0.8}
+    flipFaces: 0
+    circleVertices: 16
+    circleTwoSided: 0
+    coneFaces: 6
+    coneCap: 1
+    coneHalfCapFlatEnd: 1
+    cubeTopFace: 1
+    cubeBottomFace: 1
+    cubeLeftFace: 1
+    cubeRightFace: 1
+    cubeForwardFace: 1
+    cubeBackFace: 1
+    cylinderFaces: 16
+    cylinderCapTop: 1
+    cylinderCapBottom: 1
+    cylinderTaperTop: {x: 1, y: 1}
+    cylinderTaperBottom: {x: 1, y: 1}
+    cylinderHalfCapFlatEnd: 1
+    quadTwoSided: 0
+    triangleTwoSided: 0
+    colour: {r: 0.5686275, g: 0.95686275, b: 0.54901963, a: 0.9372549}
 --- !u!114 &114084641331924282
 MonoBehaviour:
   m_ObjectHideFlags: 1

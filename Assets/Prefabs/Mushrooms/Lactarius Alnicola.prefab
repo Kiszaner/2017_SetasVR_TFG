@@ -242,12 +242,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4319264425537398}
   - component: {fileID: 54279583048923986}
-  - component: {fileID: 64736675056410554}
   - component: {fileID: 114235419084018126}
   - component: {fileID: 114170030285946980}
   - component: {fileID: 114299889078832324}
   - component: {fileID: 114550485239180628}
   - component: {fileID: 114754084574550910}
+  - component: {fileID: 114042880429930260}
   m_Layer: 9
   m_Name: Lactarius Alnicola
   m_TagString: Mushroom
@@ -885,20 +885,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64736675056410554
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1349650322435448}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 1
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: f8f8e424e36281245a2316301af74745, type: 3}
 --- !u!114 &114005554272813926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1072,6 +1058,46 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
+--- !u!114 &114042880429930260
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1349650322435448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df1f1f21b553524e9679d198532fd59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  properties:
+    convex: 1
+    isTrigger: 0
+    material: {fileID: 0}
+    colliderType: 2
+    centre: {x: 0, y: 0.14, z: 0}
+    rotation: {x: 180, y: 0, z: 0}
+    size: {x: 0.45, y: 0.3, z: 0.4}
+    flipFaces: 0
+    circleVertices: 16
+    circleTwoSided: 0
+    coneFaces: 6
+    coneCap: 1
+    coneHalfCapFlatEnd: 1
+    cubeTopFace: 1
+    cubeBottomFace: 1
+    cubeLeftFace: 1
+    cubeRightFace: 1
+    cubeForwardFace: 1
+    cubeBackFace: 1
+    cylinderFaces: 16
+    cylinderCapTop: 1
+    cylinderCapBottom: 1
+    cylinderTaperTop: {x: 1, y: 1}
+    cylinderTaperBottom: {x: 1, y: 1}
+    cylinderHalfCapFlatEnd: 1
+    quadTwoSided: 0
+    triangleTwoSided: 0
+    colour: {r: 0.5686275, g: 0.95686275, b: 0.54901963, a: 0.9372549}
 --- !u!114 &114061916982737138
 MonoBehaviour:
   m_ObjectHideFlags: 1

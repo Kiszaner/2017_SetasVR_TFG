@@ -259,12 +259,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4266065310346990}
   - component: {fileID: 54900454190121634}
-  - component: {fileID: 64222791819996748}
   - component: {fileID: 114200232161332860}
   - component: {fileID: 114154873474940172}
   - component: {fileID: 114285538319066394}
   - component: {fileID: 114117624459622594}
   - component: {fileID: 114351745057850174}
+  - component: {fileID: 136342207892283732}
   m_Layer: 9
   m_Name: Amanita Cesarea
   m_TagString: Mushroom
@@ -886,20 +886,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64222791819996748
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1317333483348108}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 1
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 34631a36a2aed28428dfbd3f049ea7bb, type: 3}
 --- !u!114 &114019584614008344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2531,6 +2517,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!136 &136342207892283732
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1317333483348108}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.11
+  m_Height: 0.63
+  m_Direction: 1
+  m_Center: {x: -0.02, y: 0.31, z: 0}
 --- !u!222 &222045243299170534
 CanvasRenderer:
   m_ObjectHideFlags: 1

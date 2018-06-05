@@ -430,12 +430,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4799847596396356}
   - component: {fileID: 54099527942739810}
-  - component: {fileID: 64171609559820412}
   - component: {fileID: 114976117827272688}
   - component: {fileID: 114256518382617850}
   - component: {fileID: 114412716619761386}
   - component: {fileID: 114146798065183474}
   - component: {fileID: 114730726922818894}
+  - component: {fileID: 136616710547747768}
   m_Layer: 9
   m_Name: Amanita Phalloides
   m_TagString: Mushroom
@@ -886,20 +886,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64171609559820412
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1505832328909944}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 1
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: a2572421bb78e1545baa4d949060c29a, type: 3}
 --- !u!114 &114020347009884526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2531,6 +2517,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundCross: {fileID: 1740974581652350}
+--- !u!136 &136616710547747768
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1505832328909944}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.1
+  m_Height: 0.43
+  m_Direction: 1
+  m_Center: {x: -0.007, y: 0.21, z: 0}
 --- !u!222 &222017677630089192
 CanvasRenderer:
   m_ObjectHideFlags: 1

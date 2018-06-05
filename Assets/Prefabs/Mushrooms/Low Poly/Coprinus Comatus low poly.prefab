@@ -548,12 +548,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4512211250579542}
   - component: {fileID: 54001331321474914}
-  - component: {fileID: 64677205251763148}
   - component: {fileID: 114314162988002392}
   - component: {fileID: 114897055699822188}
   - component: {fileID: 114381192324656046}
   - component: {fileID: 114028185579518402}
   - component: {fileID: 114454024889258094}
+  - component: {fileID: 136118950174601708}
   m_Layer: 9
   m_Name: Coprinus Comatus low poly
   m_TagString: Mushroom
@@ -885,20 +885,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64677205251763148
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1594573939688646}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 1
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 1b74c99548179354a82cfbd733ebd241, type: 3}
 --- !u!114 &114016146735661312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2530,6 +2516,19 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
+--- !u!136 &136118950174601708
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1594573939688646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.04
+  m_Height: 0.23
+  m_Direction: 1
+  m_Center: {x: 0.014, y: 0.11, z: 0.007}
 --- !u!222 &222016557603584670
 CanvasRenderer:
   m_ObjectHideFlags: 1

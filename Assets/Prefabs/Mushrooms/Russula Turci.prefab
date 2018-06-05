@@ -379,12 +379,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4964148449177428}
   - component: {fileID: 54125196128302044}
-  - component: {fileID: 64763804711620528}
   - component: {fileID: 114130346381964458}
   - component: {fileID: 114050570565725538}
   - component: {fileID: 114056463954371418}
   - component: {fileID: 114658237588754956}
   - component: {fileID: 114674271831866612}
+  - component: {fileID: 114531991239705054}
   m_Layer: 9
   m_Name: Russula Turci
   m_TagString: Mushroom
@@ -885,20 +885,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64763804711620528
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1453869367779074}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 1
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 13bf512277041f4478128ea464b56183, type: 3}
 --- !u!114 &114008158982050616
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1688,6 +1674,46 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114531991239705054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1453869367779074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df1f1f21b553524e9679d198532fd59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  properties:
+    convex: 1
+    isTrigger: 0
+    material: {fileID: 0}
+    colliderType: 2
+    centre: {x: 0.02, y: 0.11, z: 0}
+    rotation: {x: 180, y: 0, z: 0}
+    size: {x: 0.36, y: 0.24, z: 0.36}
+    flipFaces: 0
+    circleVertices: 16
+    circleTwoSided: 0
+    coneFaces: 6
+    coneCap: 1
+    coneHalfCapFlatEnd: 1
+    cubeTopFace: 1
+    cubeBottomFace: 1
+    cubeLeftFace: 1
+    cubeRightFace: 1
+    cubeForwardFace: 1
+    cubeBackFace: 1
+    cylinderFaces: 16
+    cylinderCapTop: 1
+    cylinderCapBottom: 1
+    cylinderTaperTop: {x: 1, y: 1}
+    cylinderTaperBottom: {x: 1, y: 1}
+    cylinderHalfCapFlatEnd: 1
+    quadTwoSided: 0
+    triangleTwoSided: 0
+    colour: {r: 0.5686275, g: 0.95686275, b: 0.54901963, a: 0.9372549}
 --- !u!114 &114544511901951092
 MonoBehaviour:
   m_ObjectHideFlags: 1

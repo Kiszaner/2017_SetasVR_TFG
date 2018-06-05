@@ -190,12 +190,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4504409477520042}
   - component: {fileID: 54207456126139022}
-  - component: {fileID: 64818008521427842}
   - component: {fileID: 114860077243827406}
   - component: {fileID: 114873738772974478}
   - component: {fileID: 114631733321153748}
   - component: {fileID: 114912773539920224}
   - component: {fileID: 114261381302488232}
+  - component: {fileID: 136984126407968866}
   m_Layer: 9
   m_Name: Calocybe Gambosa
   m_TagString: Mushroom
@@ -885,20 +885,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64818008521427842
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1234847931535562}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 1
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 741e2e9fdc152124aa068ed37883c12a, type: 3}
 --- !u!114 &114009102164496814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2530,6 +2516,19 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
+--- !u!136 &136984126407968866
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1234847931535562}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.09
+  m_Height: 0.38
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.18, z: 0}
 --- !u!222 &222032394902741572
 CanvasRenderer:
   m_ObjectHideFlags: 1

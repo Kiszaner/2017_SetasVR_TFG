@@ -737,12 +737,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4720639176246726}
   - component: {fileID: 54424149325158390}
-  - component: {fileID: 64181131379551722}
   - component: {fileID: 114080272654001830}
   - component: {fileID: 114881791221050024}
   - component: {fileID: 114550325963891184}
   - component: {fileID: 114529661579345688}
   - component: {fileID: 114186523415435318}
+  - component: {fileID: 114664251395848132}
   m_Layer: 9
   m_Name: Lepista Nuda
   m_TagString: Mushroom
@@ -885,20 +885,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64181131379551722
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1951909397114006}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 1
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: e05bfe9bea416fd41ac455ac4284020e, type: 3}
 --- !u!114 &114012655474823716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1984,6 +1970,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundCross: {fileID: 1666531287856016}
+--- !u!114 &114664251395848132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1951909397114006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df1f1f21b553524e9679d198532fd59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  properties:
+    convex: 1
+    isTrigger: 0
+    material: {fileID: 0}
+    colliderType: 2
+    centre: {x: 0, y: 0.12, z: 0}
+    rotation: {x: 180, y: 0, z: 8.05}
+    size: {x: 0.45, y: 0.25, z: 0.38}
+    flipFaces: 0
+    circleVertices: 16
+    circleTwoSided: 0
+    coneFaces: 6
+    coneCap: 1
+    coneHalfCapFlatEnd: 1
+    cubeTopFace: 1
+    cubeBottomFace: 1
+    cubeLeftFace: 1
+    cubeRightFace: 1
+    cubeForwardFace: 1
+    cubeBackFace: 1
+    cylinderFaces: 16
+    cylinderCapTop: 1
+    cylinderCapBottom: 1
+    cylinderTaperTop: {x: 1, y: 1}
+    cylinderTaperBottom: {x: 1, y: 1}
+    cylinderHalfCapFlatEnd: 1
+    quadTwoSided: 0
+    triangleTwoSided: 0
+    colour: {r: 0.5686275, g: 0.95686275, b: 0.54901963, a: 0.9372549}
 --- !u!114 &114670648615227100
 MonoBehaviour:
   m_ObjectHideFlags: 1
