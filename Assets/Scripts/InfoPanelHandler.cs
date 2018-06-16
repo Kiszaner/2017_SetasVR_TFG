@@ -6,13 +6,16 @@ using UnityEngine;
 public class InfoPanelHandler : MonoBehaviour
 {
     public GameObject InfoPanel;
-    private MoveablePhysicsObject MPO;
     public BaseActionTrigger informationPanelToggleTrigger;
+
+    private MoveablePhysicsObject MPO;
+    private MushroomInfo mushroomInfo;
 
     // Use this for initialization
     void Start ()
     {
         MPO = GetComponent<MoveablePhysicsObject>();
+        mushroomInfo = GetComponent<MushroomInfo>();
 	}
 	
 	// Update is called once per frame
@@ -23,6 +26,7 @@ public class InfoPanelHandler : MonoBehaviour
             if (informationPanelToggleTrigger.TriggerActive())
             {
                 InfoPanel.SetActive(!InfoPanel.activeSelf);
+                mushroomInfo.infoAlreadyColsulted = true;
             }
         }
         else if (MPO.State == BaseInteractiveObject.ObjectState.Released)

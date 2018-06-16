@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MushroomInfo : MonoBehaviour
 {
+    public bool infoAlreadyColsulted;
     public GameObject canvas;
     public MushroomScriptableObject Mushroom;
     public Text nameText;
@@ -36,7 +37,6 @@ public class MushroomInfo : MonoBehaviour
         IsDangerous.isOn = Mushroom.IsDangerous;
         IsDeadly.isOn = Mushroom.IsDeadly;
         IsUnknown.isOn = Mushroom.IsUnknown;
-        //EdibleText.text = Mushroom.IsEdible.ToString();
         SpeciesText.text = Mushroom.Species;
         if (Mushroom.Photos.Length != 0)
         {

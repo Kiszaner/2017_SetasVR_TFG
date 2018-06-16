@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using UBUSetasVR.EditorScripts;
 using UBUSetasVR.Placement;
 using UnityEngine;
 
-namespace UBUSetasVR
+namespace UBUSetasVR.Managers
 {
     [RequireComponent(typeof(CheckPlacementSet))]
     public class LevelManager : MonoBehaviour
@@ -79,12 +77,12 @@ namespace UBUSetasVR
             }
         }
 
-        private void MushroomInBasket(GameObject mushroom, bool success, int value)
+        private void MushroomInBasket(GameObject mushroom, bool success, int value, bool infoAlreadyConsulted)
         {
             Debug.Log("MushroomInBasket");
-            if (gameOver)
+            if (infoAlreadyConsulted || gameOver)
             {
-                Debug.Log("Game is over, no further conditions will be checked");
+                Debug.Log("Información consultada o fin del juego alcanzado");
                 Destroy(mushroom);
                 return;
             }

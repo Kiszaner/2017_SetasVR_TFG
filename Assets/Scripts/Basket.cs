@@ -6,7 +6,7 @@ using UnityEngine;
 public class Basket : MonoBehaviour
 {
     public bool IsGoodBasket;
-    public delegate void MushroomInBasket(GameObject mushroom, bool success, int value); 
+    public delegate void MushroomInBasket(GameObject mushroom, bool success, int value, bool consulted); 
     public static event MushroomInBasket OnMushroomInBasket;
 
     private void OnTriggerEnter(Collider other)
@@ -34,11 +34,11 @@ public class Basket : MonoBehaviour
             Debug.Log("Comestible o recomendada");
             if (IsGoodBasket)
             {
-                OnMushroomInBasket(mushroom, true, info.Mushroom.ScoreValue);
+                OnMushroomInBasket(mushroom, true, info.Mushroom.ScoreValue, info.infoAlreadyColsulted);
             }
             else
             {
-                OnMushroomInBasket(mushroom, false, info.Mushroom.ScoreValue);
+                OnMushroomInBasket(mushroom, false, info.Mushroom.ScoreValue, info.infoAlreadyColsulted);
             }
         }
         else
@@ -46,11 +46,11 @@ public class Basket : MonoBehaviour
             Debug.Log("Otra cosa");
             if (IsGoodBasket)
             {
-                OnMushroomInBasket(mushroom, false, info.Mushroom.ScoreValue);
+                OnMushroomInBasket(mushroom, false, info.Mushroom.ScoreValue, info.infoAlreadyColsulted);
             }
             else
             {
-                OnMushroomInBasket(mushroom, true, info.Mushroom.ScoreValue);
+                OnMushroomInBasket(mushroom, true, info.Mushroom.ScoreValue, info.infoAlreadyColsulted);
             }
         }
     }
