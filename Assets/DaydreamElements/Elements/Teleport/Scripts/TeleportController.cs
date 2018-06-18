@@ -1,4 +1,5 @@
 // Copyright 2017 Google Inc. All rights reserved.
+// Modified version by Rodrigo Jurado Pajares.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -13,6 +14,7 @@
 // limitations under the License.
 
 using System;
+using UBUSetasVR;
 using UnityEngine;
 
 namespace DaydreamElements.Teleport {
@@ -353,7 +355,7 @@ namespace DaydreamElements.Teleport {
 
         private bool IsCorrectInputMode()
         {
-            if (InputModeManager.currentInputMode == InputModeManager.InputMode.TELEPORT)
+            if (InputModeManager.currentInputMode == InputMode.TELEPORT)
             {
                 return true;
             }
@@ -361,7 +363,7 @@ namespace DaydreamElements.Teleport {
             return false;
         }
 
-        private void OnInputModeChange()
+        private void OnInputModeChange(InputMode inputMode)
         {
             EndTeleportSelection();
         }

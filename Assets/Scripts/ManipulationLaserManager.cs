@@ -1,37 +1,36 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using DaydreamElements.Teleport;
-using System;
+﻿using UnityEngine;
 
-public class ManipulationLaserManager : MonoBehaviour
+namespace UBUSetasVR
 {
-    public GameObject manipulationLaser;
-
-    private void OnEnable()
+    public class ManipulationLaserManager : MonoBehaviour
     {
-        InputModeManager.OnInputModeChange += OnInputModeChange;
-    }
+        public GameObject manipulationLaser;
 
-    private void OnDisable()
-    {
-        InputModeManager.OnInputModeChange -= OnInputModeChange;
-    }
-
-    private void OnInputModeChange()
-    {
-        ChangeLaserVisibility();
-    }
-
-    private void ChangeLaserVisibility()
-    {
-        if (InputModeManager.currentInputMode != InputModeManager.InputMode.MANIPULATION)
+        private void OnEnable()
         {
-            manipulationLaser.SetActive(false);
+            InputModeManager.OnInputModeChange += OnInputModeChange;
         }
-        else
+
+        private void OnDisable()
         {
-            manipulationLaser.SetActive(true);
+            InputModeManager.OnInputModeChange -= OnInputModeChange;
+        }
+
+        private void OnInputModeChange(InputMode inputMode)
+        {
+            ChangeLaserVisibility();
+        }
+
+        private void ChangeLaserVisibility()
+        {
+            if (InputModeManager.currentInputMode != InputMode.MANIPULATION)
+            {
+                manipulationLaser.SetActive(false);
+            }
+            else
+            {
+                manipulationLaser.SetActive(true);
+            }
         }
     }
 }

@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 23827414608974714}
   - component: {fileID: 114059396384218208}
   m_Layer: 0
-  m_Name: ObjectManipulationControllerTooltips
-  m_TagString: ManipulationElement
+  m_Name: TeleportControllerTooltips
+  m_TagString: TeleportElement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,7 +56,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3de82ed44a87b49479ed687ac38a68c0, type: 2}
+  - {fileID: 2100000, guid: c300ff0e38a1c7747a59fea62b554720, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,7 +82,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1049340049793362}
-  m_Mesh: {fileID: 4300008, guid: 797994a192189ec40896b931e93bd980, type: 3}
+  m_Mesh: {fileID: 4300008, guid: 1b2c81c2ad93a804cbae35492ce8672f, type: 3}
 --- !u!114 &114059396384218208
 MonoBehaviour:
   m_ObjectHideFlags: 1

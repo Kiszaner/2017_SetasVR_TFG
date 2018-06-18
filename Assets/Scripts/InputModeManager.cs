@@ -3,57 +3,61 @@ using System.Collections.Generic;
 using UnityEngine;
 using DaydreamElements.ObjectManipulation;
 
-public class InputModeManager : MonoBehaviour
+namespace UBUSetasVR
 {
-    public enum InputMode { MANIPULATION, TELEPORT};
-    public static InputMode currentInputMode;
-    /// Trigger used to switch to teleport input
-    [Tooltip("Trigger used to switch to teleport input")]
-    public BaseActionTrigger teleportStartTrigger;
-    public delegate void InputModeChange();
-    public static event InputModeChange OnInputModeChange;
-
-    /// Trigger used to switch to manipulation input
-    [Tooltip("Trigger used to switch to manipulation input")]
-    public BaseActionTrigger manipulationStartTrigger;
-
-    private InputMode previousInputMode;
-
-    // Update is called once per frame
-    void Update ()
+    public class InputModeManager : MonoBehaviour
     {
-        if (manipulationStartTrigger.TriggerActive())
+        public static InputMode currentInputMode;
+        /// Trigger used to switch to teleport input
+        [Tooltip("Trigger used to switch to teleport input")]
+        public BaseActionTrigger teleportStartTrigger;
+        public delegate void InputModeChange(InputMode newInputMode);
+        public static event InputModeChange OnInputModeChange;
+
+        /// Trigger used to switch to manipulation input
+        [Tooltip("Trigger used to switch to manipulation input")]
+        public BaseActionTrigger manipulationStartTrigger;
+
+        private InputMode previousInputMode;
+
+        // Update is called once per frame
+        void Update()
         {
-            if (previousInputMode != InputMode.MANIPULATION)
+            if (manipulationStartTrigger.TriggerActive())
             {
-                currentInputMode = InputMode.MANIPULATION;
-                previousInputMode = InputMode.MANIPULATION;
-                if (OnInputModeChange != null)
+                if (previousInputMode != InputMode.MANIPULATION)
                 {
-                    OnInputModeChange();
+                    currentInputMode = InputMode.MANIPULATION;
+                    previousInputMode = InputMode.MANIPULATION;
+                    if (OnInputModeChange != null)
+                    {
+                        OnInputModeChange(InputMode.MANIPULATION);
+                    }
                 }
+                return;
             }
-            return;
+            if (teleportStartTrigger.TriggerActive())
+            {
+                if (previousInputMode == InputMode.MANIPULATION)
+                {
+                    if (ObjectManipulationPointer.IsObjectSelected())
+                    {
+                        return;
+                    }
+                }
+                if (previousInputMode != InputMode.TELEPORT)
+                {
+                    currentInputMode = InputMode.TELEPORT;
+                    previousInputMode = InputMode.TELEPORT;
+                    if (OnInputModeChange != null)
+                    {
+                        OnInputModeChange(InputMode.TELEPORT);
+                    }
+                }
+                return;
+            }
         }
-        if (teleportStartTrigger.TriggerActive())
-        {
-            if(previousInputMode == InputMode.MANIPULATION)
-            {
-                if (ObjectManipulationPointer.IsObjectSelected())
-                {
-                    return;
-                }
-            }
-            if (previousInputMode != InputMode.TELEPORT)
-            {
-                currentInputMode = InputMode.TELEPORT;
-                previousInputMode = InputMode.TELEPORT;
-                if (OnInputModeChange != null)
-                {
-                    OnInputModeChange();
-                }
-            }
-            return;
-        }
-	}
+    }
+
+    public enum InputMode { MANIPULATION, TELEPORT };
 }
