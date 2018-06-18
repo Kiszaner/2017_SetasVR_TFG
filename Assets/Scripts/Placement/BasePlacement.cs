@@ -50,26 +50,21 @@ namespace UBUSetasVR.Placement
 
         protected GameObject SpawnTree(Transform hierarchyGroup)
         {
-            //Debug.Log("SpawnTree");
             Vector3 pos;
             Quaternion rot;
             GameObject tmp;
             RaycastHit hit;
             GameObject go = posibleTrees[Random.Range(0, posibleTrees.Length)];
             pos = Random.insideUnitCircle * treeRadius;
-            pos.Set(pos.x, 3f, pos.y);
-            //Debug.Log("InitialSpawnPos: " + pos);
+            pos.Set(pos.x, 30f, pos.y);
             rot = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
-            if (Physics.Raycast(pos, Vector3.down, out hit, Mathf.Infinity, LayerMask.GetMask("Floor")) ||
-                Physics.Raycast(pos, Vector3.up, out hit, Mathf.Infinity, LayerMask.GetMask("Floor")))
+            if (AuxiliarFunctions.RaycastDownToFloor(pos, out hit))
             {
-                //Debug.Log("TreeHit");
                 tmp = Instantiate(go, hit.point, rot);
             }
             else
             {
-                //Debug.Log("NoTreeHit");
-                //Debug.Log("TreePos: " + pos);
+                Debug.LogError("NoTreeHit. Tree pos below terrain. Assigning new pos with y=0. Further errors expected");
                 tmp = Instantiate(go, new Vector3(pos.x, 0f, pos.y), rot);
             }
             tmp.transform.SetParent(hierarchyGroup);

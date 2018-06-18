@@ -72,7 +72,7 @@ namespace UBUSetasVR
         public static Vector3 PickRandomPosAroundPoint(Vector3 point, float maxRadius, float minRadius = 0.1f)
         {
             Vector2 flatPos = GetRandomPointBetweenTwoCircles(minRadius, maxRadius);
-            Vector3 pos = new Vector3(point.x + flatPos.x, point.y, point.z + flatPos.y);
+            Vector3 pos = new Vector3(point.x + flatPos.x, 30f, point.z + flatPos.y);
             return pos;
         }
 
@@ -80,16 +80,21 @@ namespace UBUSetasVR
         {
             Vector3 pos = PickRandomPosAroundPoint(point, maxRadius, minRadius);
             if (terr == null) return pos;
-            Debug.Log("Pos: " + pos);
             RaycastHit hit;
-            if (Physics.Raycast(pos, Vector3.down, out hit, Mathf.Infinity, LayerMask.GetMask("Floor")) ||
-                Physics.Raycast(pos, Vector3.up, out hit, Mathf.Infinity, LayerMask.GetMask("Floor")))
+            if (RaycastDownToFloor(pos, out hit))
             {
-                Debug.Log("Hit");
-                Debug.Log("TerrPos: " + hit);
                 return hit.point;
             }
+            else
+            {
+                Debug.LogError("NoMushroomHit. Position below terrain. Position will change to 0,0,0. Further errors expected");
+            }
             return hit.point;
+        }
+
+        public static bool RaycastDownToFloor(Vector3 startingPoint, out RaycastHit hit)
+        {
+            return Physics.Raycast(startingPoint, Vector3.down, out hit, Mathf.Infinity, LayerMask.GetMask("Floor"));
         }
 
         /// <summary>
