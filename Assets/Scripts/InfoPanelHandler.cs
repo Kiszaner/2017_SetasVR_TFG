@@ -1,37 +1,38 @@
 ﻿using DaydreamElements.ObjectManipulation;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class InfoPanelHandler : MonoBehaviour
+namespace UBUSetasVR
 {
-    public GameObject InfoPanel;
-    public BaseActionTrigger informationPanelToggleTrigger;
-
-    private MoveablePhysicsObject MPO;
-    private MushroomInfo mushroomInfo;
-
-    // Use this for initialization
-    void Start ()
+    public class InfoPanelHandler : MonoBehaviour
     {
-        MPO = GetComponent<MoveablePhysicsObject>();
-        mushroomInfo = GetComponent<MushroomInfo>();
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        if (MPO.State == BaseInteractiveObject.ObjectState.Selected)
+        public GameObject InfoPanel;
+        public BaseActionTrigger informationPanelToggleTrigger;
+
+        private MoveablePhysicsObject MPO;
+        private MushroomInfo mushroomInfo;
+
+        // Use this for initialization
+        void Start()
         {
-            if (informationPanelToggleTrigger.TriggerActive())
+            MPO = GetComponent<MoveablePhysicsObject>();
+            mushroomInfo = GetComponent<MushroomInfo>();
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (MPO.State == BaseInteractiveObject.ObjectState.Selected)
             {
-                InfoPanel.SetActive(!InfoPanel.activeSelf);
-                mushroomInfo.infoAlreadyColsulted = true;
+                if (informationPanelToggleTrigger.TriggerActive())
+                {
+                    InfoPanel.SetActive(!InfoPanel.activeSelf);
+                    mushroomInfo.infoAlreadyColsulted = true;
+                }
+            }
+            else if (MPO.State == BaseInteractiveObject.ObjectState.Released)
+            {
+                InfoPanel.SetActive(false);
             }
         }
-        else if (MPO.State == BaseInteractiveObject.ObjectState.Released)
-        {
-            InfoPanel.SetActive(false);
-        }
-	}
+    }
 }

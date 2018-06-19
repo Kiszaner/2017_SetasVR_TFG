@@ -12,7 +12,7 @@ namespace UBUSetasVR.UI
         private Color c;
 
         // Use this for initialization
-        void Start()
+        protected virtual void Start()
         {
             graphic = transform.GetComponent<Graphic>();
             c = graphic.color;

@@ -1,56 +1,55 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Basket : MonoBehaviour
+namespace UBUSetasVR
 {
-    public bool IsGoodBasket;
-    public delegate void MushroomInBasket(GameObject mushroom, bool success, int value, bool consulted); 
-    public static event MushroomInBasket OnMushroomInBasket;
-
-    private void OnTriggerEnter(Collider other)
+    public class Basket : MonoBehaviour
     {
-        if (other.gameObject.CompareTag("Mushroom"))
-        {
-            GameObject mushroom = other.gameObject;
-            MushroomInfo info = mushroom.GetComponent<MushroomInfo>();
-            if(info != null)
-            {
-                CheckConditions(info, mushroom);
-                //Destroy(other.gameObject);
-            }
-        }
-        else
-        {
-            Debug.Log("No es una seta");
-        }
-    }
+        public bool IsGoodBasket;
+        public delegate void MushroomInBasket(GameObject mushroom, bool success, int value, bool consulted);
+        public static event MushroomInBasket OnMushroomInBasket;
 
-    private void CheckConditions(MushroomInfo info, GameObject mushroom)
-    {
-        if (info.Mushroom.IsEdible || info.Mushroom.IsRecommended)
+        private void OnTriggerEnter(Collider other)
         {
-            Debug.Log("Comestible o recomendada");
-            if (IsGoodBasket)
+            if (other.gameObject.CompareTag("Mushroom"))
             {
-                OnMushroomInBasket(mushroom, true, info.Mushroom.ScoreValue, info.infoAlreadyColsulted);
+                GameObject mushroom = other.gameObject;
+                MushroomInfo info = mushroom.GetComponent<MushroomInfo>();
+                if (info != null)
+                {
+                    CheckConditions(info, mushroom);
+                }
             }
             else
             {
-                OnMushroomInBasket(mushroom, false, info.Mushroom.ScoreValue, info.infoAlreadyColsulted);
+                Debug.Log("No es una seta");
             }
         }
-        else
+
+        private void CheckConditions(MushroomInfo info, GameObject mushroom)
         {
-            Debug.Log("Otra cosa");
-            if (IsGoodBasket)
+            if (info.Mushroom.IsEdible || info.Mushroom.IsRecommended)
             {
-                OnMushroomInBasket(mushroom, false, info.Mushroom.ScoreValue, info.infoAlreadyColsulted);
+                Debug.Log("Comestible o recomendada");
+                if (IsGoodBasket)
+                {
+                    OnMushroomInBasket(mushroom, true, info.Mushroom.ScoreValue, info.infoAlreadyColsulted);
+                }
+                else
+                {
+                    OnMushroomInBasket(mushroom, false, info.Mushroom.ScoreValue, info.infoAlreadyColsulted);
+                }
             }
             else
             {
-                OnMushroomInBasket(mushroom, true, info.Mushroom.ScoreValue, info.infoAlreadyColsulted);
+                Debug.Log("Otra cosa");
+                if (IsGoodBasket)
+                {
+                    OnMushroomInBasket(mushroom, false, info.Mushroom.ScoreValue, info.infoAlreadyColsulted);
+                }
+                else
+                {
+                    OnMushroomInBasket(mushroom, true, info.Mushroom.ScoreValue, info.infoAlreadyColsulted);
+                }
             }
         }
     }

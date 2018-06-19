@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Database.DataStructures
+namespace UBUSetasVR.Database.DataStructures
 {
     public class Mushroom
     {

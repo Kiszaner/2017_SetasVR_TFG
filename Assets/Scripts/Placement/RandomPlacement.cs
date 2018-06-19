@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UBUSetasVR;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace UBUSetasVR.Placement

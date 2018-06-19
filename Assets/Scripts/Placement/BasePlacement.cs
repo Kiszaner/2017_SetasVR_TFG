@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace UBUSetasVR.Placement
 {
-
     public abstract class BasePlacement : MonoBehaviour
     {
         [Header("General placement settings")]

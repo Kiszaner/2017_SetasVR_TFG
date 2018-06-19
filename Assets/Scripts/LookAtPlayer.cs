@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace UBUSetasVR
 {
     public class LookAtPlayer : MonoBehaviour
     {
-        GameObject player;
+        private GameObject player;
+
         // Use this for initialization
         void Start()
         {

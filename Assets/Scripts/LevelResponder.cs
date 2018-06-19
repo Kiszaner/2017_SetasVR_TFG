@@ -3,69 +3,72 @@ using DaydreamElements.ObjectManipulation;
 using DaydreamElements.Teleport;
 using UnityEngine.Assertions;
 
-public class LevelResponder : BaseLevelSelectResponder
+namespace UBUSetasVR
 {
-    private GvrTrackedController controller;
-    private TeleportController teleport;
-    private ObjectManipulationPointer pointer;
-
-    public override void OnMenuOpened()
+    public class LevelResponder : BaseLevelSelectResponder
     {
-        SetTeleportModeEnabled(false);
-        SetObjectManipulationEnabled(false);
-    }
+        private GvrTrackedController controller;
+        private TeleportController teleport;
+        private ObjectManipulationPointer pointer;
 
-    public override void OnMenuClosed()
-    {
-        SetTeleportModeEnabled(true);
-        SetObjectManipulationEnabled(true);
-    }
-
-    void Start()
-    {
-        bool mimicsRes = false;
-        controller = SceneHelpers.FindObjectOfType<GvrTrackedController>(true);
-        Assert.IsNotNull(controller);
-        teleport = SceneHelpers.FindObjectOfType<TeleportController>(true);
-        Assert.IsNotNull(teleport);
-        pointer = controller.GetComponentInChildren<ObjectManipulationPointer>(true);
-        Assert.IsNotNull(pointer);
-        mimicsRes = FindObjectsOfType<MainCameraMimic>().UpdateMainCameraRef();
-        Assert.IsTrue(mimicsRes);
-    }
-
-    void Update()
-    {
-        if (teleport == null)
+        public override void OnMenuOpened()
         {
-            return;
+            SetTeleportModeEnabled(false);
+            SetObjectManipulationEnabled(false);
         }
 
-        if (LevelSelectController.Instance == null)
+        public override void OnMenuClosed()
         {
-            return;
+            SetTeleportModeEnabled(true);
+            SetObjectManipulationEnabled(true);
         }
 
-        bool isTeleporting = teleport.IsSelectingTeleportLocation || teleport.IsTeleporting;
-        LevelSelectController.Instance.enabled = !isTeleporting;
-    }
-
-    private void SetTeleportModeEnabled(bool enabled)
-    {
-        controller.gameObject.SetActive(enabled);
-
-        if (teleport != null)
+        void Start()
         {
-            teleport.gameObject.SetActive(enabled);
+            bool mimicsRes = false;
+            controller = SceneHelpers.FindObjectOfType<GvrTrackedController>(true);
+            Assert.IsNotNull(controller);
+            teleport = SceneHelpers.FindObjectOfType<TeleportController>(true);
+            Assert.IsNotNull(teleport);
+            pointer = controller.GetComponentInChildren<ObjectManipulationPointer>(true);
+            Assert.IsNotNull(pointer);
+            mimicsRes = FindObjectsOfType<MainCameraMimic>().UpdateMainCameraRef();
+            Assert.IsTrue(mimicsRes);
         }
-    }
 
-    private void SetObjectManipulationEnabled(bool enabled)
-    {
-        controller.gameObject.SetActive(enabled);
-        if (enabled)
+        void Update()
         {
-            GvrPointerInputModule.Pointer = pointer;
+            if (teleport == null)
+            {
+                return;
+            }
+
+            if (LevelSelectController.Instance == null)
+            {
+                return;
+            }
+
+            bool isTeleporting = teleport.IsSelectingTeleportLocation || teleport.IsTeleporting;
+            LevelSelectController.Instance.enabled = !isTeleporting;
+        }
+
+        private void SetTeleportModeEnabled(bool enabled)
+        {
+            controller.gameObject.SetActive(enabled);
+
+            if (teleport != null)
+            {
+                teleport.gameObject.SetActive(enabled);
+            }
+        }
+
+        private void SetObjectManipulationEnabled(bool enabled)
+        {
+            controller.gameObject.SetActive(enabled);
+            if (enabled)
+            {
+                GvrPointerInputModule.Pointer = pointer;
+            }
         }
     }
 }

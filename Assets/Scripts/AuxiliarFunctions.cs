@@ -1,12 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace UBUSetasVR
 {
     public static class AuxiliarFunctions
     {
-
         public static string FirstUpper(string s)
         {
             return char.ToUpper(s[0]) + s.Substring(1);

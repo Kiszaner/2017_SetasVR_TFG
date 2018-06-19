@@ -1,8 +1,4 @@
-﻿/// <summary>
-/// Makes an image spin during loading
-/// </summary>
-
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace UBUSetasVR.UI
 {

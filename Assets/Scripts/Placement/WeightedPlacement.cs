@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UBUSetasVR;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace UBUSetasVR.Placement
@@ -74,12 +72,6 @@ namespace UBUSetasVR.Placement
             // Choose posible mushrooms to spawn in this group of trees (random at the moment)
             mushroomsProbabilities = posibleMushrooms.GetProbabilities();
             mushroomsChosen = ChooseSet(mushroomsProbabilities, maxMushroomChosen);
-            int i = 0;
-            foreach (Mushroom mush in mushroomsChosen)
-            {
-                Debug.Log("Chosen " + i + ": " + mush.prefab.name);
-                i++;
-            }
             if (mushroomsChosen.Length < 1) return;
 
             // Run through trees from the group
@@ -90,12 +82,6 @@ namespace UBUSetasVR.Placement
                 spawnPoints = GetPointsAround(tree.transform.position, spawnMaxRadius, spawnMinRadius, pointsAroundTrees);
 
                 spawnPointsChosen = AuxiliarFunctions.RandomPickWithoutRepetition(spawnPoints, maxPointsChosen);
-                i = 0;
-                foreach (Vector3 vec3 in spawnPointsChosen)
-                {
-                    //Debug.Log("Chosen " + i + ": " + vec3);
-                    i++;
-                }
                 foreach (Vector3 vec3 in spawnPointsChosen)
                 {
                     // Choose a mushroom index (or not) from chosen mushrooms to spawn in the point
@@ -186,7 +172,7 @@ namespace UBUSetasVR.Placement
                 if (Random.value <= prob)
                 {
                     numToChoose--;
-                    result[numToChoose] = posibleMushrooms[numLeft - 1]; //probabilities[numLeft - 1];
+                    result[numToChoose] = posibleMushrooms[numLeft - 1];
                 }
             }
             return result;
