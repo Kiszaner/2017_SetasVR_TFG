@@ -23,12 +23,15 @@ public class LevelResponder : BaseLevelSelectResponder
 
     void Start()
     {
+        bool mimicsRes = false;
         controller = SceneHelpers.FindObjectOfType<GvrTrackedController>(true);
         Assert.IsNotNull(controller);
         teleport = SceneHelpers.FindObjectOfType<TeleportController>(true);
         Assert.IsNotNull(teleport);
         pointer = controller.GetComponentInChildren<ObjectManipulationPointer>(true);
         Assert.IsNotNull(pointer);
+        mimicsRes = FindObjectsOfType<MainCameraMimic>().UpdateMainCameraRef();
+        Assert.IsTrue(mimicsRes);
     }
 
     void Update()

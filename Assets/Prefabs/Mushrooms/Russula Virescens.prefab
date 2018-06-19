@@ -1455,6 +1455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df86f08069334747a61c788f886abe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infoAlreadyColsulted: 0
   canvas: {fileID: 1542188086843028}
   Mushroom: {fileID: 11400000, guid: 28c7500838206af49a9e163b02d3d498, type: 2}
   nameText: {fileID: 114321669485593948}
@@ -1714,14 +1715,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   automaticallyAssignPointer: 1
   controlTransform: {fileID: 0}
-  minDistance: 1
-  maxDistance: 2
+  minDistance: 0.1
+  maxDistance: 3
   maintainFacing: 1
   rotationOnTouch: 1
   resetPhysicsOnDrop: 1
   distanceIncrementOnSwipe: 0.5
-  distanceFromControllerMin: 0.2
-  distanceFromControllerMax: 1.5
+  distanceFromControllerMin: 0.1
+  distanceFromControllerMax: 3
   rotationOnTouchSpeed: 2
   camera: {fileID: 0}
 --- !u!114 &114591530733214786

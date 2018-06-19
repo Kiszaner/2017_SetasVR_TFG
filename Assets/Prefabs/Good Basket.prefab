@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd397c611730760458a416e0856da28c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsGoodBasket: 0
+  IsGoodBasket: 1
 --- !u!222 &222460079942935690
 CanvasRenderer:
   m_ObjectHideFlags: 1

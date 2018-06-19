@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UBUSetasVR.Managers;
 using UBUSetasVR.Placement;
 using UnityEngine;
 
-namespace UBUSetasVR
+namespace UBUSetasVR.EditorScripts
 {
     [ExecuteInEditMode]
     public class CheckPlacementSet : MonoBehaviour

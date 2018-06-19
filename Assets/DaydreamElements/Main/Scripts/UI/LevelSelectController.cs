@@ -1,4 +1,5 @@
 ﻿// Copyright 2017 Google Inc. All rights reserved.
+// Modified version by Rodrigo Jurado Pajares.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -63,6 +64,9 @@ namespace DaydreamElements.Main {
     private Camera levelSelectCamera;
 
     [SerializeField]
+    private Camera loadingLevelCamera;
+
+    [SerializeField]
     private GameObject pointer;
 
     [SerializeField]
@@ -103,7 +107,19 @@ namespace DaydreamElements.Main {
       }
     }
 
-    public GameObject LevelSelectPointer {
+    public Camera LoadingLevelCamera
+    {
+       get
+       {
+         return loadingLevelCamera;
+       }
+       set
+       {
+         loadingLevelCamera = value;
+       }
+    }
+
+        public GameObject LevelSelectPointer {
       get {
         return pointer;
       }
@@ -150,6 +166,8 @@ namespace DaydreamElements.Main {
     public void PreFadeToLevel() {
       isTransitioningLevel = true;
       EventSystem.current.enabled = false;
+      LevelSelectCamera.enabled = false;
+      LoadingLevelCamera.enabled = true;
     }
 
     public void PreLoadLevel() {
@@ -160,10 +178,13 @@ namespace DaydreamElements.Main {
 
     public void PostLoadLevel() {
       CloseMenuImmediate();
+      LoadingLevelCamera.enabled = false;
+      //LoadingLevelCamera = GameObject.FindGameObjectWithTag("LoadingLevelCamera").GetComponent<Camera>();
     }
 
     public void PostFadeToLevel() {
       isTransitioningLevel = false;
+      LoadingLevelCamera.enabled = false;
     }
 
     void Awake() {

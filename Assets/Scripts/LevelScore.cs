@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using UBUSetasVR.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UBUSetasVR
+namespace UBUSetasVR.UI
 {
     public class LevelScore : MonoBehaviour
     {

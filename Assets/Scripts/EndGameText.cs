@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using UBUSetasVR.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UBUSetasVR
+namespace UBUSetasVR.UI
 {
     [RequireComponent(typeof(Canvas))]
     public class EndGameText : MonoBehaviour
@@ -15,6 +13,11 @@ namespace UBUSetasVR
         private void OnEnable()
         {
             LevelManager.OnGameOver += OnGameIsOver;
+        }
+
+        private void OnDisable()
+        {
+            LevelManager.OnGameOver -= OnGameIsOver;
         }
 
         private void OnGameIsOver(bool isPlayerWinner, string endGameMessage)
