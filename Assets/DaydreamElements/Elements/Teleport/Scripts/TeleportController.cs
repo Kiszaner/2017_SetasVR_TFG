@@ -14,7 +14,7 @@
 // limitations under the License.
 
 using System;
-using UBUSetasVR;
+using UBUSetasVR.Managers;
 using UnityEngine;
 
 namespace DaydreamElements.Teleport {
@@ -39,6 +39,8 @@ namespace DaydreamElements.Teleport {
     /// Player tracking.
     [Tooltip("Player transform to move when teleporting")]
     public Transform player;
+
+    public float playerHeight = 1.8f;
 
     /// Controller transform.
     [Tooltip("Controller transform used for tracking tilt angle")]
@@ -138,7 +140,9 @@ namespace DaydreamElements.Teleport {
       if (transition == null) {
         transition = GetComponent<BaseTeleportTransition>();
       }
-    }
+      float startingHeight = DetectPlayerHeight();
+      player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + (playerHeight - startingHeight), player.transform.position.z);
+        }
 
         private void OnEnable()
         {

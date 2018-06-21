@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace UBUSetasVR
+namespace UBUSetasVR.UI
 {
     [RequireComponent(typeof(Toggle))]
     public class ToggleSwitch : MonoBehaviour

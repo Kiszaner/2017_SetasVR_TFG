@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using DaydreamElements.ObjectManipulation;
 
-namespace UBUSetasVR
+namespace UBUSetasVR.Managers
 {
     public class InputModeManager : MonoBehaviour
     {

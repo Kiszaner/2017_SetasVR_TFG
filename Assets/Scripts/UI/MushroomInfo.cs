@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using UBUSetasVR.ScriptableObjects;
 
-namespace UBUSetasVR
+namespace UBUSetasVR.UI
 {
     public class MushroomInfo : MonoBehaviour
     {

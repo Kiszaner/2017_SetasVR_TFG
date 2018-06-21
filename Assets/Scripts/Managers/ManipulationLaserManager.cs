@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace UBUSetasVR
+namespace UBUSetasVR.Managers
 {
     public class ManipulationLaserManager : MonoBehaviour
     {
