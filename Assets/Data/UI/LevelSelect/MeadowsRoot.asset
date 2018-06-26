@@ -14,5 +14,5 @@ MonoBehaviour:
   sceneAsset: {fileID: 0}
   sceneAssetName: 
   displayName: Praderas
-  backgroundSprite: {fileID: 21300000, guid: 926636374e487462ab79414418ed54d8, type: 3}
+  backgroundSprite: {fileID: 21300000, guid: 0867e1a6dab7a474a9a9b7dadabbefc8, type: 3}
   levelSelectResponderPrefab: {fileID: 0}

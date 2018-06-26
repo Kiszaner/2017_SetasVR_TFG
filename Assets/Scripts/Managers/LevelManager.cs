@@ -17,13 +17,15 @@ namespace UBUSetasVR.Managers
         public int maxNumTries = 6;
         public bool targetScoreEnabled = true;
         public bool timeLimitEnabled = true;
-        private bool numSuccessEnabled = true;
-        private bool numMushroomsEnable = true;
+        public bool numSuccessEnabled = true;
+        //private bool numMushroomsEnable = true;
         public bool maxTriesEnabled = true;
         public delegate void ScoreUpdateDelegate(int value);
         public static event ScoreUpdateDelegate OnScoreUpdated;
-        public delegate void GameOverDelegate(bool isPlayerWinner, string endGameText);
+        public delegate void GameOverDelegate(bool isPlayerWinner, string endGameText, int score);
         public static event GameOverDelegate OnGameOver;
+        public delegate void ObjectivesUpdateDelegate(bool score, float objectiveScore, bool success, int objectiveSuccess, bool time, float objectiveTime);
+        public static event ObjectivesUpdateDelegate OnObjectivesUpdate;
 
         private BasePlacement placer;
         [SerializeField]
@@ -54,6 +56,10 @@ namespace UBUSetasVR.Managers
             if (autoPlaceEnvironment)
             {
                 placer.RepeatAllPlacement();
+            }
+            if (OnObjectivesUpdate != null)
+            {
+                OnObjectivesUpdate(targetScoreEnabled, targetScore, numSuccessEnabled, targetNumSuccess, timeLimitEnabled, timeLimit);
             }
         }
 
@@ -155,15 +161,6 @@ namespace UBUSetasVR.Managers
                     PlayerWin();
                 }
             }
-            if (numMushroomsEnable)
-            {
-                if (currentNumMushrooms >= targetNumMushrooms)
-                {
-                    Debug.Log("Target num of mushrooms reached!");
-                    endGameText = "Encontradas todas las setas necesarias";
-                    PlayerWin();
-                }
-            }
         }
 
         private void CheckLoseConditions()
@@ -206,7 +203,7 @@ namespace UBUSetasVR.Managers
             GameOver();
             if (OnGameOver != null)
             {
-                OnGameOver(isPlayerWinner, endGameText);
+                OnGameOver(isPlayerWinner, endGameText, currentScore);
             }
         }
     }

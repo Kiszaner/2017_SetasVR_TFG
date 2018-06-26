@@ -20,14 +20,14 @@ namespace UBUSetasVR.UI
             LevelManager.OnGameOver -= OnGameIsOver;
         }
 
-        private void OnGameIsOver(bool isPlayerWinner, string endGameMessage)
+        private void OnGameIsOver(bool isPlayerWinner, string endGameMessage, int score)
         {
             if (endGameTextParent != null)
             {
                 endGameTextParent.SetActive(true);
             }
             endGameText.gameObject.SetActive(true);
-            endGameText.text = endGameMessage;
+            endGameText.text = endGameMessage + ".\n\n Puntuación alcanzada: " + score; ;
             if (isPlayerWinner)
             {
                 endGameText.color = Color.green;

@@ -54,7 +54,7 @@ namespace UBUSetasVR.Placement
             RaycastHit hit;
             GameObject go = posibleTrees[Random.Range(0, posibleTrees.Length)];
             pos = Random.insideUnitCircle * treeRadius;
-            pos.Set(pos.x, 30f, pos.y);
+            pos.Set(pos.x + transform.position.x, 30f, pos.y + transform.position.z);
             rot = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
             if (AuxiliarFunctions.RaycastDownToFloor(pos, out hit))
             {
