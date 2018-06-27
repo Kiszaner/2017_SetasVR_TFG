@@ -38,6 +38,8 @@ namespace UBUSetasVR.EditorScripts
         {
             Texture[] texturesArray = textures.ToArray();
             mushScrObj.Photos = AuxiliarFunctions.RandomPickWithoutRepetition(texturesArray, 4);
+            EditorUtility.SetDirty(mushScrObj);
+            AssetDatabase.SaveAssets();
         }
     }
 }
