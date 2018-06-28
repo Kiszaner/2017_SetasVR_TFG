@@ -5,5 +5,9 @@
 ## Acerca de UBUSetasVR
 Este proyecto trata sobre la realización de un videojuego de Realidad Virtual para dispositivos móviles Android de alta gama utilizando la plataforma Daydream de Google para entornos de Realidad Virtual. El juego consiste en la recogida de diferentes especies reales de setas en entornos de bosques ficticios, haciendo uso de una base de datos con información acerca de las setas. Esta base de datos contendrá aspectos como la descripción, el género o las propiedades comestibles de las setas, y con esta información el jugador deberá catalogar las setas según ciertos parámetros y sumará o restará puntos en base a si ha acertado o ha fallado con sus decisiones. El juego tiene como objetivo ser una herramienta complementaria de aprendizaje sobre micología. Para su realización se ha utilizado la herramienta de creación de videojuegos Unity3D.
 
+<img src="https://raw.githubusercontent.com/Kiszaner/2017_SetasVR_TFG/master/Documentacion/Imagenes/Capturas/Coleccion setas.png" width="70%">
+<img src="https://raw.githubusercontent.com/Kiszaner/2017_SetasVR_TFG/master/Documentacion/Imagenes/Capturas/Bosque.png" width="70%">
+<img src="https://raw.githubusercontent.com/Kiszaner/2017_SetasVR_TFG/master/Documentacion/Imagenes/Capturas/Bosque_03.png" width="70%">
+
 ## Autor
 Rodrigo Jurado Pajares
