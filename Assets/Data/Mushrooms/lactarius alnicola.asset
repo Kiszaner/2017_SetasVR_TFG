@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 609482df5d76f204d94f8aab99586d83, type: 3}
+  m_Name: lactarius alnicola
+  m_EditorClassIdentifier: 
+  Name: lactarius alnicola
+  Description: "\"Lactarius alnicola, com\xFAnmente conocida como la lechera dorada,
+    es una especie de hongo de la familia Russulaceae. Los cuerpos frutales producidos
+    por el hongo se caracterizan por un tap\xF3n pegajoso de color vainilla de hasta
+    20 cm (7.9 in) de ancho con una mezcla de amarillo "
+  Species: Lactarius
+  ScoreValue: 5
+  IsEdible: 0
+  IsNotEdible: 1
+  IsRecommended: 0
+  IsPsycotropic: 0
+  IsPoisonous: 0
+  IsDangerous: 0
+  IsDeadly: 0
+  IsUnknown: 0
+  Photos: []

@@ -1,0 +1,2097 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DynamicHelp xmlns="http://msdn.microsoft.com/vsdata/xsd/vsdh.xsd" xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance" xsi:schemaLocation="http://msdn.microsoft.com/vsdata/xsd/vsdh.xsd">	
+   <LINKGROUP ID="2017_SetasVR_TFG" Title="UBUSetasVR Documentation Help" Priority="2100">
+      <GLYPH Expanded="vs:/ctxhelp_show.gif" Collapsed="vs:/ctxhelp_hide.gif"/>
+   </LINKGROUP>
+
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.AlphaFader" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000B2.html" LinkGroup="2017_SetasVR_TFG">AlphaFader (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.AuxiliarFunctions" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000001.html" LinkGroup="2017_SetasVR_TFG">AuxiliarFunctions (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.BasketsManager.BadBasketPrefab" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000041.html" LinkGroup="2017_SetasVR_TFG">BadBasketPrefab (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.BasePlacement" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000069.html" LinkGroup="2017_SetasVR_TFG">BasePlacement (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Basket" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000000B.html" LinkGroup="2017_SetasVR_TFG">Basket (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.BasketsManager.Baskets" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000043.html" LinkGroup="2017_SetasVR_TFG">Baskets (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.BasketsManager" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000003F.html" LinkGroup="2017_SetasVR_TFG">BasketsManager (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.BasketsManager.BasketsPositions" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000042.html" LinkGroup="2017_SetasVR_TFG">BasketsPositions (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.CameraCulling" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000000F.html" LinkGroup="2017_SetasVR_TFG">CameraCulling (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.FaddingTeleportTransition.CancelTransition" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000031.html" LinkGroup="2017_SetasVR_TFG">CancelTransition (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.AuxiliarFunctions.CheckObjectsAround" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000004.html" LinkGroup="2017_SetasVR_TFG">CheckObjectsAround (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.EditorScripts.CheckPlacementSet" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000012.html" LinkGroup="2017_SetasVR_TFG">CheckPlacementSet (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.RandomPlacement.Clear" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000082.html" LinkGroup="2017_SetasVR_TFG">Clear (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.BasePlacement.ClearList" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000079.html" LinkGroup="2017_SetasVR_TFG">ClearList (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.BasePlacement.ClearLists" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000078.html" LinkGroup="2017_SetasVR_TFG">ClearLists (Método) {UBUSetasVR.Placement.BasePlacement}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.WeightedPlacement.ClearLists" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000091.html" LinkGroup="2017_SetasVR_TFG">ClearLists (Método) {UBUSetasVR.Placement.WeightedPlacement}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Database.DataService.DBName" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000016.html" LinkGroup="2017_SetasVR_TFG">DBName (Propiedad)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Database.DataService" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000014.html" LinkGroup="2017_SetasVR_TFG">DataService (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.ScriptableObjects.MushroomScriptableObject.DataToScriptable" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000AA.html" LinkGroup="2017_SetasVR_TFG">DataToScriptable (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.ScriptableObjects.MushroomScriptableObject.Description" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000009E.html" LinkGroup="2017_SetasVR_TFG">Description (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.MushroomInfo.DescriptionText" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000C3.html" LinkGroup="2017_SetasVR_TFG">DescriptionText (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.BasePlacement.DestroyGameObject" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000007A.html" LinkGroup="2017_SetasVR_TFG">DestroyGameObject (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.DrawCircleGizmo" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000029.html" LinkGroup="2017_SetasVR_TFG">DrawCircleGizmo (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.AuxiliarFunctions.DrawCircleGizmo" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000005.html" LinkGroup="2017_SetasVR_TFG">DrawCircleGizmo (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.EndGameText" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000B6.html" LinkGroup="2017_SetasVR_TFG">EndGameText (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.BasketsManager.EnvironmentMask" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000045.html" LinkGroup="2017_SetasVR_TFG">EnvironmentMask (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.FaddingTeleportTransition" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000002C.html" LinkGroup="2017_SetasVR_TFG">FaddingTeleportTransition (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.AuxiliarFunctions.FirstUpper" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000002.html" LinkGroup="2017_SetasVR_TFG">FirstUpper (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.AlphaFader.FixedUpdate" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000B5.html" LinkGroup="2017_SetasVR_TFG">FixedUpdate (Método) {UBUSetasVR.UI.AlphaFader}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.LoadAnimationWithFader.FixedUpdate" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000BD.html" LinkGroup="2017_SetasVR_TFG">FixedUpdate (Método) {UBUSetasVR.UI.LoadAnimationWithFader}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.BasketsManager.FloorMask" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000044.html" LinkGroup="2017_SetasVR_TFG">FloorMask (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.LevelManager.GameOverDelegate" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000005E.html" LinkGroup="2017_SetasVR_TFG">GameOverDelegate (Delegado)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Database.DataService.GetMushroomByName" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000018.html" LinkGroup="2017_SetasVR_TFG">GetMushroomByName (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Database.DataService.GetMushrooms" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000019.html" LinkGroup="2017_SetasVR_TFG">GetMushrooms (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.MushroomExtension.GetPrefabs" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000098.html" LinkGroup="2017_SetasVR_TFG">GetPrefabs (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.MushroomExtension.GetProbabilities" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000097.html" LinkGroup="2017_SetasVR_TFG">GetProbabilities (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.AuxiliarFunctions.GetRandomPointBetweenTwoCircles" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000009.html" LinkGroup="2017_SetasVR_TFG">GetRandomPointBetweenTwoCircles (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.AuxiliarFunctions.GetRandomVector3Between" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000000A.html" LinkGroup="2017_SetasVR_TFG">GetRandomVector3Between (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.BasketsManager.GoodBasketPrefab" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000040.html" LinkGroup="2017_SetasVR_TFG">GoodBasketPrefab (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.InfoPanelHandler.InfoPanel" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000033.html" LinkGroup="2017_SetasVR_TFG">InfoPanel (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.InfoPanelHandler" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000032.html" LinkGroup="2017_SetasVR_TFG">InfoPanelHandler (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.InputMode" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000004E.html" LinkGroup="2017_SetasVR_TFG">InputMode (Enumeración)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.InputModeManager.InputModeChange" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000004B.html" LinkGroup="2017_SetasVR_TFG">InputModeChange (Delegado)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.InputModeManager" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000048.html" LinkGroup="2017_SetasVR_TFG">InputModeManager (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Database.DataService.Instance" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000015.html" LinkGroup="2017_SetasVR_TFG">Instance (Propiedad)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.ScriptableObjects.MushroomScriptableObject.IsDangerous" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000A6.html" LinkGroup="2017_SetasVR_TFG">IsDangerous (Campo) {UBUSetasVR.ScriptableObjects.MushroomScriptableObject}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.MushroomInfo.IsDangerous" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000C9.html" LinkGroup="2017_SetasVR_TFG">IsDangerous (Campo) {UBUSetasVR.UI.MushroomInfo}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.ScriptableObjects.MushroomScriptableObject.IsDeadly" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000A7.html" LinkGroup="2017_SetasVR_TFG">IsDeadly (Campo) {UBUSetasVR.ScriptableObjects.MushroomScriptableObject}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.MushroomInfo.IsDeadly" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000CA.html" LinkGroup="2017_SetasVR_TFG">IsDeadly (Campo) {UBUSetasVR.UI.MushroomInfo}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.ScriptableObjects.MushroomScriptableObject.IsEdible" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000A1.html" LinkGroup="2017_SetasVR_TFG">IsEdible (Campo) {UBUSetasVR.ScriptableObjects.MushroomScriptableObject}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.MushroomInfo.IsEdible" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000C4.html" LinkGroup="2017_SetasVR_TFG">IsEdible (Campo) {UBUSetasVR.UI.MushroomInfo}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Basket.IsGoodBasket" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000000C.html" LinkGroup="2017_SetasVR_TFG">IsGoodBasket (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.ScriptableObjects.MushroomScriptableObject.IsNotEdible" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000A2.html" LinkGroup="2017_SetasVR_TFG">IsNotEdible (Campo) {UBUSetasVR.ScriptableObjects.MushroomScriptableObject}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.MushroomInfo.IsNotEdible" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000C5.html" LinkGroup="2017_SetasVR_TFG">IsNotEdible (Campo) {UBUSetasVR.UI.MushroomInfo}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.ScriptableObjects.MushroomScriptableObject.IsPoisonous" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000A5.html" LinkGroup="2017_SetasVR_TFG">IsPoisonous (Campo) {UBUSetasVR.ScriptableObjects.MushroomScriptableObject}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.MushroomInfo.IsPoisonous" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000C8.html" LinkGroup="2017_SetasVR_TFG">IsPoisonous (Campo) {UBUSetasVR.UI.MushroomInfo}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.ScriptableObjects.MushroomScriptableObject.IsPsycotropic" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000A4.html" LinkGroup="2017_SetasVR_TFG">IsPsycotropic (Campo) {UBUSetasVR.ScriptableObjects.MushroomScriptableObject}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.MushroomInfo.IsPsycotropic" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000C7.html" LinkGroup="2017_SetasVR_TFG">IsPsycotropic (Campo) {UBUSetasVR.UI.MushroomInfo}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.ScriptableObjects.MushroomScriptableObject.IsRecommended" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000A3.html" LinkGroup="2017_SetasVR_TFG">IsRecommended (Campo) {UBUSetasVR.ScriptableObjects.MushroomScriptableObject}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.MushroomInfo.IsRecommended" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000C6.html" LinkGroup="2017_SetasVR_TFG">IsRecommended (Campo) {UBUSetasVR.UI.MushroomInfo}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.FaddingTeleportTransition.IsTransitioning" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000002F.html" LinkGroup="2017_SetasVR_TFG">IsTransitioning (Propiedad)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.ScriptableObjects.MushroomScriptableObject.IsUnknown" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000A8.html" LinkGroup="2017_SetasVR_TFG">IsUnknown (Campo) {UBUSetasVR.ScriptableObjects.MushroomScriptableObject}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.MushroomInfo.IsUnknown" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000CB.html" LinkGroup="2017_SetasVR_TFG">IsUnknown (Campo) {UBUSetasVR.UI.MushroomInfo}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.LevelManager" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000051.html" LinkGroup="2017_SetasVR_TFG">LevelManager (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.LevelResponder" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000035.html" LinkGroup="2017_SetasVR_TFG">LevelResponder (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.LevelScore" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000B9.html" LinkGroup="2017_SetasVR_TFG">LevelScore (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.LoadAnimationWithFader" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000BB.html" LinkGroup="2017_SetasVR_TFG">LoadAnimationWithFader (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.LookAtPlayer" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000038.html" LinkGroup="2017_SetasVR_TFG">LookAtPlayer (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.MainCameraMimic" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000039.html" LinkGroup="2017_SetasVR_TFG">MainCameraMimic (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.MainCameraMimicExtension" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000003C.html" LinkGroup="2017_SetasVR_TFG">MainCameraMimicExtension (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.ManipulationLaserManager" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000065.html" LinkGroup="2017_SetasVR_TFG">ManipulationLaserManager (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.MushroomInfo.Mushroom" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000C1.html" LinkGroup="2017_SetasVR_TFG">Mushroom (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Database.DataStructures.Mushroom" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000001B.html" LinkGroup="2017_SetasVR_TFG">Mushroom (Clase) {UBUSetasVR.Database.DataStructures}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.WeightedPlacement.Mushroom" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000093.html" LinkGroup="2017_SetasVR_TFG">Mushroom (Clase) {UBUSetasVR.Placement.WeightedPlacement}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Database.DataStructures.Mushroom.Mushroom" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000027.html" LinkGroup="2017_SetasVR_TFG">Mushroom (Constructor)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.MushroomExtension" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000096.html" LinkGroup="2017_SetasVR_TFG">MushroomExtension (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Basket.MushroomInBasket" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000000D.html" LinkGroup="2017_SetasVR_TFG">MushroomInBasket (Delegado)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.MushroomInfo" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000BE.html" LinkGroup="2017_SetasVR_TFG">MushroomInfo (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.ScriptableObjects.MushroomList" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000009A.html" LinkGroup="2017_SetasVR_TFG">MushroomList (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.RandomPlacement.MushroomPlacement" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000084.html" LinkGroup="2017_SetasVR_TFG">MushroomPlacement (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.ScriptableObjects.MushroomScriptableObject" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000009C.html" LinkGroup="2017_SetasVR_TFG">MushroomScriptableObject (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.ScriptableObjects.MushroomScriptableObject.Name" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000009D.html" LinkGroup="2017_SetasVR_TFG">Name (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.ObjectivesText" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000CE.html" LinkGroup="2017_SetasVR_TFG">ObjectivesText (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.LevelManager.ObjectivesUpdateDelegate" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000060.html" LinkGroup="2017_SetasVR_TFG">ObjectivesUpdateDelegate (Delegado)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.BasePlacement.OnDrawGizmosSelected" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000074.html" LinkGroup="2017_SetasVR_TFG">OnDrawGizmosSelected (Método) {UBUSetasVR.Placement.BasePlacement}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.RandomPlacement.OnDrawGizmosSelected" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000007E.html" LinkGroup="2017_SetasVR_TFG">OnDrawGizmosSelected (Método) {UBUSetasVR.Placement.RandomPlacement}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.BasePlacement.OnEnable" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000073.html" LinkGroup="2017_SetasVR_TFG">OnEnable (Método) {UBUSetasVR.Placement.BasePlacement}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.WeightedPlacement.OnEnable" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000008F.html" LinkGroup="2017_SetasVR_TFG">OnEnable (Método) {UBUSetasVR.Placement.WeightedPlacement}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.LevelManager.OnGameOver" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000005F.html" LinkGroup="2017_SetasVR_TFG">OnGameOver (Evento)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.InputModeManager.OnInputModeChange" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000004C.html" LinkGroup="2017_SetasVR_TFG">OnInputModeChange (Evento)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.LevelResponder.OnMenuClosed" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000037.html" LinkGroup="2017_SetasVR_TFG">OnMenuClosed (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.LevelResponder.OnMenuOpened" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000036.html" LinkGroup="2017_SetasVR_TFG">OnMenuOpened (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Basket.OnMushroomInBasket" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000000E.html" LinkGroup="2017_SetasVR_TFG">OnMushroomInBasket (Evento)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.LevelManager.OnObjectivesUpdate" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000061.html" LinkGroup="2017_SetasVR_TFG">OnObjectivesUpdate (Evento)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.LevelManager.OnScoreUpdated" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000005D.html" LinkGroup="2017_SetasVR_TFG">OnScoreUpdated (Evento)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.ScriptableObjects.MushroomScriptableObject.Photos" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000A9.html" LinkGroup="2017_SetasVR_TFG">Photos (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.MushroomInfo.PhotosTexture" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000CD.html" LinkGroup="2017_SetasVR_TFG">PhotosTexture (Campo)</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.AuxiliarFunctions.PickRandomPosAroundPoint" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000006_overloads--.html" LinkGroup="2017_SetasVR_TFG">PickRandomPosAroundPoint (Método)</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.AuxiliarFunctions.PickRandomPosAroundPoint" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000007_overloads--.html" LinkGroup="2017_SetasVR_TFG">PickRandomPosAroundPoint (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.PlacementType" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000062.html" LinkGroup="2017_SetasVR_TFG">PlacementType (Enumeración)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.AuxiliarFunctions.RandomPickWithoutRepetition<T>" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000003.html" LinkGroup="2017_SetasVR_TFG">RandomPickWithoutRepetition<T> (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.RandomPlacement" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000007B.html" LinkGroup="2017_SetasVR_TFG">RandomPlacement (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.AuxiliarFunctions.RaycastDownToFloor" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000008.html" LinkGroup="2017_SetasVR_TFG">RaycastDownToFloor (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.BasePlacement.RepeatAllPlacement" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000075.html" LinkGroup="2017_SetasVR_TFG">RepeatAllPlacement (Método) {UBUSetasVR.Placement.BasePlacement}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.RandomPlacement.RepeatAllPlacement" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000007F.html" LinkGroup="2017_SetasVR_TFG">RepeatAllPlacement (Método) {UBUSetasVR.Placement.RandomPlacement}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.WeightedPlacement.RepeatAllPlacement" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000092.html" LinkGroup="2017_SetasVR_TFG">RepeatAllPlacement (Método) {UBUSetasVR.Placement.WeightedPlacement}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.RandomPlacement.RepeatMushroomsPlacement" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000081.html" LinkGroup="2017_SetasVR_TFG">RepeatMushroomsPlacement (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.RandomPlacement.RepeatTreesPlacement" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000080.html" LinkGroup="2017_SetasVR_TFG">RepeatTreesPlacement (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.LevelScore.ScoreText" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000BA.html" LinkGroup="2017_SetasVR_TFG">ScoreText (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.LevelManager.ScoreUpdateDelegate" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000005C.html" LinkGroup="2017_SetasVR_TFG">ScoreUpdateDelegate (Delegado)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.ScriptableObjects.MushroomScriptableObject.ScoreValue" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000A0.html" LinkGroup="2017_SetasVR_TFG">ScoreValue (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.TouchpadVerticalSideTouchingTrigger.Side" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000AC.html" LinkGroup="2017_SetasVR_TFG">Side (Enumeración)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.BasePlacement.SpawnMushroom" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000076.html" LinkGroup="2017_SetasVR_TFG">SpawnMushroom (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.BasePlacement.SpawnTree" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000077.html" LinkGroup="2017_SetasVR_TFG">SpawnTree (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.ScriptableObjects.MushroomScriptableObject.Species" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000009F.html" LinkGroup="2017_SetasVR_TFG">Species (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.MushroomInfo.SpeciesText" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000CC.html" LinkGroup="2017_SetasVR_TFG">SpeciesText (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Database.DataService.Start" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000017.html" LinkGroup="2017_SetasVR_TFG">Start (Método) {UBUSetasVR.Database.DataService}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.AlphaFader.Start" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000B4.html" LinkGroup="2017_SetasVR_TFG">Start (Método) {UBUSetasVR.UI.AlphaFader}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.FaddingTeleportTransition.StartTransition" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000030.html" LinkGroup="2017_SetasVR_TFG">StartTransition (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Database.DataStructures.Mushroom.ToString" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000028.html" LinkGroup="2017_SetasVR_TFG">ToString (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.ToggleSwitch" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000D4.html" LinkGroup="2017_SetasVR_TFG">ToggleSwitch (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.TooltipManager" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000067.html" LinkGroup="2017_SetasVR_TFG">TooltipManager (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.TouchpadVerticalSideTouchingTrigger" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000AB.html" LinkGroup="2017_SetasVR_TFG">TouchpadVerticalSideTouchingTrigger (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.RandomPlacement.TreePlacement" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000083.html" LinkGroup="2017_SetasVR_TFG">TreePlacement (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.WeightedPlacement.TreesPlacement" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000090.html" LinkGroup="2017_SetasVR_TFG">TreesPlacement (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.TouchpadVerticalSideTouchingTrigger.TriggerActive" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000B0.html" LinkGroup="2017_SetasVR_TFG">TriggerActive (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000000.html" LinkGroup="2017_SetasVR_TFG">UBUSetasVR (Espacio de nombres)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR Documentation" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000D6.html" LinkGroup="2017_SetasVR_TFG">UBUSetasVR Documentation</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Database" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000013.html" LinkGroup="2017_SetasVR_TFG">UBUSetasVR.Database (Espacio de nombres)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Database.DataStructures" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000001A.html" LinkGroup="2017_SetasVR_TFG">UBUSetasVR.Database.DataStructures (Espacio de nombres)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.EditorScripts" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000011.html" LinkGroup="2017_SetasVR_TFG">UBUSetasVR.EditorScripts (Espacio de nombres)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000003E.html" LinkGroup="2017_SetasVR_TFG">UBUSetasVR.Managers (Espacio de nombres)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000068.html" LinkGroup="2017_SetasVR_TFG">UBUSetasVR.Placement (Espacio de nombres)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.ScriptableObjects" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000099.html" LinkGroup="2017_SetasVR_TFG">UBUSetasVR.ScriptableObjects (Espacio de nombres)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000B1.html" LinkGroup="2017_SetasVR_TFG">UBUSetasVR.UI (Espacio de nombres)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.MainCameraMimic.UpdateCameraRef" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000003B.html" LinkGroup="2017_SetasVR_TFG">UpdateCameraRef (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.MainCameraMimicExtension.UpdateMainCameraRef" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000003D.html" LinkGroup="2017_SetasVR_TFG">UpdateMainCameraRef (Método)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.WeightedPlacement" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000085.html" LinkGroup="2017_SetasVR_TFG">WeightedPlacement (Clase)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.LevelManager.autoPlaceEnvironment" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000052.html" LinkGroup="2017_SetasVR_TFG">autoPlaceEnvironment (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.ToggleSwitch.backgroundCross" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000D5.html" LinkGroup="2017_SetasVR_TFG">backgroundCross (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.MushroomInfo.canvas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000C0.html" LinkGroup="2017_SetasVR_TFG">canvas (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.BasketsManager.checkObjectsRadius" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000046.html" LinkGroup="2017_SetasVR_TFG">checkObjectsRadius (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.InputModeManager.currentInputMode" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000049.html" LinkGroup="2017_SetasVR_TFG">currentInputMode (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Database.DataStructures.Mushroom.description" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000001D.html" LinkGroup="2017_SetasVR_TFG">description (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.CameraCulling.distance" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000010.html" LinkGroup="2017_SetasVR_TFG">distance (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.BasePlacement.drawDebugRadius" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000006F.html" LinkGroup="2017_SetasVR_TFG">drawDebugRadius (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.EndGameText.endGameText" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000B7.html" LinkGroup="2017_SetasVR_TFG">endGameText (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.EndGameText.endGameTextParent" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000B8.html" LinkGroup="2017_SetasVR_TFG">endGameTextParent (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.FaddingTeleportTransition.fader" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000002E.html" LinkGroup="2017_SetasVR_TFG">fader (Campo) {UBUSetasVR.FaddingTeleportTransition}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.AlphaFader.fader" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000B3.html" LinkGroup="2017_SetasVR_TFG">fader (Campo) {UBUSetasVR.UI.AlphaFader}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.DrawCircleGizmo.firstRadius" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000002A.html" LinkGroup="2017_SetasVR_TFG">firstRadius (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.MushroomInfo.infoAlreadyColsulted" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000BF.html" LinkGroup="2017_SetasVR_TFG">infoAlreadyColsulted (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.InfoPanelHandler.informationPanelToggleTrigger" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000034.html" LinkGroup="2017_SetasVR_TFG">informationPanelToggleTrigger (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.BasePlacement.instantiatedMushrooms" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000072.html" LinkGroup="2017_SetasVR_TFG">instantiatedMushrooms (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.BasePlacement.instantiatedTrees" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000071.html" LinkGroup="2017_SetasVR_TFG">instantiatedTrees (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Database.DataStructures.Mushroom.isDangerous" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000024.html" LinkGroup="2017_SetasVR_TFG">isDangerous (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Database.DataStructures.Mushroom.isDeadly" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000025.html" LinkGroup="2017_SetasVR_TFG">isDeadly (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Database.DataStructures.Mushroom.isEdible" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000001F.html" LinkGroup="2017_SetasVR_TFG">isEdible (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Database.DataStructures.Mushroom.isNotEdible" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000020.html" LinkGroup="2017_SetasVR_TFG">isNotEdible (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Database.DataStructures.Mushroom.isPoisonous" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000023.html" LinkGroup="2017_SetasVR_TFG">isPoisonous (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Database.DataStructures.Mushroom.isPsycotropic" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000022.html" LinkGroup="2017_SetasVR_TFG">isPsycotropic (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Database.DataStructures.Mushroom.isRecommended" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000021.html" LinkGroup="2017_SetasVR_TFG">isRecommended (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Database.DataStructures.Mushroom.isUnknown" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000026.html" LinkGroup="2017_SetasVR_TFG">isUnknown (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.MainCameraMimic.mainCamera" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000003A.html" LinkGroup="2017_SetasVR_TFG">mainCamera (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.ManipulationLaserManager.manipulationLaser" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000066.html" LinkGroup="2017_SetasVR_TFG">manipulationLaser (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.InputModeManager.manipulationStartTrigger" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000004D.html" LinkGroup="2017_SetasVR_TFG">manipulationStartTrigger (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.WeightedPlacement.maxMushroomChosen" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000089.html" LinkGroup="2017_SetasVR_TFG">maxMushroomChosen (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.BasePlacement.maxNumMushroomsSpawned" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000070.html" LinkGroup="2017_SetasVR_TFG">maxNumMushroomsSpawned (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.LevelManager.maxNumTries" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000057.html" LinkGroup="2017_SetasVR_TFG">maxNumTries (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.WeightedPlacement.maxPointsChosen" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000008D.html" LinkGroup="2017_SetasVR_TFG">maxPointsChosen (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.LevelManager.maxTriesEnabled" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000005B.html" LinkGroup="2017_SetasVR_TFG">maxTriesEnabled (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.BasePlacement.mushroomContainer" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000006C.html" LinkGroup="2017_SetasVR_TFG">mushroomContainer (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.ScriptableObjects.MushroomList.mushroomList" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000009B.html" LinkGroup="2017_SetasVR_TFG">mushroomList (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.RandomPlacement.mushroomRadius" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000007D.html" LinkGroup="2017_SetasVR_TFG">mushroomRadius (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Database.DataStructures.Mushroom.name" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000001C.html" LinkGroup="2017_SetasVR_TFG">name (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.MushroomInfo.nameText" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000C2.html" LinkGroup="2017_SetasVR_TFG">nameText (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.LevelManager.numSuccessEnabled" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000005A.html" LinkGroup="2017_SetasVR_TFG">numSuccessEnabled (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.BasePlacement.numberOfTrees" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000006D.html" LinkGroup="2017_SetasVR_TFG">numberOfTrees (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.ObjectivesText.objectivesPanel" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000CF.html" LinkGroup="2017_SetasVR_TFG">objectivesPanel (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.ObjectivesText.objectivesText" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000D0.html" LinkGroup="2017_SetasVR_TFG">objectivesText (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.BasketsManager.pickPointRadius" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000047.html" LinkGroup="2017_SetasVR_TFG">pickPointRadius (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.WeightedPlacement.pointsAroundTrees" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000008C.html" LinkGroup="2017_SetasVR_TFG">pointsAroundTrees (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.RandomPlacement.posibleMushrooms" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000007C.html" LinkGroup="2017_SetasVR_TFG">posibleMushrooms (Campo) {UBUSetasVR.Placement.RandomPlacement}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.WeightedPlacement.posibleMushrooms" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000087.html" LinkGroup="2017_SetasVR_TFG">posibleMushrooms (Campo) {UBUSetasVR.Placement.WeightedPlacement}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.BasePlacement.posibleTrees" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000006A.html" LinkGroup="2017_SetasVR_TFG">posibleTrees (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.WeightedPlacement.Mushroom.prefab" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000094.html" LinkGroup="2017_SetasVR_TFG">prefab (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.WeightedPlacement.Mushroom.probability" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000095.html" LinkGroup="2017_SetasVR_TFG">probability (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.ObjectivesText.scoreObjectiveString" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000D1.html" LinkGroup="2017_SetasVR_TFG">scoreObjectiveString (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.DrawCircleGizmo.secondRadius" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000002B.html" LinkGroup="2017_SetasVR_TFG">secondRadius (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.TouchpadVerticalSideTouchingTrigger.side" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000AF.html" LinkGroup="2017_SetasVR_TFG">side (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.WeightedPlacement.spawnMaxRadius" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000008B.html" LinkGroup="2017_SetasVR_TFG">spawnMaxRadius (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.WeightedPlacement.spawnMinRadius" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000008A.html" LinkGroup="2017_SetasVR_TFG">spawnMinRadius (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Database.DataStructures.Mushroom.species" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000001E.html" LinkGroup="2017_SetasVR_TFG">species (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.ObjectivesText.successObjectiveString" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000D2.html" LinkGroup="2017_SetasVR_TFG">successObjectiveString (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.LevelManager.targetNumMushrooms" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000056.html" LinkGroup="2017_SetasVR_TFG">targetNumMushrooms (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.LevelManager.targetNumSuccess" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000055.html" LinkGroup="2017_SetasVR_TFG">targetNumSuccess (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.LevelManager.targetScore" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000053.html" LinkGroup="2017_SetasVR_TFG">targetScore (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.LevelManager.targetScoreEnabled" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000058.html" LinkGroup="2017_SetasVR_TFG">targetScoreEnabled (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.InputModeManager.teleportStartTrigger" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000004A.html" LinkGroup="2017_SetasVR_TFG">teleportStartTrigger (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.WeightedPlacement.terrainUsed" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000086.html" LinkGroup="2017_SetasVR_TFG">terrainUsed (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.LevelManager.timeLimit" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000054.html" LinkGroup="2017_SetasVR_TFG">timeLimit (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Managers.LevelManager.timeLimitEnabled" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000059.html" LinkGroup="2017_SetasVR_TFG">timeLimitEnabled (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.ObjectivesText.timeObjectiveString" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000D3.html" LinkGroup="2017_SetasVR_TFG">timeObjectiveString (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.FaddingTeleportTransition.transitionSpeed" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000002D.html" LinkGroup="2017_SetasVR_TFG">transitionSpeed (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.BasePlacement.treeContainer" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000006B.html" LinkGroup="2017_SetasVR_TFG">treeContainer (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.WeightedPlacement.treeGroupsList" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000008E.html" LinkGroup="2017_SetasVR_TFG">treeGroupsList (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.BasePlacement.treeRadius" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_000000000000006E.html" LinkGroup="2017_SetasVR_TFG">treeRadius (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.Placement.WeightedPlacement.treesPerGroup" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_0000000000000088.html" LinkGroup="2017_SetasVR_TFG">treesPerGroup (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="UBUSetasVR.UI.LoadAnimationWithFader.turnSpeed" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:2017_SetasVR_TFG.chm::/topic_00000000000000BC.html" LinkGroup="2017_SetasVR_TFG">turnSpeed (Campo)</LItem>
+      </Links>
+   </Context>
+   
+
+</DynamicHelp>
+

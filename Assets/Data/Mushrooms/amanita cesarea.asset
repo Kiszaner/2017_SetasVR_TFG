@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 609482df5d76f204d94f8aab99586d83, type: 3}
+  m_Name: amanita cesarea
+  m_EditorClassIdentifier: 
+  Name: amanita cesarea
+  Description: "Brota de forma aislada a gregaria en bosques de caducifolios.\nEs
+    una especie term\xF3fila, que aparece a principios de oto\xF1o o en pleno verano,
+    pero siempre despu\xE9s de tormentas abundantes y repetidas. \nComo necesita calor
+    para su crecimiento, seg\xFAn avanza el oto\xF1o desaparece en zonas de climas
+    menos templados."
+  Species: Amanita
+  ScoreValue: 5
+  IsEdible: 1
+  IsNotEdible: 0
+  IsRecommended: 0
+  IsPsycotropic: 0
+  IsPoisonous: 0
+  IsDangerous: 0
+  IsDeadly: 0
+  IsUnknown: 0
+  Photos: []

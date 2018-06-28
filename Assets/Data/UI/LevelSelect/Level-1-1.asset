@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8465ac6a4bb547dd97116832e098653, type: 3}
+  m_Name: Level-1-1
+  m_EditorClassIdentifier: 
+  sceneAsset: {fileID: 102900000, guid: 995dba4ce740a4b42aa04316555e0747, type: 3}
+  sceneAssetName: Nivel 1-1
+  displayName: Nivel 1-1
+  backgroundSprite: {fileID: 21300000, guid: 405dbc4eeb0ac364f8cf80e35e807186, type: 3}
+  levelSelectResponderPrefab: {fileID: 1079647992188152, guid: 0b6c10bc2d9fe9f48af1532debff736a,
+    type: 2}

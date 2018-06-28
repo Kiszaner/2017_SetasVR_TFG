@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 609482df5d76f204d94f8aab99586d83, type: 3}
+  m_Name: russula turci
+  m_EditorClassIdentifier: 
+  Name: russula turci
+  Description: "Especie que crece en pinares, principalmente en pinares de repoblaci\xF3n.
+    Suele salir en oto\xF1o. Se diferencia de otras Russulas violeta en su acusado
+    olor a yodo y tener su sombrero adornado"
+  Species: Russula
+  ScoreValue: 5
+  IsEdible: 1
+  IsNotEdible: 0
+  IsRecommended: 0
+  IsPsycotropic: 0
+  IsPoisonous: 0
+  IsDangerous: 0
+  IsDeadly: 0
+  IsUnknown: 0
+  Photos: []

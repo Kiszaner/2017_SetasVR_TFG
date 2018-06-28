@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 609482df5d76f204d94f8aab99586d83, type: 3}
+  m_Name: pleurotus eryngii
+  m_EditorClassIdentifier: 
+  Name: pleurotus eryngii
+  Description: "Com\xFAnmente denominada \"Seta de Cardo\". Es un hongo basidiomiceto.
+    Se desarrolla unida a la ra\xEDces en fase de descomposici\xF3n de ciertos cardos, "
+  Species: Pleurotus
+  ScoreValue: 5
+  IsEdible: 1
+  IsNotEdible: 0
+  IsRecommended: 0
+  IsPsycotropic: 0
+  IsPoisonous: 0
+  IsDangerous: 0
+  IsDeadly: 0
+  IsUnknown: 0
+  Photos: []

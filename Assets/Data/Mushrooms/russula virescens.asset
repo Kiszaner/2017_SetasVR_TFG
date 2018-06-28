@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 609482df5d76f204d94f8aab99586d83, type: 3}
+  m_Name: russula virescens
+  m_EditorClassIdentifier: 
+  Name: russula virescens
+  Description: "\"Russula virescens es una seta basidiomicete del g\xE9nero Russula,
+    y se la conoce com\xFAnmente como la rusula verde, la roulula verde acolchada
+    o la brittlegill verde. Puede reconocerse por su distintivo gorro verde p\xE1lido
+    que mide hasta 15 cm (6 in "
+  Species: Russula
+  ScoreValue: 5
+  IsEdible: 0
+  IsNotEdible: 0
+  IsRecommended: 1
+  IsPsycotropic: 0
+  IsPoisonous: 0
+  IsDangerous: 0
+  IsDeadly: 0
+  IsUnknown: 0
+  Photos: []

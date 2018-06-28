@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 609482df5d76f204d94f8aab99586d83, type: 3}
+  m_Name: calocybe gambosa
+  m_EditorClassIdentifier: 
+  Name: calocybe gambosa
+  Description: "Com\xFAnmente denominada perro chico, seta de San Jorge o seta de
+    primavera.Fructifica en primavera en suelos humificados, h\xFAmedos y no contaminados.
+    \nAparece bajo espinos, endrinos y otros arbustos. Siempre en grupos, abundantemente
+    en cada mata."
+  Species: Calocybe
+  ScoreValue: 5
+  IsEdible: 1
+  IsNotEdible: 0
+  IsRecommended: 0
+  IsPsycotropic: 0
+  IsPoisonous: 0
+  IsDangerous: 0
+  IsDeadly: 0
+  IsUnknown: 0
+  Photos: []

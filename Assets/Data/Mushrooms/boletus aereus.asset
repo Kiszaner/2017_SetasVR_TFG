@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 609482df5d76f204d94f8aab99586d83, type: 3}
+  m_Name: boletus aereus
+  m_EditorClassIdentifier: 
+  Name: boletus aereus
+  Description: "Com\xFAnmente denominada Hongo Negro. Es una especie que sale en \xE1rboles
+    de hoja caduca, como por ejemplo casta\xF1o, roble o haya, \nadem\xE1s de en encinares
+    y alcornocales. Es bastante term\xF3fila, por lo que gusta de salir en los meses
+    estivales o en principio del oto\xF1o. \nAdaptada al clima mediterr\xE1neo, es
+    abundante en algunas regiones."
+  Species: Boletus
+  ScoreValue: 5
+  IsEdible: 1
+  IsNotEdible: 0
+  IsRecommended: 0
+  IsPsycotropic: 0
+  IsPoisonous: 0
+  IsDangerous: 0
+  IsDeadly: 0
+  IsUnknown: 0
+  Photos: []
