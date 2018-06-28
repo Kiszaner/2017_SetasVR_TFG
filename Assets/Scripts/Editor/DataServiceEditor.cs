@@ -64,7 +64,7 @@ namespace UBUSetasVR.EditorScripts
             {
                 MushroomScriptableObject asset = CreateInstance<MushroomScriptableObject>();
                 asset.DataToScriptable(mushroom);
-                AssetDatabase.CreateAsset(asset, "Assets/Data/Mushrooms/" + mushroom.Name + ".asset");
+                AssetDatabase.CreateAsset(asset, "Assets/Data/Mushrooms/" + mushroom.name + ".asset");
                 return asset;
             }
 

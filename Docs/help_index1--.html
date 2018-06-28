@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Index</title>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type">
+	<style>
+		html,body {
+			margin: 0; padding: 0px;
+			height:100%; 
+			min-height:100%;
+			background-color: rgb(233,232,220);
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			font-style: normal;
+			font-weight: normal;
+			color: black;
+		}
+
+		body {font-size:75%;position:relative; margin-top:-1px; border-style: solid solid solid solid;	border-color: rgb(172,168,153);	border-width: 0px 0px 1px 0px;}
+		a { text-decoration:none; color:#06c }
+		form {padding:5px; margin:0px;}
+	</style>
+</head>
+<body style="direction: ltr;">
+	<form>
+	Look for:<br /><input style="width:100%" onKeyDown="check_input(this.value,get_match)" onKeyUp="check_input(this.value,get_match)"/>
+	</form>
+
+	<script>
+		var words = new Array(
+"AlphaFader (Clase)","AuxiliarFunctions (Clase)","BadBasketPrefab (Campo)","BasePlacement (Clase)","Basket (Clase)","Baskets (Campo)","BasketsManager (Clase)","BasketsPositions (Campo)","CameraCulling (Clase)","CancelTransition (Método)","CheckObjectsAround (Método)","CheckPlacementSet (Clase)","Clear (Método)","ClearList (Método)","ClearLists (Método) {UBUSetasVR.Placement.BasePlacement}","ClearLists (Método) {UBUSetasVR.Placement.WeightedPlacement}","DBName (Propiedad)","DataService (Clase)","DataToScriptable (Método)","Description (Campo)","DescriptionText (Campo)","DestroyGameObject (Método)","DrawCircleGizmo (Clase)","DrawCircleGizmo (Método)","EndGameText (Clase)","EnvironmentMask (Campo)","FaddingTeleportTransition (Clase)","FirstUpper (Método)","FixedUpdate (Método) {UBUSetasVR.UI.AlphaFader}","FixedUpdate (Método) {UBUSetasVR.UI.LoadAnimationWithFader}","FloorMask (Campo)","GameOverDelegate (Delegado)","GetMushroomByName (Método)","GetMushrooms (Método)","GetPrefabs (Método)","GetProbabilities (Método)","GetRandomPointBetweenTwoCircles (Método)","GetRandomVector3Between (Método)","GoodBasketPrefab (Campo)","InfoPanel (Campo)","InfoPanelHandler (Clase)","InputMode (Enumeración)","InputModeChange (Delegado)","InputModeManager (Clase)","Instance (Propiedad)","IsDangerous (Campo) {UBUSetasVR.ScriptableObjects.MushroomScriptableObject}","IsDangerous (Campo) {UBUSetasVR.UI.MushroomInfo}","IsDeadly (Campo) {UBUSetasVR.ScriptableObjects.MushroomScriptableObject}","IsDeadly (Campo) {UBUSetasVR.UI.MushroomInfo}","IsEdible (Campo) {UBUSetasVR.ScriptableObjects.MushroomScriptableObject}","IsEdible (Campo) {UBUSetasVR.UI.MushroomInfo}","IsGoodBasket (Campo)","IsNotEdible (Campo) {UBUSetasVR.ScriptableObjects.MushroomScriptableObject}","IsNotEdible (Campo) {UBUSetasVR.UI.MushroomInfo}","IsPoisonous (Campo) {UBUSetasVR.ScriptableObjects.MushroomScriptableObject}","IsPoisonous (Campo) {UBUSetasVR.UI.MushroomInfo}","IsPsycotropic (Campo) {UBUSetasVR.ScriptableObjects.MushroomScriptableObject}","IsPsycotropic (Campo) {UBUSetasVR.UI.MushroomInfo}","IsRecommended (Campo) {UBUSetasVR.ScriptableObjects.MushroomScriptableObject}","IsRecommended (Campo) {UBUSetasVR.UI.MushroomInfo}","IsTransitioning (Propiedad)","IsUnknown (Campo) {UBUSetasVR.ScriptableObjects.MushroomScriptableObject}","IsUnknown (Campo) {UBUSetasVR.UI.MushroomInfo}","LevelManager (Clase)","LevelResponder (Clase)","LevelScore (Clase)","LoadAnimationWithFader (Clase)","LookAtPlayer (Clase)","MainCameraMimic (Clase)","MainCameraMimicExtension (Clase)","ManipulationLaserManager (Clase)","Mushroom (Campo)","Mushroom (Clase) {UBUSetasVR.Database.DataStructures}","Mushroom (Clase) {UBUSetasVR.Placement.WeightedPlacement}","Mushroom (Constructor)","MushroomExtension (Clase)","MushroomInBasket (Delegado)","MushroomInfo (Clase)","MushroomList (Clase)","MushroomPlacement (Método)","MushroomScriptableObject (Clase)","Name (Campo)","ObjectivesText (Clase)","ObjectivesUpdateDelegate (Delegado)","OnDrawGizmosSelected (Método) {UBUSetasVR.Placement.BasePlacement}","OnDrawGizmosSelected (Método) {UBUSetasVR.Placement.RandomPlacement}","OnEnable (Método) {UBUSetasVR.Placement.BasePlacement}","OnEnable (Método) {UBUSetasVR.Placement.WeightedPlacement}","OnGameOver (Evento)","OnInputModeChange (Evento)","OnMenuClosed (Método)","OnMenuOpened (Método)","OnMushroomInBasket (Evento)","OnObjectivesUpdate (Evento)","OnScoreUpdated (Evento)","Photos (Campo)","PhotosTexture (Campo)","PickRandomPosAroundPoint (Vector3, Single, Single) (Método)","PickRandomPosAroundPoint (Vector3, Single, Terrain, Single) (Método)","PlacementType (Enumeración)","RandomPickWithoutRepetition&lt;T&gt; (Método)","RandomPlacement (Clase)","RaycastDownToFloor (Método)","RepeatAllPlacement (Método) {UBUSetasVR.Placement.BasePlacement}","RepeatAllPlacement (Método) {UBUSetasVR.Placement.RandomPlacement}","RepeatAllPlacement (Método) {UBUSetasVR.Placement.WeightedPlacement}","RepeatMushroomsPlacement (Método)","RepeatTreesPlacement (Método)","ScoreText (Campo)","ScoreUpdateDelegate (Delegado)","ScoreValue (Campo)","Side (Enumeración)","SpawnMushroom (Método)","SpawnTree (Método)","Species (Campo)","SpeciesText (Campo)","Start (Método) {UBUSetasVR.Database.DataService}","Start (Método) {UBUSetasVR.UI.AlphaFader}","StartTransition (Método)","ToString (Método)","ToggleSwitch (Clase)","TooltipManager (Clase)","TouchpadVerticalSideTouchingTrigger (Clase)","TreePlacement (Método)","TreesPlacement (Método)","TriggerActive (Método)","UBUSetasVR (Espacio de nombres)","UBUSetasVR Documentation","UBUSetasVR.Database (Espacio de nombres)","UBUSetasVR.Database.DataStructures (Espacio de nombres)","UBUSetasVR.EditorScripts (Espacio de nombres)","UBUSetasVR.Managers (Espacio de nombres)","UBUSetasVR.Placement (Espacio de nombres)","UBUSetasVR.ScriptableObjects (Espacio de nombres)","UBUSetasVR.UI (Espacio de nombres)","UpdateCameraRef (Método)","UpdateMainCameraRef (Método)","WeightedPlacement (Clase)","autoPlaceEnvironment (Campo)","backgroundCross (Campo)","canvas (Campo)","checkObjectsRadius (Campo)","currentInputMode (Campo)","description (Campo)","distance (Campo)","drawDebugRadius (Campo)","endGameText (Campo)","endGameTextParent (Campo)","fader (Campo) {UBUSetasVR.FaddingTeleportTransition}","fader (Campo) {UBUSetasVR.UI.AlphaFader}","firstRadius (Campo)","infoAlreadyColsulted (Campo)","informationPanelToggleTrigger (Campo)","instantiatedMushrooms (Campo)","instantiatedTrees (Campo)","isDangerous (Campo)","isDeadly (Campo)","isEdible (Campo)","isNotEdible (Campo)","isPoisonous (Campo)","isPsycotropic (Campo)","isRecommended (Campo)","isUnknown (Campo)","mainCamera (Campo)","manipulationLaser (Campo)","manipulationStartTrigger (Campo)","maxMushroomChosen (Campo)","maxNumMushroomsSpawned (Campo)","maxNumTries (Campo)","maxPointsChosen (Campo)","maxTriesEnabled (Campo)","mushroomContainer (Campo)","mushroomList (Campo)","mushroomRadius (Campo)","name (Campo)","nameText (Campo)","numSuccessEnabled (Campo)","numberOfTrees (Campo)","objectivesPanel (Campo)","objectivesText (Campo)","pickPointRadius (Campo)","pointsAroundTrees (Campo)","posibleMushrooms (Campo) {UBUSetasVR.Placement.RandomPlacement}","posibleMushrooms (Campo) {UBUSetasVR.Placement.WeightedPlacement}","posibleTrees (Campo)","prefab (Campo)","probability (Campo)","scoreObjectiveString (Campo)","secondRadius (Campo)","side (Campo)","spawnMaxRadius (Campo)","spawnMinRadius (Campo)","species (Campo)","successObjectiveString (Campo)","targetNumMushrooms (Campo)","targetNumSuccess (Campo)","targetScore (Campo)","targetScoreEnabled (Campo)","teleportStartTrigger (Campo)","terrainUsed (Campo)","timeLimit (Campo)","timeLimitEnabled (Campo)","timeObjectiveString (Campo)","transitionSpeed (Campo)","treeContainer (Campo)","treeGroupsList (Campo)","treeRadius (Campo)","treesPerGroup (Campo)","turnSpeed (Campo)"
+		);
+		
+		
+		var oldHighlight = 0;
+		var oldKey = "";
+		
+		function get_match(text) {
+		    var ltext = text.toLowerCase();
+		    for(i in words) {
+		        if(words[i].toLowerCase().indexOf(ltext) == "0") {
+		            return words[i];
+		        }
+		    }
+		    return "";
+		}
+		
+		function highlight(keyword) {
+		    if(oldHighlight) oldHighlight.className = "";
+		    var el = parent.frames['zindex'].document.getElementById("w_"+keyword);
+		    el.className="highlighted";
+		    oldHighlight = el;
+		}
+		
+		function check_input(text, matchfun) {
+		    if(text!=oldKey) {
+		        var keyword = matchfun(text);
+		        if(keyword) {       
+		            highlight(keyword);
+		            parent.frames['zindex'].document.getElementById('w_'+keyword).scrollIntoView();
+		        }
+		        oldKey = text;
+		    }
+		}
+	</script>
+</body>
+</html>
+

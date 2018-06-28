@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace UBUSetasVR.EditorScripts
 {
+    /// <summary>
+    /// Class that runs in the editor to check if there are the correct number of placer scripts on the scene.
+    /// </summary>
     [ExecuteInEditMode]
     public class CheckPlacementSet : MonoBehaviour
     {

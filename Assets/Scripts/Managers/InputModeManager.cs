@@ -3,22 +3,47 @@ using DaydreamElements.ObjectManipulation;
 
 namespace UBUSetasVR.Managers
 {
+    /// <summary>
+    /// Class that defines a manager to handle the input mode changes and triggers the proper events.
+    /// </summary>
     public class InputModeManager : MonoBehaviour
     {
+        /// <summary>
+        /// Current input mode
+        /// </summary>
         public static InputMode currentInputMode;
-        /// Trigger used to switch to teleport input
+
+        /// <summary>
+        /// Trigger used to switch to teleport input.
+        /// </summary>
         [Tooltip("Trigger used to switch to teleport input")]
         public BaseActionTrigger teleportStartTrigger;
+
+        /// <summary>
+        /// Delegate to handle input mode changes.
+        /// </summary>
+        /// <param name="newInputMode">The new input mode</param>
         public delegate void InputModeChange(InputMode newInputMode);
+
+        /// <summary>
+        /// Event fired after the input mode has been changed.
+        /// </summary>
         public static event InputModeChange OnInputModeChange;
 
-        /// Trigger used to switch to manipulation input
+        /// <summary>
+        /// Trigger used to switch to manipulation input.
+        /// </summary>
         [Tooltip("Trigger used to switch to manipulation input")]
         public BaseActionTrigger manipulationStartTrigger;
 
+        /// <summary>
+        /// Previous input mode.
+        /// </summary>
         private InputMode previousInputMode;
 
-        // Update is called once per frame
+        /// <summary>
+        /// Unity method that runs every frame.
+        /// </summary>
         void Update()
         {
             if (manipulationStartTrigger.TriggerActive())
@@ -57,5 +82,8 @@ namespace UBUSetasVR.Managers
         }
     }
 
+    /// <summary>
+    /// Enumeration to keep input mode status easier.
+    /// </summary>
     public enum InputMode { MANIPULATION, TELEPORT };
 }
